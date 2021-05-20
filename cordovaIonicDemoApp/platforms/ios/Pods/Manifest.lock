@@ -1,0 +1,24 @@
+PODS:
+  - Mati-Global-ID-SDK (3.0.2):
+    - Socket.IO-Client-Swift
+  - Socket.IO-Client-Swift (16.0.1):
+    - Starscream (~> 4.0)
+  - Starscream (4.0.4)
+
+DEPENDENCIES:
+  - Mati-Global-ID-SDK
+
+SPEC REPOS:
+  trunk:
+    - Mati-Global-ID-SDK
+    - Socket.IO-Client-Swift
+    - Starscream
+
+SPEC CHECKSUMS:
+  Mati-Global-ID-SDK: 23153fedc7ca9de9e352ffb8cb0cc7c288ba6b8f
+  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+
+PODFILE CHECKSUM: 498105f47980e984ccc37b2e79994637b561a382
+
+COCOAPODS: 1.10.0

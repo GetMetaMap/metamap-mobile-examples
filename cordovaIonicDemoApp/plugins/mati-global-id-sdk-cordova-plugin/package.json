@@ -1,0 +1,47 @@
+{
+  "_from": "git+https://github.com/GetMati/mati-cordova-plugin.git",
+  "_id": "mati-global-id-sdk-cordova-plugin@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/mati-global-id-sdk-cordova-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/GetMati/mati-cordova-plugin.git",
+    "rawSpec": "https://github.com/GetMati/mati-cordova-plugin.git",
+    "saveSpec": "git+https://github.com/GetMati/mati-cordova-plugin.git",
+    "fetchSpec": "https://github.com/GetMati/mati-cordova-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "git+https://github.com/GetMati/mati-cordova-plugin.git#59fba791f8347244beb32f1a789e6a4d9a28da68",
+  "_spec": "https://github.com/GetMati/mati-cordova-plugin.git",
+  "_where": "/Users/andreyposnov/Desktop/MobileDev/cordova/demoIonicStart",
+  "author": {
+    "name": "Andrey Posnov"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "mati-global-id-sdk-cordova-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {}
+  },
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Mati SDK plugin",
+  "devDependencies": {},
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "mati-global-id-sdk-cordova-plugin",
+  "version": "1.0.0"
+}

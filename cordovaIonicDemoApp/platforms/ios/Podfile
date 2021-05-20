@@ -1,0 +1,5 @@
+platform :ios, '11.4'
+use_frameworks!
+target 'MyApp' do
+	pod 'Mati-Global-ID-SDK'
+end

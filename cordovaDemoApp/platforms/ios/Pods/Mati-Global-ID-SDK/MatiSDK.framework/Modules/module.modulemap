@@ -1,0 +1,11 @@
+framework module MatiSDK {
+  umbrella header "MatiSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module MatiSDK.Swift {
+    header "MatiSDK-Swift.h"
+    requires objc
+}

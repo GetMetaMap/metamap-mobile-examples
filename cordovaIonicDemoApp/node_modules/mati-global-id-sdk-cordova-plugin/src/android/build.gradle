@@ -1,0 +1,7 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.matilock:mati-global-id-sdk:3.0.3'
+}

@@ -1,0 +1,48 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios11.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MatiSDK
+import AVFoundation
+import CoreTelephony
+import Foundation
+import ImageIO
+@_exported import MatiSDK
+import MobileCoreServices
+import SafariServices
+import SocketIO
+import Swift
+import UIKit
+@objc public protocol MatiButtonResultDelegate : AnyObject {
+  @objc func verificationSuccess(identityId: Swift.String)
+  @objc func verificationCancelled()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MatiButtonResult : ObjectiveC.NSObject {
+  @objc weak public var delegate: MatiSDK.MatiButtonResultDelegate?
+  @objc public static let shared: MatiSDK.MatiButtonResult
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class MatiButton : UIKit.UIButton {
+  @objc public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc dynamic public init()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc public func setParams(clientId: Swift.String, flowId: Swift.String?, metadata: [Swift.String : Any]? = nil)
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension UIImageView {
+  public func loadGif(name: Swift.String)
+}
+extension UIImage {
+  public class func gif(data: Foundation.Data) -> UIKit.UIImage?
+  public class func gif(url: Swift.String) -> UIKit.UIImage?
+  public class func gif(name: Swift.String) -> UIKit.UIImage?
+}
+extension UIDevice {
+  public static let modelName: Swift.String
+}

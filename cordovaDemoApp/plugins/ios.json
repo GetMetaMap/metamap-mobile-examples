@@ -1,0 +1,22 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
+    },
+    "mati-global-id-sdk-cordova-plugin": {
+      "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-cocoapod-support": {
+      "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
+    }
+  }
+}

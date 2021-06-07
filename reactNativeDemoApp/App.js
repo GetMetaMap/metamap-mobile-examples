@@ -18,10 +18,6 @@ export default class App extends Component {
 
   componentDidMount() {
 
-  //set 3 params clientId (cant be null), flowId, metadata
-  var yourMetadata = { param1: "value1", param2: "value2" }
-  MatiGlobalIdSdk.setParams("YOUR_CLIENT_ID", "YOUR_FLOW_ID", yourMetadata);
-
   //set listening callbacks
   const MatiVerifyResult = new NativeEventEmitter(NativeModules.MatiGlobalIdSdk)
   MatiVerifyResult.addListener('verificationSuccess', (data) => console.log(data))
@@ -30,8 +26,10 @@ export default class App extends Component {
 
   //call showFlow when button is clicked
   handleMatiClickButton = () => {
-    MatiGlobalIdSdk.showFlow();
-   }
+	 //set 3 params clientId (cant be null), flowId, metadata
+  	  var yourMetadata = { param1: "value1", param2: "value2" }
+   	 MatiGlobalIdSdk.showFlow("YOUR_CLIENT_ID", "YOUR_FLOW_ID", yourMetadata);
+  }
 
   //Add button to view graph
   render() {

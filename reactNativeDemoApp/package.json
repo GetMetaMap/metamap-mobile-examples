@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "17.0.1",
     "react-native": "0.64.0",
-    "react-native-mati-global-id-sdk": "git+https://github.com/MatiFace/react-native-mati-global-id-sdk.git"
+    "react-native-mati-global-id-sdk": "github:MatiFace/react-native-mati-global-id-sdk"
   },
   "devDependencies": {
     "@babel/core": "7.13.14",

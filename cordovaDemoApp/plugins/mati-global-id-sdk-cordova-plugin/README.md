@@ -1,10 +1,10 @@
 # Cordova&Ionic plugin for Mati SDK
-
+## Recommended version of Cordova is 10. (minimum is 6.X+).
 Create a new Cordova project or Ionic project
 Add the SDK plugin with the following command
 
-cordova plugin add https://github.com/GetMati/mati-cordova-plugin.git
-
+INSTALL: cordova plugin add https://github.com/GetMati/mati-cordova-plugin.git
+UNINSTALL: cordova plugin remove mati-global-id-sdk-cordova-plugin
 
 # Cordova.
 
@@ -27,33 +27,32 @@ In your project add a button to trigger the login process.
 
  ```    
 function onDeviceReady() {
-
-//set 3 params clientId (cant be null), flowId, metadata 
-var matiParams = { clientId: "YOURS_CLIENT_ID", flowId: "YOURS_FLOW_ID", metadata: YOURS_METADATA }
-cordova.plugins.MatiGlobalIDSDK.setParams(matiParams);
  
 //trigger login on button click
 var matiButton = document.getElementById("matiButton");
 
-matiButton.onclick = () => {
-  cordova.plugins.MatiGlobalIDSDK.showMatiFlow();
-};
+  matiButton.onclick = () => {
+      //set 3 params clientId (cant be null), flowId, metadata
+      var yourMetadata = { param1: "value1", param2: "value2" }
+      var matiButtinParams = { clientId: "YOUR_FLOW_ID", flowId: "", metadata: yourMetadata }
+      cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiButtinParams)
+    };
 
-//register to callback
-cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
-  identityId => {
-    console.log("setMatiCallback success: " + identityId);
-  },
-  error => {
-    console.log("setMatiCallback error: " + error);
-  }
-);
+    //register to callback
+    cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
+     identityId => {
+       console.log("setMatiCallback success: " + identityId);
+     },
+     error => {
+       console.log("setMatiCallback error: " + error);
+     }
+    );
 
 }
  ```
  
 ## Please see cordovaDemoApp folder for example on Cordova
-cordovaDemoApp
+https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaDemoApp
 
 # Ionic.
 
@@ -118,31 +117,17 @@ You have to check your project: YourProject/platforms/android/mati-global-id-sdk
 
 ```
 dependencies {
-implementation 'com.matilock:mati-global-id-sdk:HERE_IS_LATEST_VERSION'
+implementation 'com.getmati:mati-sdk:HERE_IS_LATEST_VERSION'
 }
 ```
 Check this for latest version: 
-https://bintray.com/matibiometricskyc/maven/mati-global-id-sdk
+https://search.maven.org/artifact/com.getmati/mati-sdk
 
-
-## Please change public class CordovaActivity.java
-Before CordovaActivity.java
- ```
-public class CordovaActivity extends Activity {
-```
-After CordovaActivity.java
-```
-public class CordovaActivity extends AppCompatActivity {
-```
-Changes in manifest, please set theme to MainActivity
-```
- android:theme="@style/Theme.AppCompat" 
-```
  
-### Set AndroidX support to true 
-android.useAndroidX=true
-
-android.enableJetifier=true
+### Set AndroidX support into config.xml for cordova project
+<platform name="android">
+	<preference name="AndroidXEnabled" value="true" />
+</platform>
 
 ### iOS
 
@@ -178,8 +163,8 @@ end
 Check this for latest version: 
 https://cocoapods.org/pods/Mati-Global-ID-SDK
 
-# Please see cordovaDemoApp folder for example
-cordovaDemoApp
+# Please see cordovaIonicDemoApp folder for example
+https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaIonicDemoApp
 
 ## Have any questions? Feel free create issue here.
 

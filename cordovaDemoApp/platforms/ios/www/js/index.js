@@ -22,31 +22,28 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-   
-    
-console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-document.getElementById('deviceready').classList.add('ready');
 
-//set 3 params clientId (cant be null), flowId, metadata 
-var yourMetadata = { param1: "value1", param2: "value2" }
-var matiParams = { clientId: "5c94e3c401ddc6001be83c07", flowId: null, metadata: yourMetadata }
-cordova.plugins.MatiGlobalIDSDK.setParams(matiParams);
- 
-//trigger login on button click
-var matiButton = document.getElementById("matiButton");
+    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    document.getElementById('deviceready').classList.add('ready');
 
-matiButton.onclick = () => {
-  cordova.plugins.MatiGlobalIDSDK.showMatiFlow();
-};
+    //trigger login on button click
+    var matiButton = document.getElementById("matiButton");
 
-//register to callback
-cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
-  identityId => {
-    console.log("setMatiCallback success: " + identityId);
-  },
-  error => {
-    console.log("setMatiCallback error: " + error);
-  }
-);
+    matiButton.onclick = () => {
+      //set 3 params clientId (cant be null), flowId, metadata
+      var yourMetadata = { param1: "value1", param2: "value2" }
+      var matiButtinParams = { clientId: "YOUR_FLOW_ID", flowId: "", metadata: yourMetadata }
+      cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiButtinParams)
+    };
+
+    //register to callback
+    cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
+     identityId => {
+       console.log("setMatiCallback success: " + identityId);
+     },
+     error => {
+       console.log("setMatiCallback error: " + error);
+     }
+    );
 
 }

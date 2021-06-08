@@ -17,6 +17,7 @@
 		4323E8A4C20D4DF98634C203 /* MatiGlobalIDSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFB9B50CB004CA8BA6F7325 /* MatiGlobalIDSDK.m */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		E792AB132602639700347BDC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E792AB122602639700347BDC /* File.swift */; };
+		A32C3B169556493AA7884800 /* MatiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2073CF5F8EAE46FD87F59A2F /* MatiSDK.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = cordovaDemoApp/config.xml; sourceTree = "<group>"; };
+		2073CF5F8EAE46FD87F59A2F /* MatiSDK.m */ = {isa = PBXFileReference; name = "MatiSDK.m"; path = "mati-global-id-sdk-cordova-plugin/MatiSDK.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFB9B50CB004CA8BA6F7325 /* MatiGlobalIDSDK.m */,
+				2073CF5F8EAE46FD87F59A2F /* MatiSDK.m */,
 			);
 			name = Plugins;
 			path = cordovaDemoApp/Plugins;
@@ -361,6 +364,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				4323E8A4C20D4DF98634C203 /* MatiGlobalIDSDK.m in Sources */,
+				A32C3B169556493AA7884800 /* MatiSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

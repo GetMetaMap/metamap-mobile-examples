@@ -10,8 +10,7 @@ PODS:
     - React-jsi (= 0.64.0)
     - ReactCommon/turbomodule/core (= 0.64.0)
   - glog (0.3.5)
-  - Mati-Global-ID-SDK (3.0.3):
-    - Socket.IO-Client-Swift
+  - Mati-Global-ID-SDK (3.2.1)
   - RCT-Folly (2020.01.13.00):
     - boost-for-react-native
     - DoubleConversion
@@ -205,7 +204,7 @@ PODS:
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
   - React-jsinspector (0.64.0)
-  - react-native-mati-global-id-sdk (2.0.1):
+  - react-native-mati-global-id-sdk (3.1.0):
     - Mati-Global-ID-SDK
     - React
   - React-perflogger (0.64.0)
@@ -272,9 +271,6 @@ PODS:
     - React-cxxreact (= 0.64.0)
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
-  - Socket.IO-Client-Swift (16.0.1):
-    - Starscream (~> 4.0)
-  - Starscream (4.0.4)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -314,8 +310,6 @@ SPEC REPOS:
   trunk:
     - boost-for-react-native
     - Mati-Global-ID-SDK
-    - Socket.IO-Client-Swift
-    - Starscream
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -381,9 +375,9 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: 49cbe4b43e445b06bf29199b6ad2057649e4c8f5
-  FBReactNativeSpec: 32ff842890bfe51044d157d6578b970bf222c2e3
+  FBReactNativeSpec: ef83a05120020fcfb09ab0f5fc11536c7b851a24
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
-  Mati-Global-ID-SDK: 281825f03a9ddc96516839fd27649e6333beed5a
+  Mati-Global-ID-SDK: e15a0fff4cd58b206a40b4a10bf9e8662ce49baa
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
   RCTRequired: 2f8cb5b7533219bf4218a045f92768129cf7050a
   RCTTypeSafety: 512728b73549e72ad7330b92f3d42936f2a4de5b
@@ -395,7 +389,7 @@ SPEC CHECKSUMS:
   React-jsi: 74341196d9547cbcbcfa4b3bbbf03af56431d5a1
   React-jsiexecutor: 06a9c77b56902ae7ffcdd7a4905f664adc5d237b
   React-jsinspector: 0ae35a37b20d5e031eb020a69cc5afdbd6406301
-  react-native-mati-global-id-sdk: de8e35257c27ad77e0436604155a7f3fda384d74
+  react-native-mati-global-id-sdk: 597a78f111fc3a315b9765c36239dc6bcb702cc1
   React-perflogger: 9c547d8f06b9bf00cb447f2b75e8d7f19b7e02af
   React-RCTActionSheet: 3080b6e12e0e1a5b313c8c0050699b5c794a1b11
   React-RCTAnimation: 3f96f21a497ae7dabf4d2f150ee43f906aaf516f
@@ -408,8 +402,6 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0fd6b21751a33cb72fce1a4a33ab9678416d307a
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
-  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   Yoga: 8c8436d4171c87504c648ae23b1d81242bdf3bbf
 
 PODFILE CHECKSUM: c005a6e9150f46972f6c5f0aa141cb0b31bed44b

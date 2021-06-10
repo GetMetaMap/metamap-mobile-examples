@@ -49,7 +49,7 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"MatiSDK\"><param name=\"ios-package\" value=\"MatiSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "xml": "<feature name=\"MatiGlobalIDSDK\"><param name=\"ios-package\" value=\"MatiGlobalIDSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
           ]

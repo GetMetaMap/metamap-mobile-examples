@@ -1,12 +1,12 @@
 package com.cordova.plugin.matiglobalidsdk;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import androidx.annotation.Nullable;
-import com.matilock.mati_kyc_sdk.MatiButton;
-import com.matilock.mati_kyc_sdk.Metadata;
-import com.matilock.mati_kyc_sdk.kyc.KYCActivity;
+
+import com.getmati.mati_sdk.Metadata;
+import com.getmati.mati_sdk.MatiSdk;
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
@@ -14,6 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.Iterator;
+import static android.app.Activity.RESULT_OK;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -21,10 +22,8 @@ import java.util.Iterator;
 public class MatiGlobalIDSDK extends CordovaPlugin  {
 
     public static final String SHOW_MATIFLOW = "showMatiFlow";
-    public static final String SET_MATI_CALLBACK = "setMatiCallback";
-    public static final String SET_PARAMS = "setParams";
     public static final String COOL_METHOD = "coolMethod";
-    private MatiButton matiButton;
+    public static final String SET_CALLBACK = "setMatiCallback";
     CallbackContext mOnCallback;
 
     @Override
@@ -35,7 +34,7 @@ public class MatiGlobalIDSDK extends CordovaPlugin  {
                 this.coolMethod(message, callbackContext);
                 return true;
             }
-            case SET_PARAMS:{
+            case SHOW_MATIFLOW:{
                 String clientId = null;
                 String flowId = null;
                 JSONObject metadata = null;
@@ -44,19 +43,15 @@ public class MatiGlobalIDSDK extends CordovaPlugin  {
                     clientId = params.getString("clientId");
                     flowId = params.optString("flowId");
                     metadata = params.optJSONObject("metadata");
-                    this.setParams(clientId,flowId,metadata, callbackContext);
+                    this.showMatiFlow(clientId,flowId,metadata, callbackContext);
                     return true;
                 } else {
                     Log.e("Integration error", "Please set yours Mati client ID");
                     return true;
                 }
             }
-            case SET_MATI_CALLBACK:{
-                this.setMatiCallback(callbackContext);
-                return true;
-            }
-            case SHOW_MATIFLOW:{
-                this.showMatiFlow(callbackContext);
+            case SET_CALLBACK:{
+                mOnCallback = callbackContext;
                 return true;
             }
         }
@@ -71,48 +66,24 @@ public class MatiGlobalIDSDK extends CordovaPlugin  {
         }
     }
 
-    private void setParams(final String clientId, @Nullable final String flowId , @Nullable final JSONObject metadata, CallbackContext callbackContext) {
+    private void showMatiFlow(final String clientId, @Nullable final String flowId , @Nullable final JSONObject metadata, CallbackContext callbackContext) {
+        cordova.setActivityResultCallback(this);
         cordova.getActivity().runOnUiThread(new Runnable() {
-            @Override
             public void run() {
-                matiButton = new MatiButton(cordova.getContext(), null);
-                matiButton.setParams(clientId,
+                MatiSdk.INSTANCE.startFlow(cordova.getActivity(),
+                        clientId,
                         flowId,
-                        "Default flow",
                         convertToMetadata(metadata));
                 callbackContext.success();
             }
         });
     }
 
-    private void showMatiFlow(CallbackContext callbackContext){
-        if (matiButton.getVm().getValue() != null) {
-            MatiButton.State matiState = matiButton.getVm().getValue();
-            MatiButton.SuccessState matiSuccess = (MatiButton.SuccessState) matiState;
-
-            Intent intent = new Intent(cordova.getContext(), KYCActivity.class);
-            intent.putExtra("ARG_ID_TOKEN", matiSuccess.getIdToken());
-            intent.putExtra("ARG_CLIENT_ID", matiSuccess.getClientId());
-            intent.putExtra("ARG_VERIFICATION_ID", matiSuccess.getVerificationId());
-            intent.putExtra("ARG_ACCESS_TOKEN", matiSuccess.getAccessToken());
-            intent.putExtra("ARG_VOICE_TXT", matiSuccess.getVoiceDataTxt());
-            intent.putExtra("STATE_LANGUAGE_ID", matiSuccess.getIdToken());
-            cordova.getActivity().startActivityForResult(intent, KYCActivity.REQUEST_CODE);
-        } else {
-            Log.e("Loading error", "Please check yours Mati client ID or internet connection");
-        }
-        callbackContext.success();
-    }
-
-    private void  setMatiCallback(CallbackContext callbackContext) {
-        mOnCallback = callbackContext;
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == KYCActivity.REQUEST_CODE) {
-            if(resultCode == KYCActivity.RESULT_OK) {
-                PluginResult result = new PluginResult(PluginResult.Status.OK);
+        if(requestCode == MatiSdk.REQUEST_CODE) {
+            if(resultCode == RESULT_OK) {
+                 PluginResult result = new PluginResult(PluginResult.Status.OK, data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID));
                 result.setKeepCallback(true);
                 mOnCallback.sendPluginResult(result);
             } else {

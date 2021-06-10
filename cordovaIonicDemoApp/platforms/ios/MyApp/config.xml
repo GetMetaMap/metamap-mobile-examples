@@ -43,8 +43,8 @@
     <feature name="CDVIonicKeyboard">
         <param name="ios-package" onload="true" value="CDVIonicKeyboard" />
     </feature>
-    <feature name="MatiSDK">
-        <param name="ios-package" value="MatiSDK" />
+    <feature name="MatiGlobalIDSDK">
+        <param name="ios-package" value="MatiGlobalIDSDK" />
         <param name="onload" value="true" />
     </feature>
     <name>MyApp</name>

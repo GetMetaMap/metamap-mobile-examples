@@ -3,5 +3,5 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.matilock:mati-global-id-sdk:3.0.3'
+    implementation 'com.getmati:mati-sdk:3.4.1'
 }

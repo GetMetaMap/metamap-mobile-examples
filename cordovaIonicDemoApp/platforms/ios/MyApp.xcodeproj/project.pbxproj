@@ -16,7 +16,6 @@
 		61F27EBCAC0C425084B7243F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315B846A4E6F48F4A46F294F /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		73AA9C0D7B6F4392AB83F050 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF3E60C940A4DF8987B12E7 /* CDVViewController+SplashScreen.m */; };
-		A869F98BEDB1429BA4F1EC12 /* MatiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A67425C501E40259CF0F460 /* MatiSDK.m */; };
 		A938E0CEDB844A2FBD2C85EC /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC768716BDF485DA591A987 /* CDVSplashScreen.m */; };
 		C3CD2FA17F70D45A86A81CDF /* Pods_MyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4043F25DBFEA5899A148B928 /* Pods_MyApp.framework */; };
 		C894537C0E854AC2965BBC48 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C71AB49C4944748E4FF6CD /* CDVStatusBar.m */; };
@@ -26,6 +25,7 @@
 		E4A8BF257A9445009052D1B4 /* CDVWKProcessPoolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 086D3C8AB7F0485E963F9824 /* CDVWKProcessPoolFactory.m */; };
 		F27A903AB2654608B6138D70 /* IONAssetHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E073010CAFC48CE8C53A467 /* IONAssetHandler.m */; };
 		F69C5C829DCC4C68B4F59892 /* CDVWKWebViewEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D2BCC875E744C3820614B2 /* CDVWKWebViewEngine.m */; };
+		7C2DC4FD12A6491EA7F7B31D /* MatiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = C379DD8E72324AC98694E231 /* MatiSDK.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,6 @@
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyApp/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		086D3C8AB7F0485E963F9824 /* CDVWKProcessPoolFactory.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVWKProcessPoolFactory.m; path = "cordova-plugin-ionic-webview/CDVWKProcessPoolFactory.m"; sourceTree = "<group>"; };
 		17C71AB49C4944748E4FF6CD /* CDVStatusBar.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; };
-		1A67425C501E40259CF0F460 /* MatiSDK.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MatiSDK.m; path = "mati-global-id-sdk-cordova-plugin/MatiSDK.m"; sourceTree = "<group>"; };
 		1A6EA7FD0798470CA38C7C69 /* CDVWKWebViewUIDelegate.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVWKWebViewUIDelegate.h; path = "cordova-plugin-ionic-webview/CDVWKWebViewUIDelegate.h"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = MyApp/config.xml; sourceTree = "<group>"; };
 		FEB6257B1391422FA0EC3871 /* CDVIonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVIonicKeyboard.h; path = "cordova-plugin-ionic-keyboard/CDVIonicKeyboard.h"; sourceTree = "<group>"; };
+		C379DD8E72324AC98694E231 /* MatiSDK.m */ = {isa = PBXFileReference; name = "MatiSDK.m"; path = "mati-global-id-sdk-cordova-plugin/MatiSDK.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,7 @@
 				377A4280EF3D4E80BA7E6EB3 /* IONAssetHandler.h */,
 				D72FACCFA473461F8A601972 /* CDVIonicKeyboard.m */,
 				FEB6257B1391422FA0EC3871 /* CDVIonicKeyboard.h */,
-				1A67425C501E40259CF0F460 /* MatiSDK.m */,
+				C379DD8E72324AC98694E231 /* MatiSDK.m */,
 			);
 			name = Plugins;
 			path = MyApp/Plugins;
@@ -407,7 +407,7 @@
 				E4A8BF257A9445009052D1B4 /* CDVWKProcessPoolFactory.m in Sources */,
 				F27A903AB2654608B6138D70 /* IONAssetHandler.m in Sources */,
 				C9CA8E3890F1484CA7060906 /* CDVIonicKeyboard.m in Sources */,
-				A869F98BEDB1429BA4F1EC12 /* MatiSDK.m in Sources */,
+				7C2DC4FD12A6491EA7F7B31D /* MatiSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

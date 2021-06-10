@@ -22,8 +22,8 @@
       <pods-config ios-min-version="11.4" use-frameworks="true">
       </pods-config>
       <config-file parent="/*" target="config.xml">
-         <feature name="MatiSDK">
-            <param name="ios-package" value="MatiSDK" />
+         <feature name="MatiGlobalIDSDK">
+            <param name="ios-package" value="MatiGlobalIDSDK" />
             <param name="onload" value="true" />
          </feature>
       </config-file>

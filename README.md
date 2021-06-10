@@ -5,7 +5,7 @@ Hello, here is you can try our demo apps with implemented Mati SDK (by native or
 
 Plugins connected with native SDK's [Android](https://github.com/GetMati/mati-android-sdk) and [iOS](https://github.com/GetMati/mati-ios-sdk ), and plugins are a bridge between our native SDK's and crossplatform frameworks.
 
-# Native SDK's 
+# Native platforms
 
 ## iOS
 

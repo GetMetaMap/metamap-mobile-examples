@@ -3,21 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
-		0BF99D7FB74274076102E77E /* Pods_cordovaDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 104A14C598191176242E5A5B /* Pods_cordovaDemoApp.framework */; };
+		11F32B9C198F496D9FBA2DF7 /* MatiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FDC743D5CC4EA1A08567AB /* MatiSDK.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		4323E8A4C20D4DF98634C203 /* MatiGlobalIDSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFB9B50CB004CA8BA6F7325 /* MatiGlobalIDSDK.m */; };
-		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		E792AB132602639700347BDC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E792AB122602639700347BDC /* File.swift */; };
-		A32C3B169556493AA7884800 /* MatiSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 2073CF5F8EAE46FD87F59A2F /* MatiSDK.m */; };
+		3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */; };
+		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
+		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
+		D8BB615BF758B0926FBF7B4E /* Pods_cordovaDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138B2D458A1713614D315A43 /* Pods_cordovaDemoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +35,11 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = CordovaLib;
 		};
-		907D8123214C687600058A10 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C0C01EB21E3911D50056E6CB;
-			remoteInfo = Cordova;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = cordovaDemoApp/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		104A14C598191176242E5A5B /* Pods_cordovaDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		138B2D458A1713614D315A43 /* Pods_cordovaDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* cordovaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cordovaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,18 +53,14 @@
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* cordovaDemoApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cordovaDemoApp-Prefix.pch"; sourceTree = "<group>"; };
-		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = cordovaDemoApp/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		7A2F53419D68F49A5B0CD90C /* Pods-cordovaDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cordovaDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7DDDEC248822F6CBD5027DAB /* Pods-cordovaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cordovaDemoApp.release.xcconfig"; path = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* cordovaDemoApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "cordovaDemoApp-Info.plist"; path = "cordovaDemoApp/cordovaDemoApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
-		AE17BCC29AA5124537410BE7 /* Pods-cordovaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cordovaDemoApp.release.xcconfig"; path = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		DCFB9B50CB004CA8BA6F7325 /* MatiGlobalIDSDK.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MatiGlobalIDSDK.m; path = "mati-global-id-sdk-cordova-plugin/MatiGlobalIDSDK.m"; sourceTree = "<group>"; };
-		DDBD1573F0C89B93C2D9643D /* Pods-cordovaDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cordovaDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		E792AB112602639700347BDC /* cordovaDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cordovaDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		E792AB122602639700347BDC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		97FDC743D5CC4EA1A08567AB /* MatiSDK.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MatiSDK.m; path = "mati-global-id-sdk-cordova-plugin/MatiSDK.m"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = cordovaDemoApp/config.xml; sourceTree = "<group>"; };
-		2073CF5F8EAE46FD87F59A2F /* MatiSDK.m */ = {isa = PBXFileReference; name = "MatiSDK.m"; path = "mati-global-id-sdk-cordova-plugin/MatiSDK.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,22 +69,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				0BF99D7FB74274076102E77E /* Pods_cordovaDemoApp.framework in Frameworks */,
+				D8BB615BF758B0926FBF7B4E /* Pods_cordovaDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06D96160C54341441967F35A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DDBD1573F0C89B93C2D9643D /* Pods-cordovaDemoApp.debug.xcconfig */,
-				AE17BCC29AA5124537410BE7 /* Pods-cordovaDemoApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +97,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				E792AB122602639700347BDC /* File.swift */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
 				EB87FDF11871DA420020F90C /* Staging */,
@@ -131,8 +110,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				06D96160C54341441967F35A /* Pods */,
-				E792AB112602639700347BDC /* cordovaDemoApp-Bridging-Header.h */,
+				2CF2C53F4ABEA21846A25D26 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -154,7 +132,6 @@
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* cordovaDemoApp-Info.plist */,
-				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
 			);
 			name = Resources;
 			path = cordovaDemoApp/Resources;
@@ -163,16 +140,24 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				104A14C598191176242E5A5B /* Pods_cordovaDemoApp.framework */,
+				138B2D458A1713614D315A43 /* Pods_cordovaDemoApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CF2C53F4ABEA21846A25D26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A2F53419D68F49A5B0CD90C /* Pods-cordovaDemoApp.debug.xcconfig */,
+				7DDDEC248822F6CBD5027DAB /* Pods-cordovaDemoApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		301BF52E109A57CC0062928A /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				301BF535109A57CC0062928A /* libCordova.a */,
-				907D8124214C687600058A10 /* Cordova.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,8 +175,7 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				DCFB9B50CB004CA8BA6F7325 /* MatiGlobalIDSDK.m */,
-				2073CF5F8EAE46FD87F59A2F /* MatiSDK.m */,
+				97FDC743D5CC4EA1A08567AB /* MatiSDK.m */,
 			);
 			name = Plugins;
 			path = cordovaDemoApp/Plugins;
@@ -213,12 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "cordovaDemoApp" */;
 			buildPhases = (
-				ABC520E916C5288519EF4A30 /* [CP] Check Pods Manifest.lock */,
+				B40AAE75DC9ED36129A45F08 /* [CP] Check Pods Manifest.lock */,
 				304B58A110DAC018002A0835 /* Copy www directory */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				A3291FEC393018B85D5E8FEE /* [CP] Embed Pods Frameworks */,
+				8D5F68325F59E715017B22DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,22 +220,24 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						LastSwiftMigration = 1240;
+						DevelopmentTeam = GU3LVMLYVJ;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "cordovaDemoApp" */;
-			compatibilityVersion = "Xcode 11.0";
-			developmentRegion = en;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -275,13 +261,6 @@
 			remoteRef = 301BF534109A57CC0062928A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		907D8124214C687600058A10 /* Cordova.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Cordova.framework;
-			remoteRef = 907D8123214C687600058A10 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -290,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */,
+				3047A5141AB8059700498E2A /* build.xcconfig in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
-				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,27 +291,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/cordovaDemoApp/Scripts/copy-www-build-step.sh\"";
+			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js";
 			showEnvVarsInLog = 0;
 		};
-		A3291FEC393018B85D5E8FEE /* [CP] Embed Pods Frameworks */ = {
+		8D5F68325F59E715017B22DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-frameworks.sh",
+				"${PODS_ROOT}/Mati-Global-ID-SDK/MatiSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MatiSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABC520E916C5288519EF4A30 /* [CP] Check Pods Manifest.lock */ = {
+		B40AAE75DC9ED36129A45F08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,12 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E792AB132602639700347BDC /* File.swift in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				4323E8A4C20D4DF98634C203 /* MatiGlobalIDSDK.m in Sources */,
-				A32C3B169556493AA7884800 /* MatiSDK.m in Sources */,
+				11F32B9C198F496D9FBA2DF7 /* MatiSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,11 +365,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = Q6797J499A;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = GU3LVMLYVJ;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -399,13 +381,8 @@
 				INFOPLIST_FILE = "cordovaDemoApp/cordovaDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.getmati.cordovaDemoApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "cordovaDemoApp-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_WORKSPACE = NO;
+				PRODUCT_NAME = cordovaDemoApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -415,27 +392,21 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = Q6797J499A;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = GU3LVMLYVJ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cordovaDemoApp/cordovaDemoApp-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "cordovaDemoApp/cordovaDemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.getmati.cordovaDemoApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = cordovaDemoApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "cordovaDemoApp-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};
@@ -443,34 +414,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
 			buildSettings = {
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -480,7 +434,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				WK_WEB_VIEW_ONLY = 1;
 			};
 			name = Debug;
 		};
@@ -488,33 +441,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3047A5111AB8059700498E2A /* build.xcconfig */;
 			buildSettings = {
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				ENABLE_BITCODE = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -523,7 +460,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				WK_WEB_VIEW_ONLY = 1;
 			};
 			name = Release;
 		};

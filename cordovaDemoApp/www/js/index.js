@@ -30,10 +30,10 @@ function onDeviceReady() {
     var matiButton = document.getElementById("matiButton");
 
     matiButton.onclick = () => {
-      //set 3 params clientId (cant be null), flowId, metadata
-      var yourMetadata = { param1: "value1", param2: "value2" }
-      var matiButtinParams = { clientId: "YOUR_FLOW_ID", flowId: "YOUR_FLOWID", metadata: yourMetadata }
-      cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiButtinParams)
+        //set 3 params clientId (cant be null), flowId, metadata
+        var yourMetadata = { param1: "value1", param2: "value2" }
+        var matiButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
+        cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiButtinParams)
     };
 
     //register to callback

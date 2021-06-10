@@ -26,54 +26,69 @@ Note: Don't miss to add framework in Embedded Binaries.
 
 ## Example
 
-You now need to place the Mati KYC button inside your App. You have 2 options for that (interface builder vs. code):
+Please take a look at example
 
-You can include `MatiButton` into your view using XCode interface builder
-Or
+https://github.com/GetMati/mati-mobile-examples/tree/main/MatiSDKDemoSwift
+
+
+## Implemenatation
+You now need to place the Mati button inside your App. 
+
 Add using Swift or Objective-C 
 
 ### Swift
-    
-    import UIKit
-	import MatiSDK
 
-	class ViewController: UIViewController {
+```swift
+import UIKit
+import MatiSDK
+
+class ViewController: UIViewController {
     
-      override func viewDidLoad() {
-          super.viewDidLoad()
-          self.setupMatiButton()
-      }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.setupMatiButton()
+	}
     
-      private func setupMatiButton() {
+    private func setupMatiButton() {
+
+      //init button
+      let matiButton = MatiButton()
+
+      //add button action
+      matiButton.addTarget(self, action: #selector(self.matiButtonAction), for: .touchUpInside)
+
+      //set view of button
+      matiButton.frame = CGRect(x: 20, y: self.view.frame.size.height/2 - 50, width: view.frame.size.width - 40, height: 50)
+
+      //add button to yours view
+      view.addSubview(matiButton)
+
+      //set delegate to get result
+      MatiButtonResult.shared.delegate = self
       
-          //init button
-          let matiButton = MatiButton()
+    }
+  
+      @objc private func matiButtonAction() {
+	//set params to showMatiFlow
+	MatiSDK.shared.showMatiFlow(clientId: "YOUR_CLIENT_ID",
+				flowId: "YOUR_FLOW_ID",
+				metadata: ["key1": "value1"])
+	}
+}
 
-          //set params to your button
-          matiButton.setParams(clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: ["key": "value"])
-          
-          //set view of button
-          matiButton.frame = CGRect(x: 20, y: self.view.frame.size.height/2 - 50, width: view.frame.size.width - 40, height: 50)
-
-          //add button to yours view
-          view.addSubview(matiButton)
-
-          //set delegate to get result
-          MatiButtonResult.shared.delegate = self
-      }
+//MARK: MatiButtonResultDelegate
+extension ViewController: MatiButtonResultDelegate {
+    
+	func verificationSuccess(identityId: String) {
+		print("Mati Verification Success \(identityId)")
 	}
 
-    //MARK: MatiButtonResultDelegate
-    extension ViewController: MatiButtonResultDelegate {
-        func verificationSuccess(identityId: String) {
-            print("Mati Verification Success \(identityId)")
-        }
-
-        func verificationCancelled() {
-            print("Mati Verification Cancelled")
-        }
-    }
-    
+	func verificationCancelled() {
+		print("Mati Verification Cancelled")
+	}
+}
+```
+   
 ### Objective-C
     
     #import "ViewController.h"
@@ -93,8 +108,8 @@ Add using Swift or Objective-C
           //init button
           self.matiButton = [[MatiButton alloc] init];
           
-          //set params to your button
-          [self.matiButton setParamsWithClientId:@"YOUR_CLIENT_ID" flowId:@"YOUR_FLOW_ID" metadata:@{@"key":@"value"}];
+          //add action to yours button
+            [self.matiButton addTarget:self action:@selector(matiButtonAction:) forControlEvents:UIControlEventTouchUpInside];
           
           //set view of button
           self.matiButton.frame = CGRectMake(20, self.view.frame.size.height/2 - 25, self.view.frame.size.width - 40, 50);
@@ -106,10 +121,11 @@ Add using Swift or Objective-C
 		  //set delegate to get result
           [MatiButtonResult shared].delegate = self;
       }
-
-      - (IBAction)closeButtonAction:(id)sender {
-          [self dismissViewControllerAnimated:true completion:nil];
-      }
+      
+      //add showMatiFlow function with YOURS parameters
+      -(void)matiButtonAction:(UIButton *) sender{
+      	[MatiSDK.shared showMatiFlowWithClientId:@"YOUR_CLIENT_ID" flowId:@"YOUR_FLOW_ID"  metadata:@{@"key":@"value"}];
+	}
 
     #pragma mark - MatiButtonResultDelegate
 
@@ -144,3 +160,23 @@ The following permissions are needed to capture video, access the photo gallery 
 
    For Mati SDK below 3.x.x please use this documentation https://github.com/MatiFace/mati-global-id-sdk/blob/master/README_old__2_x_x_.md
 
+
+## SPECIFIC PARAMETERS
+
+You can use metadata to set specific parameters
+
+##### Fixed selected language and hiding the language selection. (to make it permanent)
+
+key: fixedLanguage
+value: locale code of language
+
+###### example
+
+for Spain (it can be any country, if we doesnt support language yet it will be setted to English)
+
+##### fixedLanguage : es
+
+###### full example
+```swift
+metadata: ["fixedLanguage": "es"]
+```

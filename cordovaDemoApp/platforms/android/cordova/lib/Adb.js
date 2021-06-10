@@ -17,18 +17,19 @@
     under the License.
 */
 
+var Q = require('q');
 var os = require('os');
-var execa = require('execa');
 var events = require('cordova-common').events;
+var spawn = require('cordova-common').superspawn.spawn;
 var CordovaError = require('cordova-common').CordovaError;
 
 var Adb = {};
 
-function isDevice (line) {
+function isDevice(line) {
     return line.match(/\w+\tdevice/) && !line.match(/emulator/);
 }
 
-function isEmulator (line) {
+function isEmulator(line) {
     return line.match(/device/) && line.match(/emulator/);
 }
 
@@ -43,7 +44,8 @@ function isEmulator (line) {
  *   devices/emulators
  */
 Adb.devices = function (opts) {
-    return execa('adb', ['devices'], { cwd: os.tmpdir() }).then(({ stdout: output }) => {
+    return spawn('adb', ['devices'], {cwd: os.tmpdir()})
+    .then(function(output) {
         return output.split('\n').filter(function (line) {
             // Filter out either real devices or emulators, depending on options
             return (line && opts && opts.emulators) ? isEmulator(line) : isDevice(line);
@@ -54,45 +56,40 @@ Adb.devices = function (opts) {
 };
 
 Adb.install = function (target, packagePath, opts) {
-    events.emit('verbose', 'Installing apk ' + packagePath + ' on target ' + target + '...');
+    events.emit('verbose', 'Installing apk ' + packagePath + ' on ' + target + '...');
     var args = ['-s', target, 'install'];
     if (opts && opts.replace) args.push('-r');
-    return execa('adb', args.concat(packagePath), { cwd: os.tmpdir() }).then(({ stdout: output }) => {
+    return spawn('adb', args.concat(packagePath), {cwd: os.tmpdir()})
+    .then(function(output) {
         // 'adb install' seems to always returns no error, even if installation fails
         // so we catching output to detect installation failure
-        if (output.match(/Failure/)) {
-            if (output.match(/INSTALL_PARSE_FAILED_NO_CERTIFICATES/)) {
-                output += '\n\n' + 'Sign the build using \'-- --keystore\' or \'--buildConfig\'' +
-                    ' or sign and deploy the unsigned apk manually using Android tools.';
-            } else if (output.match(/INSTALL_FAILED_VERSION_DOWNGRADE/)) {
-                output += '\n\n' + 'You\'re trying to install apk with a lower versionCode that is already installed.' +
-                    '\nEither uninstall an app or increment the versionCode.';
-            }
-
-            return Promise.reject(new CordovaError('Failed to install apk to device: ' + output));
-        }
+        if (output.match(/Failure/))
+            return Q.reject(new CordovaError('Failed to install apk to device: ' + output));
     });
 };
 
 Adb.uninstall = function (target, packageId) {
-    events.emit('verbose', 'Uninstalling package ' + packageId + ' from target ' + target + '...');
-    return execa('adb', ['-s', target, 'uninstall', packageId], { cwd: os.tmpdir() }).then(({ stdout }) => stdout);
+    events.emit('verbose', 'Uninstalling ' + packageId + ' from ' + target + '...');
+    return spawn('adb', ['-s', target, 'uninstall', packageId], {cwd: os.tmpdir()});
 };
 
 Adb.shell = function (target, shellCommand) {
-    events.emit('verbose', 'Running adb shell command "' + shellCommand + '" on target ' + target + '...');
+    events.emit('verbose', 'Running command "' + shellCommand + '" on ' + target + '...');
     var args = ['-s', target, 'shell'];
     shellCommand = shellCommand.split(/\s+/);
-    return execa('adb', args.concat(shellCommand), { cwd: os.tmpdir() })
-        .then(({ stdout }) => stdout)
-        .catch(error => Promise.reject(new CordovaError(`Failed to execute shell command "${shellCommand}" on device: ${error}`)));
+    return spawn('adb', args.concat(shellCommand), {cwd: os.tmpdir()})
+    .catch(function (output) {
+        return Q.reject(new CordovaError('Failed to execute shell command "' +
+            shellCommand + '"" on device: ' + output));
+    });
 };
 
 Adb.start = function (target, activityName) {
-    events.emit('verbose', 'Starting application "' + activityName + '" on target ' + target + '...');
-    return Adb.shell(target, 'am start -W -a android.intent.action.MAIN -n' + activityName).catch((error) => {
-        return Promise.reject(new CordovaError('Failed to start application "' +
-            activityName + '"" on device: ' + error));
+    events.emit('verbose', 'Starting application "' + activityName + '" on ' + target + '...');
+    return Adb.shell(target, 'am start -W -a android.intent.action.MAIN -n' + activityName)
+    .catch(function (output) {
+        return Q.reject(new CordovaError('Failed to start application "' +
+            activityName + '"" on device: ' + output));
     });
 };
 

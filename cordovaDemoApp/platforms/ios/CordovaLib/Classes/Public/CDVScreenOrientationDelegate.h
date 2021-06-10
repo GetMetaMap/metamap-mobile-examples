@@ -21,8 +21,8 @@
 
 @protocol CDVScreenOrientationDelegate <NSObject>
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations;
-
+- (NSUInteger)supportedInterfaceOrientations;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 - (BOOL)shouldAutorotate;
 
 @end

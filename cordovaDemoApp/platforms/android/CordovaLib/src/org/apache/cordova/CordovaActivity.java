@@ -24,7 +24,6 @@ import java.util.Locale;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.annotation.SuppressLint;
@@ -35,6 +34,7 @@ import android.graphics.Color;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,7 +50,7 @@ import android.widget.FrameLayout;
  * html file that contains the application.
  *
  * As an example:
- *
+ * 
  * <pre>
  *     package org.apache.cordova.examples;
  *
@@ -67,8 +67,8 @@ import android.widget.FrameLayout;
  *       }
  *     }
  * </pre>
- *
- * Cordova xml configuration: Cordova uses a configuration file at
+ * 
+ * Cordova xml configuration: Cordova uses a configuration file at 
  * res/xml/config.xml to specify its settings. See "The config.xml File"
  * guide in cordova-docs at http://cordova.apache.org/docs for the documentation
  * for the configuration. The use of the set*Property() methods is
@@ -104,27 +104,21 @@ public class CordovaActivity extends Activity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        // need to activate preferences before super.onCreate to avoid "requestFeature() must be called before adding content" exception
-        loadConfig();
-
-        String logLevel = preferences.getString("loglevel", "ERROR");
-        LOG.setLogLevel(logLevel);
-
         LOG.i(TAG, "Apache Cordova native platform version " + CordovaWebView.CORDOVA_VERSION + " is starting");
         LOG.d(TAG, "CordovaActivity.onCreate()");
 
+        // need to activate preferences before super.onCreate to avoid "requestFeature() must be called before adding content" exception
+        loadConfig();
         if (!preferences.getBoolean("ShowTitle", false)) {
             getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         }
 
         if (preferences.getBoolean("SetFullscreen", false)) {
-            LOG.d(TAG, "The SetFullscreen configuration is deprecated in favor of Fullscreen, and will be removed in a future version.");
+            Log.d(TAG, "The SetFullscreen configuration is deprecated in favor of Fullscreen, and will be removed in a future version.");
             preferences.set("Fullscreen", true);
         }
         if (preferences.getBoolean("Fullscreen", false)) {
-            // NOTE: use the FullscreenNotImmersive configuration key to set the activity in a REAL full screen
-            // (as was the case in previous cordova versions)
-            if (!preferences.getBoolean("FullscreenNotImmersive", false)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 immersiveMode = true;
             } else {
                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -181,14 +175,9 @@ public class CordovaActivity extends Activity {
         setContentView(appView.getView());
 
         if (preferences.contains("BackgroundColor")) {
-            try {
-                int backgroundColor = preferences.getInteger("BackgroundColor", Color.BLACK);
-                // Background of activity:
-                appView.getView().setBackgroundColor(backgroundColor);
-            }
-            catch (NumberFormatException e){
-                e.printStackTrace();
-            }
+            int backgroundColor = preferences.getInteger("BackgroundColor", Color.BLACK);
+            // Background of activity:
+            appView.getView().setBackgroundColor(backgroundColor);
         }
 
         appView.getView().requestFocusFromTouch();
@@ -269,11 +258,9 @@ public class CordovaActivity extends Activity {
         if (this.appView == null) {
             return;
         }
-        if (! this.getWindow().getDecorView().hasFocus()) {
-            // Force window to have focus, so application always
-            // receive user input. Workaround for some devices (Samsung Galaxy Note 3 at least)
-            this.getWindow().getDecorView().requestFocus();
-        }
+        // Force window to have focus, so application always
+        // receive user input. Workaround for some devices (Samsung Galaxy Note 3 at least)
+        this.getWindow().getDecorView().requestFocus();
 
         this.appView.handleResume(this.keepRunning);
     }
@@ -322,7 +309,6 @@ public class CordovaActivity extends Activity {
     /**
      * Called when view focus is changed
      */
-    @SuppressLint("InlinedApi")
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);

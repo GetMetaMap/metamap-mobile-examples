@@ -4,6 +4,7 @@ Create a new Cordova project or Ionic project
 Add the SDK plugin with the following command
 
 INSTALL: cordova plugin add https://github.com/GetMati/mati-cordova-plugin.git
+
 UNINSTALL: cordova plugin remove mati-global-id-sdk-cordova-plugin
 
 # Cordova.
@@ -84,11 +85,6 @@ export class HomePage {
   constructor() {}
   
   ionViewDidEnter() {
-    
-    //set 3 params clientId (cant be null), flowId, metadata 
-    var matiParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: YOUR_METADATA }
-    cordova.plugins.MatiGlobalIDSDK.setParams(matiParams);
-
     //register to callback
     cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
       identityId => {
@@ -101,14 +97,17 @@ export class HomePage {
   }
 
   showMatiFlow() {
-    cordova.plugins.MatiGlobalIDSDK.showMatiFlow();
+   //set 3 params clientId (cant be null), flowId, metadata 
+   var yourMetadata = { param1: "value1", param2: "value2" }
+    var matiParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
+    cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiParams);
   }
 
 }
  ```
  
-## Please see demoIonicStart folder for example on Ionic
-demoIonicStart
+## Please see cordovaIonicDemoApp folder for example on Ionic
+https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaIonicDemoApp
 
 # Additional info
 

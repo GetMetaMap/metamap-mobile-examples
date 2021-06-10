@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Socket.IO-Client-Swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Starscream.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict/>

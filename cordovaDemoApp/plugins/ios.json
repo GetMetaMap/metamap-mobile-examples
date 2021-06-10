@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-cocoapod-support": {
+            "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
+        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
         },
@@ -14,9 +17,5 @@
             "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-cocoapod-support": {
-            "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
-        }
-    }
+    "dependent_plugins": {}
 }

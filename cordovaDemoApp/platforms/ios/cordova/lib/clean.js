@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
+ * 
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -17,31 +17,28 @@
  * under the License.
  */
 
-const path = require('path');
-const fs = require('fs-extra');
-const {
-    CordovaError,
-    superspawn: { spawn }
-} = require('cordova-common');
+/*jshint node: true*/
 
-const projectPath = path.join(__dirname, '..', '..');
+var Q     = require('q'),
+    path  = require('path'),
+    shell = require('shelljs'),
+    spawn = require('./spawn');
 
-module.exports.run = () => {
-    const projectName = fs.readdirSync(projectPath).filter(name => path.extname(name) === '.xcodeproj');
+var projectPath = path.join(__dirname, '..', '..');
+
+module.exports.run = function() {
+    var projectName = shell.ls(projectPath).filter(function (name) {
+        return path.extname(name) === '.xcodeproj';
+    })[0];
 
     if (!projectName) {
-        return Promise.reject(new CordovaError(`No Xcode project found in ${projectPath}`));
+        return Q.reject('No Xcode project found in ' + projectPath);
     }
 
-    const xcodebuildClean = configName => {
-        return spawn(
-            'xcodebuild',
-            ['-project', projectName, '-configuration', configName, '-alltargets', 'clean'],
-            { cwd: projectPath, printCommand: true, stdio: 'inherit' }
-        );
-    };
-
-    return xcodebuildClean('Debug')
-        .then(() => xcodebuildClean('Release'))
-        .then(() => fs.removeSync(path.join(projectPath, 'build')));
+    return spawn('xcodebuild', ['-project', projectName, '-configuration', 'Debug', '-alltargets', 'clean'], projectPath)
+    .then(function () {
+        return spawn('xcodebuild', ['-project', projectName, '-configuration', 'Release', '-alltargets', 'clean'], projectPath);
+    }).then(function () {
+        return shell.rm('-rf', path.join(projectPath, 'build'));
+    });
 };

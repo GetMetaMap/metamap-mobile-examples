@@ -1,0 +1,8 @@
+{
+  "name": "photo-rc1",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

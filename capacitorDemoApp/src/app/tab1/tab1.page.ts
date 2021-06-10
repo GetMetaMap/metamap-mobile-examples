@@ -14,14 +14,12 @@ export class Tab1Page {
 
   // the method that starts to show FLOW screens
   showMatiFlow() {
-    MatiCapacitorPlugin.showMatiFlow();
+    let metadataParams = { param1: "value1" }; // variable for metadata params
+    let registerParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: metadataParams}; // variable for register params
+    MatiCapacitorPlugin.showMatiFlow(registerParams);
   }
 
   ionViewDidEnter() {
-    let metadataParams = { param1: "value1" }; // variable for metadata params
-    let registerParams = { clientId: "YOUR_CLIENT_ID", flowId: "", metadata: metadataParams}; // variable for register params
-    MatiCapacitorPlugin.setParams(registerParams); // initialization main class
-
     // methods handle of result
     window.addEventListener('Verification success', (verificationId) => {
       console.log("verification success:" + verificationId)

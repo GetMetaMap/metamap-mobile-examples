@@ -30,7 +30,7 @@ Hello, here is you can try our demo apps with implemented Mati SDK (by native or
 
 ## React Native
 
-- [Repo of plugin](https://github.com/GetMati/mati-mobile-examples/tree/main/reactNativeDemoApp).
+- [Repo of plugin](https://github.com/GetMati/mati-reactnative-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/reactNativeDemoApp).

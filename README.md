@@ -45,6 +45,8 @@ You can use "Bare workflow" with our react-native plugin (fully compatible).
 
 - [How to switch-on "Bare workflow"](https://docs.expo.io/workflow/customizing/).
 
+- [VIDEO](https://www.loom.com/share/9ec2a465dd614735937469611dfbcbf8).
+
 ## Cordova
 
 - [Repo of plugin](https://github.com/GetMati/mati-cordova-plugin).

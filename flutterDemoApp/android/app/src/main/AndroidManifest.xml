@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.getmati.mati_plugin_flutter_example">
+    package="com.example.myapp">
    <application
-        android:label="mati_plugin_flutter_example"
+        android:label="myapp"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

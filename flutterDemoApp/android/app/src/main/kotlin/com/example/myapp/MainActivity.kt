@@ -1,4 +1,4 @@
-package com.getmati.mati_plugin_flutter_example
+package com.example.myapp
 
 import io.flutter.embedding.android.FlutterActivity
 

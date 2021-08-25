@@ -25,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -42,8 +44,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
@@ -77,7 +77,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * deprecated in favor of the config.xml file.
  *
  */
-public class CordovaActivity extends AppCompatActivity {
+public class CordovaActivity extends Activity {
     public static String TAG = "CordovaActivity";
 
     // The webview for our app

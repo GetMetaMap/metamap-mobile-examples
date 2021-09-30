@@ -37,13 +37,11 @@ Hello, here is you can try our demo apps with implemented Mati SDK (by native or
 
 ## Expo
 
-You can use "Bare workflow" with our react-native sdk(fully compatible).
+You can use "Managed workflow" with our react-native sdk(fully compatible).
 
 - [Repo of React-Native SDK](https://github.com/GetMati/mati-reactnative-plugin).
 
-- [Managed vs Bare workflow](https://docs.expo.io/introduction/managed-vs-bare/).
-
-- [How to switch-on "Bare workflow"](https://docs.expo.io/workflow/customizing/).
+Just use expo run:ios and expo run:android, it still allow you to use Managed workflow.
 
 
 ## Cordova

@@ -41,8 +41,10 @@ You can use "Managed workflow" with our react-native sdk(fully compatible).
 
 - [Repo of React-Native SDK](https://github.com/GetMati/mati-reactnative-plugin).
 
-Just use expo run:ios and expo run:android, it still allow you to use Managed workflow.
-
+Please use yarn to install 
+1. Install SDK -  yarn add https://github.com/MatiFace/react-native-mati-global-id-sdk.git
+2. add  "plugins": "react-native-mati-global-id-sdk", on app.json file
+3. use expo run:ios and expo run:android, it still allow you to use Managed workflow.
 
 ## Cordova
 

@@ -30,7 +30,7 @@ Hello, here is you can try our demo apps with implemented Mati SDK (by native or
 
 ## React Native
 
-- [Repo of plugin](https://github.com/GetMati/mati-reactnative-plugin).
+- [Repo of React-Native SDK](https://github.com/GetMati/mati-reactnative-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/reactNativeDemoApp).
@@ -39,7 +39,7 @@ Hello, here is you can try our demo apps with implemented Mati SDK (by native or
 
 You can use "Bare workflow" with our react-native plugin (fully compatible).
 
-- [Repo of react-native plugin](https://github.com/GetMati/mati-reactnative-plugin).
+- [Repo of React-Native SDK](https://github.com/GetMati/mati-reactnative-plugin).
 
 - [Managed vs Bare workflow](https://docs.expo.io/introduction/managed-vs-bare/).
 
@@ -48,7 +48,7 @@ You can use "Bare workflow" with our react-native plugin (fully compatible).
 
 ## Cordova
 
-- [Repo of plugin](https://github.com/GetMati/mati-cordova-plugin).
+- [Repo of Cordova SDK](https://github.com/GetMati/mati-cordova-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaDemoApp).
@@ -56,7 +56,7 @@ You can use "Bare workflow" with our react-native plugin (fully compatible).
 ## Cordova/Ionic
 Cordova and Cordova/Ionic uses same plugin but little bit different implementation
 
-- [Repo of plugin](https://github.com/GetMati/mati-cordova-plugin).
+- [Repo of Cordova Ionic SDK](https://github.com/GetMati/mati-cordova-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaIonicDemoApp).
@@ -73,7 +73,7 @@ Cordova and Cordova/Ionic uses same plugin but little bit different implementati
 
 ## Flutter
 
-- [Repo of plugin](https://github.com/GetMati/mati-flutter-plugin).
+- [Repo of Flutter SDK](https://github.com/GetMati/mati-flutter-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/flutterDemoApp).

@@ -30,40 +30,40 @@ Hello, here is you can try our demo apps with implemented Mati SDK (by native or
 
 ## React Native
 
-- [Repo of plugin](https://github.com/GetMati/mati-reactnative-plugin).
+- [Repo of React-Native SDK](https://github.com/GetMati/mati-reactnative-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/reactNativeDemoApp).
 
 ## Expo
 
-You can use "Bare workflow" with our react-native plugin (fully compatible).
+You can use "Managed workflow" with our react-native sdk(fully compatible).
 
-- [Repo of react-native plugin](https://github.com/GetMati/mati-reactnative-plugin).
+- [Repo of React-Native SDK](https://github.com/GetMati/mati-reactnative-plugin).
 
-- [Managed vs Bare workflow](https://docs.expo.io/introduction/managed-vs-bare/).
-
-- [How to switch-on "Bare workflow"](https://docs.expo.io/workflow/customizing/).
-
+Please use yarn to install 
+1. Install SDK -  yarn add https://github.com/MatiFace/react-native-mati-global-id-sdk.git
+2. add  "plugins": "react-native-mati-global-id-sdk", on app.json file
+3. use expo run:ios and expo run:android, it still allow you to use Managed workflow.
 
 ## Cordova
 
-- [Repo of plugin](https://github.com/GetMati/mati-cordova-plugin).
+- [Repo of Cordova SDK](https://github.com/GetMati/mati-cordova-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaDemoApp).
 
 ## Cordova/Ionic
-Cordova and Cordova/Ionic uses same plugin but little bit different implementation
+Cordova and Cordova/Ionic uses same sdk but little bit different implementation
 
-- [Repo of plugin](https://github.com/GetMati/mati-cordova-plugin).
+- [Repo of Cordova Ionic SDK](https://github.com/GetMati/mati-cordova-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/cordovaIonicDemoApp).
 
 
 ## Capacitor (Cordova/Ionic/Capacitor)
-Сapacitor uses a separate plugin despite its affinity with Cordova and Ionic
+Сapacitor uses a separate sdk despite its affinity with Cordova and Ionic
 
 - [Repo of plugin](https://github.com/GetMati/mati-capacitor-plugin).
 
@@ -73,7 +73,7 @@ Cordova and Cordova/Ionic uses same plugin but little bit different implementati
 
 ## Flutter
 
-- [Repo of plugin](https://github.com/GetMati/mati-flutter-plugin).
+- [Repo of Flutter SDK](https://github.com/GetMati/mati-flutter-plugin).
 
 
 - [Demo app in this repo](https://github.com/GetMati/mati-mobile-examples/tree/main/flutterDemoApp).
@@ -82,6 +82,6 @@ Cordova and Cordova/Ionic uses same plugin but little bit different implementati
 
 ## Other
 
-If you dont see here plugin that you need, please add request in [Issue section](https://github.com/GetMati/mati-mobile-examples/issues). 
+If you dont see here platform/framework that you need, please add request in [Issue section](https://github.com/GetMati/mati-mobile-examples/issues). 
 
 

@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 
 //MARK: MatiButtonResultDelegate
 extension ViewController: MatiButtonResultDelegate {
-    func verificationSuccess(identityId: String) {
+    func verificationSuccess(identityId: String?, verificationID: String?) {
         print("Mati Verification Success \(identityId)")
     }
     

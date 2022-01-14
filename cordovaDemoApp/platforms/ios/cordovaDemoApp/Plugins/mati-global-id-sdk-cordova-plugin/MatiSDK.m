@@ -39,7 +39,7 @@
     CDVPluginResult* pluginResult = nil;
     NSString* clientId = nil;
     NSString* flowId = nil;
-    NSDictionary* metadata = nil;
+    NSDictionary* metadata = @{ @"sdkType" : @"cordova"};
     NSDictionary* options = [[NSDictionary alloc]init];
     
     if ([command.arguments count] > 0) {
@@ -62,7 +62,7 @@
         }
     
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            [MatiSDK.shared showMatiFlowWithClientId: clientId flowId: flowId metadata: metadata];
+            [Mati.shared showMatiFlowWithClientId: clientId flowId: flowId metadata: metadata];
             CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         });
@@ -78,9 +78,10 @@
     [MatiButtonResult shared].delegate = self;
 }
 
-- (void)verificationSuccessWithIdentityId:(NSString *)identityId {
+- (void)verificationSuccessWithIdentityId:(NSString *)identityId verificationID:(nullable NSString *)verificationID {
     if(setMatiCallbackCDVInvokedUrlCommand != nil){
-        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:identityId];
+        NSDictionary *dict = @{@"identityId": identityId, @"verificationID": verificationID};
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:dict];
         [pluginResult setKeepCallbackAsBool:YES];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:setMatiCallbackCDVInvokedUrlCommand.callbackId];
     }

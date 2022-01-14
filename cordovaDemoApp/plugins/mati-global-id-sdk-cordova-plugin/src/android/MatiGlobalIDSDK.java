@@ -22,47 +22,35 @@ import static android.app.Activity.RESULT_OK;
 public class MatiGlobalIDSDK extends CordovaPlugin  {
 
     public static final String SHOW_MATIFLOW = "showMatiFlow";
-    public static final String COOL_METHOD = "coolMethod";
     public static final String SET_CALLBACK = "setMatiCallback";
+    public static final String SDK_TYPE = "sdkType";
     CallbackContext mOnCallback;
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        switch (action){
-            case COOL_METHOD:{
-                String message = args.getString(0);
-                this.coolMethod(message, callbackContext);
-                return true;
-            }
-            case SHOW_MATIFLOW:{
+        switch (action) {
+            case SHOW_MATIFLOW:
                 String clientId = null;
                 String flowId = null;
-                JSONObject metadata = null;
+                JSONObject metadata = (new JSONObject()).put("sdkType", "cordova");
                 if (args != null) {
                     JSONObject params = args.getJSONObject(0);
                     clientId = params.getString("clientId");
                     flowId = params.optString("flowId");
                     metadata = params.optJSONObject("metadata");
-                    this.showMatiFlow(clientId,flowId,metadata, callbackContext);
-                    return true;
+
+                    this.showMatiFlow(clientId, flowId, metadata, callbackContext);
                 } else {
                     Log.e("Integration error", "Please set yours Mati client ID");
-                    return true;
                 }
-            }
-            case SET_CALLBACK:{
+                return true;
+
+            case SET_CALLBACK:
                 mOnCallback = callbackContext;
                 return true;
-            }
-        }
-        return false;
-    }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
+            default:
+                return false;
         }
     }
 

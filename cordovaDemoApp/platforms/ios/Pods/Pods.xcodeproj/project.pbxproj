@@ -9,8 +9,9 @@
 /* Begin PBXAggregateTarget section */
 		CB3DA2D277B8C676DAFAA681751A98AD /* Mati-Global-ID-SDK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3F4C8C8BFC974C4C3811623CFDDB4101 /* Build configuration list for PBXAggregateTarget "Mati-Global-ID-SDK" */;
+			buildConfigurationList = D19B116259879A98021CD32E07F65E92 /* Build configuration list for PBXAggregateTarget "Mati-Global-ID-SDK" */;
 			buildPhases = (
+				FA99A5233E1C318B6F0015023F0EBD96 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
@@ -19,13 +20,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		769D16C73BD5892E6FDE9E61459DECBE /* Pods-cordovaDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C044892E87AEB5F9B679533122CA0A3 /* Pods-cordovaDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B83191E9B8FD25B7918B8E62966F1643 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		EE9FA91609C91BE26945F9ABE6AB2E61 /* Pods-cordovaDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F71798789DC7D5E461FB8D71B1CA4B4F /* Pods-cordovaDemoApp-dummy.m */; };
+		1CE8AADB0070C32D54C584CB87C791BB /* Pods-cordovaDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C044892E87AEB5F9B679533122CA0A3 /* Pods-cordovaDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21190A2C1E54537D766EDE25AB41DF8E /* Pods-cordovaDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F71798789DC7D5E461FB8D71B1CA4B4F /* Pods-cordovaDemoApp-dummy.m */; };
+		B4848322EB355FC1C7DA3ADB303FF7C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8FA3E111BE9914F80EA8234735647528 /* PBXContainerItemProxy */ = {
+		F2D24B4928C737D7E49BB0F013521645 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -36,83 +37,35 @@
 
 /* Begin PBXFileReference section */
 		07BED6134675904A29D52D4F4FE91FEA /* Pods-cordovaDemoApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cordovaDemoApp-Info.plist"; sourceTree = "<group>"; };
-		0CF8C2E7A65889071C483A33F435138D /* SentrySdkInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySdkInfo.h; path = MatiSDK.framework/Headers/SentrySdkInfo.h; sourceTree = "<group>"; };
-		10D99674733B83E2BBE2775B4B5560B2 /* SentryEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryEvent.h; path = MatiSDK.framework/Headers/SentryEvent.h; sourceTree = "<group>"; };
-		142510B9198F468D296C2065055AFF6E /* SentrySpanStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySpanStatus.h; path = MatiSDK.framework/Headers/SentrySpanStatus.h; sourceTree = "<group>"; };
-		1693507925DA6C805C6D159C58AE45F0 /* SentryHub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryHub.h; path = MatiSDK.framework/Headers/SentryHub.h; sourceTree = "<group>"; };
-		21B5DA620A191B3A28014D9FEE40BDB0 /* SentrySpanContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySpanContext.h; path = MatiSDK.framework/Headers/SentrySpanContext.h; sourceTree = "<group>"; };
-		22A5DF48D214BB4326B39FB862939495 /* SentryException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryException.h; path = MatiSDK.framework/Headers/SentryException.h; sourceTree = "<group>"; };
 		2C044892E87AEB5F9B679533122CA0A3 /* Pods-cordovaDemoApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-cordovaDemoApp-umbrella.h"; sourceTree = "<group>"; };
-		2EB4F66C9B5A652C827BBAA9F28FF83E /* SentryAttachment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryAttachment.h; path = MatiSDK.framework/Headers/SentryAttachment.h; sourceTree = "<group>"; };
 		358BF08D06C842E47CC411AB21A13874 /* Pods-cordovaDemoApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-cordovaDemoApp.modulemap"; sourceTree = "<group>"; };
-		36B19AFEEAC23994283377D6692D12B8 /* SentryDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryDefines.h; path = MatiSDK.framework/Headers/SentryDefines.h; sourceTree = "<group>"; };
-		3C42463EEDE2C059538D96B51C88ACDA /* SentryThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryThread.h; path = MatiSDK.framework/Headers/SentryThread.h; sourceTree = "<group>"; };
-		3DBC8AFCF364E561B1553CFB7B3A7C36 /* SentryDsn.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryDsn.h; path = MatiSDK.framework/Headers/SentryDsn.h; sourceTree = "<group>"; };
 		3FC56BAF1CCABD76D793E0FF242879A5 /* Pods-cordovaDemoApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-cordovaDemoApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		45C1CF6A4C660B64E20695711299AB12 /* SentrySerializable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySerializable.h; path = MatiSDK.framework/Headers/SentrySerializable.h; sourceTree = "<group>"; };
-		4D363BAF1C1FFEE566FC229F64FE4172 /* SentryNSError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryNSError.h; path = MatiSDK.framework/Headers/SentryNSError.h; sourceTree = "<group>"; };
-		4FD89DF64D0F200B02FAE5CEB99E4AE8 /* SentryIntegrationProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryIntegrationProtocol.h; path = MatiSDK.framework/Headers/SentryIntegrationProtocol.h; sourceTree = "<group>"; };
-		5450C191DE6D8EC9C783C7FFCC6FE77A /* SentrySamplingContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySamplingContext.h; path = MatiSDK.framework/Headers/SentrySamplingContext.h; sourceTree = "<group>"; };
-		56DBEC03FC6DF97B5C8242522F16E765 /* SentrySpanId.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySpanId.h; path = MatiSDK.framework/Headers/SentrySpanId.h; sourceTree = "<group>"; };
-		5DA6593D5BFDC8F237B70D8307BFD3DC /* SentryEnvelopeItemType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryEnvelopeItemType.h; path = MatiSDK.framework/Headers/SentryEnvelopeItemType.h; sourceTree = "<group>"; };
-		636E6ECDDED9B12B80DCCEB6F85C2855 /* Mati-Global-ID-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.debug.xcconfig"; sourceTree = "<group>"; };
-		68DB25FFE1FAE125E5FCEE7A118BF09B /* SentryMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryMessage.h; path = MatiSDK.framework/Headers/SentryMessage.h; sourceTree = "<group>"; };
-		6A2307C44E6DF1756FC8BD903564F4BD /* SentryId.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryId.h; path = MatiSDK.framework/Headers/SentryId.h; sourceTree = "<group>"; };
+		51F4E25F7602F59B5C74DCE2C9BAD705 /* Mati-Global-ID-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Mati-Global-ID-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		732BBD825786A5875CB4DFBB9ED83374 /* MatiSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MatiSDK.h; path = MatiSDK.framework/Headers/MatiSDK.h; sourceTree = "<group>"; };
 		7CF176A510DD5C451C53E1BEE4B39A0C /* Pods-cordovaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cordovaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		7E12C18B3D6917674D9DEBBB1D75B459 /* SentrySpanProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySpanProtocol.h; path = MatiSDK.framework/Headers/SentrySpanProtocol.h; sourceTree = "<group>"; };
-		8241B7FE7C98C510B0D789EEDF5A1311 /* SentryError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryError.h; path = MatiSDK.framework/Headers/SentryError.h; sourceTree = "<group>"; };
-		8394A1EAB3B0A5E8D0D8F121532F1674 /* SentrySDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySDK.h; path = MatiSDK.framework/Headers/SentrySDK.h; sourceTree = "<group>"; };
 		8FCDDD265AF09C229EC3E6C40192DF3D /* Pods-cordovaDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cordovaDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		902C10C4EC6E6F900D6FAA605DC9274E /* SentryMechanismMeta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryMechanismMeta.h; path = MatiSDK.framework/Headers/SentryMechanismMeta.h; sourceTree = "<group>"; };
-		917EE7E41A816F91CDB5147189F3AA0E /* Pods_cordovaDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_cordovaDemoApp.framework; path = "Pods-cordovaDemoApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9582B8C8678F2EAB0AD9846617B64436 /* MatiSDK-Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MatiSDK-Swift.h"; path = "MatiSDK.framework/Headers/MatiSDK-Swift.h"; sourceTree = "<group>"; };
-		976C1231D2A44AC3C40F726342D4811A /* SentrySampleDecision.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySampleDecision.h; path = MatiSDK.framework/Headers/SentrySampleDecision.h; sourceTree = "<group>"; };
-		9CCD117F19C91F622A697D9676C81C56 /* SentryEnvelope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryEnvelope.h; path = MatiSDK.framework/Headers/SentryEnvelope.h; sourceTree = "<group>"; };
-		9D0B191DFA37B8F940B0393F827B78EB /* SentryFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryFrame.h; path = MatiSDK.framework/Headers/SentryFrame.h; sourceTree = "<group>"; };
+		917EE7E41A816F91CDB5147189F3AA0E /* Pods-cordovaDemoApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-cordovaDemoApp"; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E58ECF0ED26F8B1E82FF1344A0EBDDC /* SentryUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryUser.h; path = MatiSDK.framework/Headers/SentryUser.h; sourceTree = "<group>"; };
 		A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cordovaDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		B2C3E559DFBDEA5F263FDC9A9F68E4D4 /* SentryDebugImageProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryDebugImageProvider.h; path = MatiSDK.framework/Headers/SentryDebugImageProvider.h; sourceTree = "<group>"; };
-		BC75D7271E0141EC2C32A409481D0D52 /* SentryDebugMeta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryDebugMeta.h; path = MatiSDK.framework/Headers/SentryDebugMeta.h; sourceTree = "<group>"; };
-		BD69AB58ADFA3EC2F38543991FE3DD5D /* Sentry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Sentry.h; path = MatiSDK.framework/Headers/Sentry.h; sourceTree = "<group>"; };
-		BF8228014D0680F2BA7F0C27136AA496 /* SentryTransactionContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryTransactionContext.h; path = MatiSDK.framework/Headers/SentryTransactionContext.h; sourceTree = "<group>"; };
-		C0141C8926A6143A1FD8F32194708CDC /* SentryBreadcrumb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryBreadcrumb.h; path = MatiSDK.framework/Headers/SentryBreadcrumb.h; sourceTree = "<group>"; };
-		C094CC85F593A367038A6BA580EC7D7D /* SentryClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryClient.h; path = MatiSDK.framework/Headers/SentryClient.h; sourceTree = "<group>"; };
-		C8F6D867A79F1EF9DC6BD6B5AD27257C /* SentrySession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentrySession.h; path = MatiSDK.framework/Headers/SentrySession.h; sourceTree = "<group>"; };
+		C9E639DC4410E31A329260EBA5B57E50 /* MatiSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MatiSDK.xcframework; sourceTree = "<group>"; };
 		D87EE9C2B67DF298D386D6BA9E5AB4A1 /* Pods-cordovaDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cordovaDemoApp-frameworks.sh"; sourceTree = "<group>"; };
-		D9D565FEFC73178B9BE7C8E0FBDC345F /* SentryStacktrace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryStacktrace.h; path = MatiSDK.framework/Headers/SentryStacktrace.h; sourceTree = "<group>"; };
-		DA541CB9635F7AF2CF917E28D684E065 /* SentryMechanism.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryMechanism.h; path = MatiSDK.framework/Headers/SentryMechanism.h; sourceTree = "<group>"; };
-		DF56DDC9CC78A7F3951513D37D4CC678 /* Mati-Global-ID-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.release.xcconfig"; sourceTree = "<group>"; };
-		E31D2A069BE801BB03823CF0C1BD8CBE /* MatiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MatiSDK.framework; sourceTree = "<group>"; };
-		E420AFFF276F8AC98F47EDEE1A44CB70 /* SentryCrashExceptionApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryCrashExceptionApplication.h; path = MatiSDK.framework/Headers/SentryCrashExceptionApplication.h; sourceTree = "<group>"; };
-		ED07C59CCC2ACF4CFE88D92E75942444 /* SentryOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryOptions.h; path = MatiSDK.framework/Headers/SentryOptions.h; sourceTree = "<group>"; };
-		F45550E599B6F4AC2C506C8B626868CE /* SentryScope.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryScope.h; path = MatiSDK.framework/Headers/SentryScope.h; sourceTree = "<group>"; };
+		DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		F71798789DC7D5E461FB8D71B1CA4B4F /* Pods-cordovaDemoApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-cordovaDemoApp-dummy.m"; sourceTree = "<group>"; };
-		FFE2BAFA4EF6825372E25AFE9A67CAB4 /* SentryUserFeedback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SentryUserFeedback.h; path = MatiSDK.framework/Headers/SentryUserFeedback.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2AA8C9142AA143BAE334C75458DB4991 /* Frameworks */ = {
+		584B15D0129733272329A8142E338951 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B83191E9B8FD25B7918B8E62966F1643 /* Foundation.framework in Frameworks */,
+				B4848322EB355FC1C7DA3ADB303FF7C3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		051B2BB20CBA850065389B87C4414007 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				57D4F3EA6BD44952F05BDAD40535F6C2 /* Mati-Global-ID-SDK */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		1A319D5AB2BDC5308670C978FB3E2770 /* Pods-cordovaDemoApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,14 +83,22 @@
 			path = "Target Support Files/Pods-cordovaDemoApp";
 			sourceTree = "<group>";
 		};
-		2024C5B466A3AB83CF729F0F289DFB5B /* Support Files */ = {
+		2308E11FC189DDF7F1FB9E5944D4019E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				636E6ECDDED9B12B80DCCEB6F85C2855 /* Mati-Global-ID-SDK.debug.xcconfig */,
-				DF56DDC9CC78A7F3951513D37D4CC678 /* Mati-Global-ID-SDK.release.xcconfig */,
+				917EE7E41A816F91CDB5147189F3AA0E /* Pods-cordovaDemoApp */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Mati-Global-ID-SDK";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3922295C4ACF3ECA711E5544CDE5744E /* Mati-Global-ID-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				7F3CD5D973DB4582B62AA4FDE082F53B /* Frameworks */,
+				CED40EE02A27141DD5723A9751DF0E98 /* Support Files */,
+			);
+			name = "Mati-Global-ID-SDK";
+			path = "Mati-Global-ID-SDK";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -148,69 +109,10 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		57D4F3EA6BD44952F05BDAD40535F6C2 /* Mati-Global-ID-SDK */ = {
+		7F3CD5D973DB4582B62AA4FDE082F53B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				732BBD825786A5875CB4DFBB9ED83374 /* MatiSDK.h */,
-				9582B8C8678F2EAB0AD9846617B64436 /* MatiSDK-Swift.h */,
-				BD69AB58ADFA3EC2F38543991FE3DD5D /* Sentry.h */,
-				2EB4F66C9B5A652C827BBAA9F28FF83E /* SentryAttachment.h */,
-				C0141C8926A6143A1FD8F32194708CDC /* SentryBreadcrumb.h */,
-				C094CC85F593A367038A6BA580EC7D7D /* SentryClient.h */,
-				E420AFFF276F8AC98F47EDEE1A44CB70 /* SentryCrashExceptionApplication.h */,
-				B2C3E559DFBDEA5F263FDC9A9F68E4D4 /* SentryDebugImageProvider.h */,
-				BC75D7271E0141EC2C32A409481D0D52 /* SentryDebugMeta.h */,
-				36B19AFEEAC23994283377D6692D12B8 /* SentryDefines.h */,
-				3DBC8AFCF364E561B1553CFB7B3A7C36 /* SentryDsn.h */,
-				9CCD117F19C91F622A697D9676C81C56 /* SentryEnvelope.h */,
-				5DA6593D5BFDC8F237B70D8307BFD3DC /* SentryEnvelopeItemType.h */,
-				8241B7FE7C98C510B0D789EEDF5A1311 /* SentryError.h */,
-				10D99674733B83E2BBE2775B4B5560B2 /* SentryEvent.h */,
-				22A5DF48D214BB4326B39FB862939495 /* SentryException.h */,
-				9D0B191DFA37B8F940B0393F827B78EB /* SentryFrame.h */,
-				1693507925DA6C805C6D159C58AE45F0 /* SentryHub.h */,
-				6A2307C44E6DF1756FC8BD903564F4BD /* SentryId.h */,
-				4FD89DF64D0F200B02FAE5CEB99E4AE8 /* SentryIntegrationProtocol.h */,
-				DA541CB9635F7AF2CF917E28D684E065 /* SentryMechanism.h */,
-				902C10C4EC6E6F900D6FAA605DC9274E /* SentryMechanismMeta.h */,
-				68DB25FFE1FAE125E5FCEE7A118BF09B /* SentryMessage.h */,
-				4D363BAF1C1FFEE566FC229F64FE4172 /* SentryNSError.h */,
-				ED07C59CCC2ACF4CFE88D92E75942444 /* SentryOptions.h */,
-				976C1231D2A44AC3C40F726342D4811A /* SentrySampleDecision.h */,
-				5450C191DE6D8EC9C783C7FFCC6FE77A /* SentrySamplingContext.h */,
-				F45550E599B6F4AC2C506C8B626868CE /* SentryScope.h */,
-				8394A1EAB3B0A5E8D0D8F121532F1674 /* SentrySDK.h */,
-				0CF8C2E7A65889071C483A33F435138D /* SentrySdkInfo.h */,
-				45C1CF6A4C660B64E20695711299AB12 /* SentrySerializable.h */,
-				C8F6D867A79F1EF9DC6BD6B5AD27257C /* SentrySession.h */,
-				21B5DA620A191B3A28014D9FEE40BDB0 /* SentrySpanContext.h */,
-				56DBEC03FC6DF97B5C8242522F16E765 /* SentrySpanId.h */,
-				7E12C18B3D6917674D9DEBBB1D75B459 /* SentrySpanProtocol.h */,
-				142510B9198F468D296C2065055AFF6E /* SentrySpanStatus.h */,
-				D9D565FEFC73178B9BE7C8E0FBDC345F /* SentryStacktrace.h */,
-				3C42463EEDE2C059538D96B51C88ACDA /* SentryThread.h */,
-				BF8228014D0680F2BA7F0C27136AA496 /* SentryTransactionContext.h */,
-				9E58ECF0ED26F8B1E82FF1344A0EBDDC /* SentryUser.h */,
-				FFE2BAFA4EF6825372E25AFE9A67CAB4 /* SentryUserFeedback.h */,
-				90542E4A1C5B353380B73B5B0725DBF2 /* Frameworks */,
-				2024C5B466A3AB83CF729F0F289DFB5B /* Support Files */,
-			);
-			name = "Mati-Global-ID-SDK";
-			path = "Mati-Global-ID-SDK";
-			sourceTree = "<group>";
-		};
-		7FDBC103DC0B297FFFCF5D212B02FA63 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				917EE7E41A816F91CDB5147189F3AA0E /* Pods_cordovaDemoApp.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		90542E4A1C5B353380B73B5B0725DBF2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E31D2A069BE801BB03823CF0C1BD8CBE /* MatiSDK.framework */,
+				C9E639DC4410E31A329260EBA5B57E50 /* MatiSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,13 +125,32 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		AD9CA38FCC7474D073AA12C99F2653EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3922295C4ACF3ECA711E5544CDE5744E /* Mati-Global-ID-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CED40EE02A27141DD5723A9751DF0E98 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				51F4E25F7602F59B5C74DCE2C9BAD705 /* Mati-Global-ID-SDK-xcframeworks.sh */,
+				E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */,
+				DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Mati-Global-ID-SDK";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				051B2BB20CBA850065389B87C4414007 /* Pods */,
-				7FDBC103DC0B297FFFCF5D212B02FA63 /* Products */,
+				AD9CA38FCC7474D073AA12C99F2653EA /* Pods */,
+				2308E11FC189DDF7F1FB9E5944D4019E /* Products */,
 				90D1BF0C4BAF868A954C94E359BB2DEF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -245,11 +166,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4D7229B44380083ABBA0801B9E0F415D /* Headers */ = {
+		1FBA0A987008ED7F1013425521B21EF2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				769D16C73BD5892E6FDE9E61459DECBE /* Pods-cordovaDemoApp-umbrella.h in Headers */,
+				1CE8AADB0070C32D54C584CB87C791BB /* Pods-cordovaDemoApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,21 +179,21 @@
 /* Begin PBXNativeTarget section */
 		C7B2A621F5DA02F35C72357BE1DD7AC9 /* Pods-cordovaDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E64C7F9A8D4AE5210DA5DAC78B900A8 /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */;
+			buildConfigurationList = 6A298AAC3EAFB38E67D7DBD32949FED5 /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */;
 			buildPhases = (
-				4D7229B44380083ABBA0801B9E0F415D /* Headers */,
-				DB208F6F6161EDE55E8E3605D13700A1 /* Sources */,
-				2AA8C9142AA143BAE334C75458DB4991 /* Frameworks */,
-				DD10B85888DA1D993C3699142482C942 /* Resources */,
+				1FBA0A987008ED7F1013425521B21EF2 /* Headers */,
+				415949FBF3FD5D2558EC87F4141A1BA4 /* Sources */,
+				584B15D0129733272329A8142E338951 /* Frameworks */,
+				A5BCB6E29489B35101CE77D3C0B4EBF1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C3379CF698130F546896BEDCF0A8CA4E /* PBXTargetDependency */,
+				17D6F46C5725AA609981DC4A7595B87F /* PBXTargetDependency */,
 			);
 			name = "Pods-cordovaDemoApp";
-			productName = "Pods-cordovaDemoApp";
-			productReference = 917EE7E41A816F91CDB5147189F3AA0E /* Pods_cordovaDemoApp.framework */;
+			productName = Pods_cordovaDemoApp;
+			productReference = 917EE7E41A816F91CDB5147189F3AA0E /* Pods-cordovaDemoApp */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -281,19 +202,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7FDBC103DC0B297FFFCF5D212B02FA63 /* Products */;
+			productRefGroup = 2308E11FC189DDF7F1FB9E5944D4019E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -304,7 +225,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DD10B85888DA1D993C3699142482C942 /* Resources */ = {
+		A5BCB6E29489B35101CE77D3C0B4EBF1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,46 +234,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FA99A5233E1C318B6F0015023F0EBD96 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Mati-Global-ID-SDK/Mati-Global-ID-SDK-xcframeworks.sh",
+				"${PODS_ROOT}/Mati-Global-ID-SDK/MatiSDK.xcframework",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputPaths = (
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Mati-Global-ID-SDK/MatiSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Mati-Global-ID-SDK/Mati-Global-ID-SDK-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		DB208F6F6161EDE55E8E3605D13700A1 /* Sources */ = {
+		415949FBF3FD5D2558EC87F4141A1BA4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9FA91609C91BE26945F9ABE6AB2E61 /* Pods-cordovaDemoApp-dummy.m in Sources */,
+				21190A2C1E54537D766EDE25AB41DF8E /* Pods-cordovaDemoApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C3379CF698130F546896BEDCF0A8CA4E /* PBXTargetDependency */ = {
+		17D6F46C5725AA609981DC4A7595B87F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Mati-Global-ID-SDK";
 			target = CB3DA2D277B8C676DAFAA681751A98AD /* Mati-Global-ID-SDK */;
-			targetProxy = 8FA3E111BE9914F80EA8234735647528 /* PBXContainerItemProxy */;
+			targetProxy = F2D24B4928C737D7E49BB0F013521645 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3E7A60E365D2F38266485843E2995A9B /* Release */ = {
+		031B20CC7643E2F0EA9EF12899A3BE56 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF56DDC9CC78A7F3951513D37D4CC678 /* Mati-Global-ID-SDK.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		4E523549987CA5EBE6FCCBDE1DAA0C5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CF176A510DD5C451C53E1BEE4B39A0C /* Pods-cordovaDemoApp.release.xcconfig */;
+			baseConfigurationReference = A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -367,7 +293,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.modulemap";
@@ -379,13 +305,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		6427804744C4054555383985007A0B6C /* Debug */ = {
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -438,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -451,7 +376,22 @@
 			};
 			name = Debug;
 		};
-		74556EDEC03158A3009CA84D67369133 /* Release */ = {
+		5F3A5471794A38EB1A88C20145C9850F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -501,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,9 +453,25 @@
 			};
 			name = Release;
 		};
-		AC7EE2B108E01A71C0374CE55A54CA48 /* Debug */ = {
+		CC9F194AE770DED5DF4A4E04CEA81BDC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */;
+			baseConfigurationReference = DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDE0C2897CD915009ADB92681D3878B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF176A510DD5C451C53E1BEE4B39A0C /* Pods-cordovaDemoApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -530,7 +486,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.modulemap";
@@ -542,52 +498,38 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		BB9EBF14CD26D029B22E8D9FB6E3C6A0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 636E6ECDDED9B12B80DCCEB6F85C2855 /* Mati-Global-ID-SDK.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F4C8C8BFC974C4C3811623CFDDB4101 /* Build configuration list for PBXAggregateTarget "Mati-Global-ID-SDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB9EBF14CD26D029B22E8D9FB6E3C6A0 /* Debug */,
-				3E7A60E365D2F38266485843E2995A9B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6427804744C4054555383985007A0B6C /* Debug */,
-				74556EDEC03158A3009CA84D67369133 /* Release */,
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E64C7F9A8D4AE5210DA5DAC78B900A8 /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */ = {
+		6A298AAC3EAFB38E67D7DBD32949FED5 /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC7EE2B108E01A71C0374CE55A54CA48 /* Debug */,
-				4E523549987CA5EBE6FCCBDE1DAA0C5E /* Release */,
+				031B20CC7643E2F0EA9EF12899A3BE56 /* Debug */,
+				FDE0C2897CD915009ADB92681D3878B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D19B116259879A98021CD32E07F65E92 /* Build configuration list for PBXAggregateTarget "Mati-Global-ID-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F3A5471794A38EB1A88C20145C9850F /* Debug */,
+				CC9F194AE770DED5DF4A4E04CEA81BDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

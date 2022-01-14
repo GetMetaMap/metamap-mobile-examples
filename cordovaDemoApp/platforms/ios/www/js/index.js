@@ -32,17 +32,17 @@ function onDeviceReady() {
     matiButton.onclick = () => {
         //set 3 params clientId (cant be null), flowId, metadata
         var yourMetadata = { param1: "value1", param2: "value2" }
-        var matiButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
+        var matiButtinParams = { clientId: "610b96fb7cc893001b135505", flowId: "61cb1c7dd0b1c2001ba3c366", metadata: yourMetadata }
         cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiButtinParams)
     };
 
     //register to callback
     cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
      identityId => {
-        alert("setMatiCallback success: " + identityId);
+       console.log("setMatiCallback success: " + identityId);
      },
      error => {
-       alert("setMatiCallback error: " + error);
+       console.log("setMatiCallback error: " + error);
      }
     );
 

@@ -6,6 +6,6 @@
 		}
 	},
 	"sources": {},
-	"iosMinVersion": "11.4",
+	"iosMinVersion": "12.0",
 	"useFrameworks": true
 }

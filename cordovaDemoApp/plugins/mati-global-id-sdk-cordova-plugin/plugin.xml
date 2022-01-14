@@ -19,7 +19,7 @@
    </platform>
    <platform name="ios">
       <dependency id="cordova-plugin-cocoapod-support"/>
-      <pods-config ios-min-version="11.4" use-frameworks="true">
+      <pods-config ios-min-version="12.0" use-frameworks="true">
       </pods-config>
       <config-file parent="/*" target="config.xml">
          <feature name="MatiGlobalIDSDK">

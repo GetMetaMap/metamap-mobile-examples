@@ -16,6 +16,7 @@
 			dependencies = (
 			);
 			name = "Mati-Global-ID-SDK";
+			productName = "Mati-Global-ID-SDK";
 		};
 /* End PBXAggregateTarget section */
 
@@ -45,9 +46,9 @@
 		7CF176A510DD5C451C53E1BEE4B39A0C /* Pods-cordovaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cordovaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		8FCDDD265AF09C229EC3E6C40192DF3D /* Pods-cordovaDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cordovaDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		917EE7E41A816F91CDB5147189F3AA0E /* Pods-cordovaDemoApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-cordovaDemoApp"; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cordovaDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		C9E639DC4410E31A329260EBA5B57E50 /* MatiSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MatiSDK.xcframework; sourceTree = "<group>"; };
+		C9E639DC4410E31A329260EBA5B57E50 /* MatiSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = MatiSDK.xcframework; sourceTree = "<group>"; };
 		D87EE9C2B67DF298D386D6BA9E5AB4A1 /* Pods-cordovaDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cordovaDemoApp-frameworks.sh"; sourceTree = "<group>"; };
 		DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 				7F3CD5D973DB4582B62AA4FDE082F53B /* Frameworks */,
 				CED40EE02A27141DD5723A9751DF0E98 /* Support Files */,
 			);
-			name = "Mati-Global-ID-SDK";
 			path = "Mati-Global-ID-SDK";
 			sourceTree = "<group>";
 		};
@@ -314,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -395,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -444,10 +446,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

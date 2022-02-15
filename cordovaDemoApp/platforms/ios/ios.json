@@ -5,73 +5,30 @@
   },
   "config_munge": {
     "files": {
-      "config.xml": {
-        "parents": {
-          "/*": [
-            {
-              "xml": "<feature name=\"MatiGlobalIDSDK\"><param name=\"ios-package\" value=\"MatiGlobalIDSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            }
-          ]
-        }
-      },
-      "app/src/main/AndroidManifest.xml": {
-        "parents": {
-          "/manifest/application/activity[@android:name='MainActivity']": [
-            {
-              "xml": "<activity android:exported=\"true\" />",
-              "count": 1,
-              "mode": "merge",
-              "id": "config.xml"
-            }
-          ]
-        }
-      },
       "*-Info.plist": {
         "parents": {
           "NSLocationWhenInUseUsageDescription": [
             {
               "xml": "<string>We need access to work properly MetaMap</string>",
-              "count": 2
+              "count": 1
             }
           ],
           "NSCameraUsageDescription": [
             {
               "xml": "<string>We need access to work properly MetaMap</string>",
-              "count": 2
+              "count": 1
             }
           ],
           "NSPhotoLibraryUsageDescription": [
             {
               "xml": "<string>We need access to work properly MetaMap</string>",
-              "count": 2
+              "count": 1
             }
           ]
         }
       }
     }
   },
-  "installed_plugins": {
-    "cordova-plugin-cocoapod-support": {
-      "PACKAGE_NAME": "com.metamap.cordovaDemoApp"
-    },
-    "mati-global-id-sdk-cordova-plugin": {
-      "PACKAGE_NAME": "com.metamap.cordovaDemoApp"
-    }
-  },
-  "dependent_plugins": {},
-  "modules": [
-    {
-      "id": "mati-global-id-sdk-cordova-plugin.MatiGlobalIDSDK",
-      "file": "plugins/mati-global-id-sdk-cordova-plugin/www/MatiGlobalIDSDK.js",
-      "pluginId": "mati-global-id-sdk-cordova-plugin",
-      "clobbers": [
-        "cordova.plugins.MatiGlobalIDSDK"
-      ]
-    }
-  ],
-  "plugin_metadata": {
-    "cordova-plugin-cocoapod-support": "1.6.2",
-    "mati-global-id-sdk-cordova-plugin": "0.0.4"
-  }
+  "installed_plugins": {},
+  "dependent_plugins": {}
 }

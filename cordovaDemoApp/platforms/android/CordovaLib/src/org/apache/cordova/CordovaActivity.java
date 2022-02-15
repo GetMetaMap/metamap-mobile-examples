@@ -24,7 +24,6 @@ import java.util.Locale;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -32,9 +31,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.media.AudioManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,13 +41,15 @@ import android.view.WindowManager;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * This class is the main Android activity that represents the Cordova
  * application. It should be extended by the user to load the specific
  * html file that contains the application.
  *
  * As an example:
- * 
+ *
  * <pre>
  *     package org.apache.cordova.examples;
  *
@@ -67,15 +66,15 @@ import android.widget.FrameLayout;
  *       }
  *     }
  * </pre>
- * 
- * Cordova xml configuration: Cordova uses a configuration file at 
+ *
+ * Cordova xml configuration: Cordova uses a configuration file at
  * res/xml/config.xml to specify its settings. See "The config.xml File"
  * guide in cordova-docs at http://cordova.apache.org/docs for the documentation
  * for the configuration. The use of the set*Property() methods is
  * deprecated in favor of the config.xml file.
  *
  */
-public class CordovaActivity extends Activity {
+public class CordovaActivity extends AppCompatActivity {
     public static String TAG = "CordovaActivity";
 
     // The webview for our app
@@ -104,22 +103,31 @@ public class CordovaActivity extends Activity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        // need to activate preferences before super.onCreate to avoid "requestFeature() must be called before adding content" exception
+        loadConfig();
+
+        String logLevel = preferences.getString("loglevel", "ERROR");
+        LOG.setLogLevel(logLevel);
+
         LOG.i(TAG, "Apache Cordova native platform version " + CordovaWebView.CORDOVA_VERSION + " is starting");
         LOG.d(TAG, "CordovaActivity.onCreate()");
 
-        // need to activate preferences before super.onCreate to avoid "requestFeature() must be called before adding content" exception
-        loadConfig();
         if (!preferences.getBoolean("ShowTitle", false)) {
             getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         }
 
         if (preferences.getBoolean("SetFullscreen", false)) {
-            Log.d(TAG, "The SetFullscreen configuration is deprecated in favor of Fullscreen, and will be removed in a future version.");
+            LOG.d(TAG, "The SetFullscreen configuration is deprecated in favor of Fullscreen, and will be removed in a future version.");
             preferences.set("Fullscreen", true);
         }
         if (preferences.getBoolean("Fullscreen", false)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // NOTE: use the FullscreenNotImmersive configuration key to set the activity in a REAL full screen
+            // (as was the case in previous cordova versions)
+            if (!preferences.getBoolean("FullscreenNotImmersive", false)) {
                 immersiveMode = true;
+                // The splashscreen plugin needs the flags set before we're focused to prevent
+                // the nav and title bars from flashing in.
+                setImmersiveUiVisibility();
             } else {
                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -175,9 +183,14 @@ public class CordovaActivity extends Activity {
         setContentView(appView.getView());
 
         if (preferences.contains("BackgroundColor")) {
-            int backgroundColor = preferences.getInteger("BackgroundColor", Color.BLACK);
-            // Background of activity:
-            appView.getView().setBackgroundColor(backgroundColor);
+            try {
+                int backgroundColor = preferences.getInteger("BackgroundColor", Color.BLACK);
+                // Background of activity:
+                appView.getView().setBackgroundColor(backgroundColor);
+            }
+            catch (NumberFormatException e){
+                e.printStackTrace();
+            }
         }
 
         appView.getView().requestFocusFromTouch();
@@ -258,9 +271,11 @@ public class CordovaActivity extends Activity {
         if (this.appView == null) {
             return;
         }
-        // Force window to have focus, so application always
-        // receive user input. Workaround for some devices (Samsung Galaxy Note 3 at least)
-        this.getWindow().getDecorView().requestFocus();
+        if (! this.getWindow().getDecorView().hasFocus()) {
+            // Force window to have focus, so application always
+            // receive user input. Workaround for some devices (Samsung Galaxy Note 3 at least)
+            this.getWindow().getDecorView().requestFocus();
+        }
 
         this.appView.handleResume(this.keepRunning);
     }
@@ -313,15 +328,20 @@ public class CordovaActivity extends Activity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus && immersiveMode) {
-            final int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-
-            getWindow().getDecorView().setSystemUiVisibility(uiOptions);
+            setImmersiveUiVisibility();
         }
+    }
+
+    @SuppressLint("InlinedApi")
+    protected void setImmersiveUiVisibility() {
+        final int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+
+        getWindow().getDecorView().setSystemUiVisibility(uiOptions);
     }
 
     @SuppressLint("NewApi")
@@ -493,6 +513,8 @@ public class CordovaActivity extends Activity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[],
                                            int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
         try
         {
             cordovaInterface.onRequestPermissionResult(requestCode, permissions, grantResults);

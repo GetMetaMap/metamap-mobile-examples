@@ -26,7 +26,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -62,7 +61,7 @@ public class SystemWebChromeClient extends WebChromeClient {
 
     // the video progress view
     private View mVideoProgressView;
-    
+
     private CordovaDialogsHelper dialogsHelper;
     private Context appContext;
 
@@ -143,34 +142,12 @@ public class SystemWebChromeClient extends WebChromeClient {
      * Handle database quota exceeded notification.
      */
     @Override
+    @SuppressWarnings("deprecation")
     public void onExceededDatabaseQuota(String url, String databaseIdentifier, long currentQuota, long estimatedSize,
             long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater)
     {
         LOG.d(LOG_TAG, "onExceededDatabaseQuota estimatedSize: %d  currentQuota: %d  totalUsedQuota: %d", estimatedSize, currentQuota, totalUsedQuota);
         quotaUpdater.updateQuota(MAX_QUOTA);
-    }
-
-    // console.log in api level 7: http://developer.android.com/guide/developing/debug-tasks.html
-    // Expect this to not compile in a future Android release!
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onConsoleMessage(String message, int lineNumber, String sourceID)
-    {
-        //This is only for Android 2.1
-        if(android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.ECLAIR_MR1)
-        {
-            LOG.d(LOG_TAG, "%s: Line %d : %s", sourceID, lineNumber, message);
-            super.onConsoleMessage(message, lineNumber, sourceID);
-        }
-    }
-
-    @TargetApi(8)
-    @Override
-    public boolean onConsoleMessage(ConsoleMessage consoleMessage)
-    {
-        if (consoleMessage.message() != null)
-            LOG.d(LOG_TAG, "%s: Line %d : %s" , consoleMessage.sourceId() , consoleMessage.lineNumber(), consoleMessage.message());
-         return super.onConsoleMessage(consoleMessage);
     }
 
     @Override
@@ -191,16 +168,17 @@ public class SystemWebChromeClient extends WebChromeClient {
         {
             geolocation.requestPermissions(0);
         }
-
     }
-    
+
     // API level 7 is required for this, see if we could lower this using something else
     @Override
+    @SuppressWarnings("deprecation")
     public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
         parentEngine.getCordovaWebView().showCustomView(view, callback);
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void onHideCustomView() {
         parentEngine.getCordovaWebView().hideCustomView();
     }
@@ -212,10 +190,9 @@ public class SystemWebChromeClient extends WebChromeClient {
      * @return View The progress view.
      */
     public View getVideoLoadingProgressView() {
-
-        if (mVideoProgressView == null) {            
+        if (mVideoProgressView == null) {
             // Create a new Loading view programmatically.
-            
+
             // create the linear layout
             LinearLayout layout = new LinearLayout(parentEngine.getView().getContext());
             layout.setOrientation(LinearLayout.VERTICAL);
@@ -226,64 +203,64 @@ public class SystemWebChromeClient extends WebChromeClient {
             ProgressBar bar = new ProgressBar(parentEngine.getView().getContext());
             LinearLayout.LayoutParams barLayoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             barLayoutParams.gravity = Gravity.CENTER;
-            bar.setLayoutParams(barLayoutParams);   
+            bar.setLayoutParams(barLayoutParams);
             layout.addView(bar);
-            
+
             mVideoProgressView = layout;
         }
-    return mVideoProgressView; 
+        return mVideoProgressView;
     }
 
-    // <input type=file> support:
-    // openFileChooser() is for pre KitKat and in KitKat mr1 (it's known broken in KitKat).
-    // For Lollipop, we use onShowFileChooser().
-    public void openFileChooser(ValueCallback<Uri> uploadMsg) {
-        this.openFileChooser(uploadMsg, "*/*");
-    }
-    
-    public void openFileChooser( ValueCallback<Uri> uploadMsg, String acceptType ) {
-        this.openFileChooser(uploadMsg, acceptType, null);
-    }
-    
-    public void openFileChooser(final ValueCallback<Uri> uploadMsg, String acceptType, String capture)
-    {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        intent.setType("*/*");
-        parentEngine.cordova.startActivityForResult(new CordovaPlugin() {
-            @Override
-            public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-                Uri result = intent == null || resultCode != Activity.RESULT_OK ? null : intent.getData();
-                Log.d(LOG_TAG, "Receive file chooser URL: " + result);
-                uploadMsg.onReceiveValue(result);
-            }
-        }, intent, FILECHOOSER_RESULTCODE);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onShowFileChooser(WebView webView, final ValueCallback<Uri[]> filePathsCallback, final WebChromeClient.FileChooserParams fileChooserParams) {
+        // Check if multiple-select is specified
+        Boolean selectMultiple = false;
+        if (fileChooserParams.getMode() == WebChromeClient.FileChooserParams.MODE_OPEN_MULTIPLE) {
+            selectMultiple = true;
+        }
         Intent intent = fileChooserParams.createIntent();
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, selectMultiple);
+        
+        // Uses Intent.EXTRA_MIME_TYPES to pass multiple mime types.
+        String[] acceptTypes = fileChooserParams.getAcceptTypes();
+        if (acceptTypes.length > 1) {
+            intent.setType("*/*"); // Accept all, filter mime types by Intent.EXTRA_MIME_TYPES.
+            intent.putExtra(Intent.EXTRA_MIME_TYPES, acceptTypes);
+        }
         try {
             parentEngine.cordova.startActivityForResult(new CordovaPlugin() {
                 @Override
                 public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-                    Uri[] result = WebChromeClient.FileChooserParams.parseResult(resultCode, intent);
-                    Log.d(LOG_TAG, "Receive file chooser URL: " + result);
+                    Uri[] result = null;
+                    if (resultCode ==  Activity.RESULT_OK && intent != null) {
+                        if (intent.getClipData() != null) {
+                            // handle multiple-selected files
+                            final int numSelectedFiles = intent.getClipData().getItemCount();
+                            result = new Uri[numSelectedFiles];
+                            for (int i = 0; i < numSelectedFiles; i++) {
+                                result[i] = intent.getClipData().getItemAt(i).getUri();
+                                LOG.d(LOG_TAG, "Receive file chooser URL: " + result[i]);
+                            }
+                        }
+                        else if (intent.getData() != null) {
+                            // handle single-selected file
+                            result = WebChromeClient.FileChooserParams.parseResult(resultCode, intent);
+                            LOG.d(LOG_TAG, "Receive file chooser URL: " + result);
+                        }
+                    }
                     filePathsCallback.onReceiveValue(result);
                 }
             }, intent, FILECHOOSER_RESULTCODE);
         } catch (ActivityNotFoundException e) {
-            Log.w("No activity found to handle file chooser intent.", e);
+            LOG.w("No activity found to handle file chooser intent.", e);
             filePathsCallback.onReceiveValue(null);
         }
         return true;
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onPermissionRequest(final PermissionRequest request) {
-        Log.d(LOG_TAG, "onPermissionRequest: " + Arrays.toString(request.getResources()));
+        LOG.d(LOG_TAG, "onPermissionRequest: " + Arrays.toString(request.getResources()));
         request.grant(request.getResources());
     }
 

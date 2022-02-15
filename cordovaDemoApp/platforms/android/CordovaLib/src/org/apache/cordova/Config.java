@@ -22,9 +22,8 @@ package org.apache.cordova;
 import java.util.List;
 
 import android.app.Activity;
-import android.util.Log;
 
-@Deprecated // Use Whitelist, CordovaPrefences, etc. directly.
+@Deprecated // Use AllowList, CordovaPrefences, etc. directly.
 public class Config {
     private static final String TAG = "Config";
 
@@ -61,7 +60,7 @@ public class Config {
     public static List<PluginEntry> getPluginEntries() {
         return parser.getPluginEntries();
     }
-    
+
     public static CordovaPreferences getPreferences() {
         return parser.getPreferences();
     }

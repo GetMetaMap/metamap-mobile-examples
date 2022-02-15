@@ -22,11 +22,12 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
+    // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 
-    //trigger login on button click
+     //trigger login on button click
     var matiButton = document.getElementById("matiButton");
 
     matiButton.onclick = () => {
@@ -45,5 +46,4 @@ function onDeviceReady() {
        console.log("setMatiCallback error: " + error);
      }
     );
-
 }

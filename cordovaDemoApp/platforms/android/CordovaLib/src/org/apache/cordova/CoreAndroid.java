@@ -30,18 +30,20 @@ import android.content.IntentFilter;
 import android.telephony.TelephonyManager;
 import android.view.KeyEvent;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 
 /**
  * This class exposes methods in Cordova that can be called from JavaScript.
  */
-class CoreAndroid extends CordovaPlugin {
+public class CoreAndroid extends CordovaPlugin {
 
     public static final String PLUGIN_NAME = "CoreAndroid";
     protected static final String TAG = "CordovaApp";
     private BroadcastReceiver telephonyReceiver;
     private CallbackContext messageChannel;
     private PluginResult pendingResume;
+    private PluginResult pendingPause;
     private final Object messageChannelLock = new Object();
 
     /**
@@ -112,6 +114,10 @@ class CoreAndroid extends CordovaPlugin {
 			else if (action.equals("messageChannel")) {
                 synchronized(messageChannelLock) {
                     messageChannel = callbackContext;
+                    if (pendingPause != null) {
+                        sendEventMessage(pendingPause);
+                        pendingPause = null;
+                    }
                     if (pendingResume != null) {
                         sendEventMessage(pendingResume);
                         pendingResume = null;
@@ -138,7 +144,7 @@ class CoreAndroid extends CordovaPlugin {
     public void clearCache() {
         cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
-                webView.clearCache(true);
+                webView.clearCache();
             }
         });
     }
@@ -320,7 +326,19 @@ class CoreAndroid extends CordovaPlugin {
         } catch (JSONException e) {
             LOG.e(TAG, "Failed to create event message", e);
         }
-        sendEventMessage(new PluginResult(PluginResult.Status.OK, obj));
+        PluginResult result = new PluginResult(PluginResult.Status.OK, obj);
+
+        if (messageChannel == null) {
+            LOG.i(TAG, "Request to send event before messageChannel initialised: " + action);
+            if ("pause".equals(action)) {
+                pendingPause = result;
+            } else if ("resume".equals(action)) {
+                // When starting normally onPause then onResume is called
+                pendingPause = null;
+            }
+        } else {
+            sendEventMessage(result);
+        }
     }
 
     private void sendEventMessage(PluginResult payload) {
@@ -356,5 +374,37 @@ class CoreAndroid extends CordovaPlugin {
                 this.pendingResume = resumeEvent;
             }
         }
+    }
+
+      /*
+     * This needs to be implemented if you wish to use the Camera Plugin or other plugins
+     * that read the Build Configuration.
+     *
+     * Thanks to Phil@Medtronic and Graham Borland for finding the answer and posting it to
+     * StackOverflow.  This is annoying as hell!
+     *
+     */
+
+    public static Object getBuildConfigValue(Context ctx, String key)
+    {
+        try
+        {
+            Class<?> clazz = Class.forName(ctx.getClass().getPackage().getName() + ".BuildConfig");
+            Field field = clazz.getField(key);
+            return field.get(null);
+        } catch (ClassNotFoundException e) {
+            LOG.d(TAG, "Unable to get the BuildConfig, is this built with ANT?");
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            LOG.d(TAG, key + " is not a valid field. Check your build.gradle");
+        } catch (IllegalAccessException e) {
+            LOG.d(TAG, "Illegal Access Exception: Let's print a stack trace.");
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            LOG.d(TAG, "Null Pointer Exception: Let's print a stack trace.");
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MatiSDK
 import AVFoundation
 import CommonCrypto
+import CoreGraphics
 import CoreTelephony
 import Dispatch
 import Foundation
@@ -12,7 +13,10 @@ import Network
 import PDFKit
 import SafariServices
 import Swift
+import SwiftUI
+import SystemConfiguration
 import UIKit
+import WebKit
 import _Concurrency
 import zlib
 @objc public protocol MatiButtonResultDelegate {
@@ -91,6 +95,9 @@ extension Swift.Array where Element : MatiSDK.MyWSArrayType, Element : Swift.Uns
 public func writeUint16(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt16)
 public func writeUint32(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt32)
 public func writeUint64(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt64)
+public protocol SVGShapeElement : MatiSDK.Fillable, MatiSDK.Identifiable, MatiSDK.SVGElement, MatiSDK.Strokable, MatiSDK.Stylable, MatiSDK.Transformable {
+  var svgLayer: QuartzCore.CAShapeLayer { get set }
+}
 public struct SocketIOClientConfiguration : Swift.ExpressibleByArrayLiteral, Swift.Collection, Swift.MutableCollection {
   public typealias Element = MatiSDK.SocketIOClientOption
   public typealias Index = Swift.Array<MatiSDK.SocketIOClientOption>.Index
@@ -166,6 +173,9 @@ public class WSEngine : MatiSDK.Engine, MatiSDK.TransportEventClient, MatiSDK.Fr
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @objc deinit
+}
+extension Swift.Dictionary {
+  public mutating func add(_ dictionary: [Key : Value])
 }
 @objc final public class SocketAckEmitter : ObjectiveC.NSObject {
   @objc final public var rawEmitView: MatiSDK.SocketRawAckView {
@@ -253,6 +263,7 @@ open class WebSocket : MatiSDK.WebSocketClient, MatiSDK.EngineDelegate {
   public func didReceive(event: MatiSDK.WebSocketEvent)
   @objc deinit
 }
+public func unown<T, U, V>(_ owner: T, _ method: @escaping (T) -> ((U) -> V)) -> (U) -> V where T : AnyObject
 public protocol SocketManagerSpec : MatiSDK.SocketEngineClient {
   var defaultSocket: MatiSDK.SocketIOClient { get }
   var engine: MatiSDK.SocketEngineSpec? { get set }
@@ -294,6 +305,8 @@ public class StringHTTPHandler : MatiSDK.HTTPHandler {
   public func parse(data: Foundation.Data) -> Swift.Int
   public func register(delegate: MatiSDK.HTTPHandlerDelegate)
   @objc deinit
+}
+public protocol Strokable {
 }
 public struct SocketEventHandler {
   public let event: Swift.String
@@ -347,6 +360,12 @@ public protocol Transport : AnyObject {
   func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
   var usingTLS: Swift.Bool { get }
 }
+public protocol DelaysApplyingAttributes {
+  var delayedAttributes: [Swift.String : Swift.String] { get set }
+}
+extension MatiSDK.DelaysApplyingAttributes where Self : MatiSDK.SVGElement {
+  public mutating func applyDelayedAttributes()
+}
 extension UIKit.UIImageView {
   @_Concurrency.MainActor(unsafe) public func loadGif(name: Swift.String)
 }
@@ -354,6 +373,55 @@ extension UIKit.UIImage {
   public class func gif(data: Foundation.Data) -> UIKit.UIImage?
   public class func gif(url: Swift.String) -> UIKit.UIImage?
   public class func gif(name: Swift.String) -> UIKit.UIImage?
+}
+extension UIKit.UIImage {
+  public static func loadFrom(url: Foundation.URL, completion: @escaping (_ image: UIKit.UIImage?) -> ())
+}
+public protocol SVGLayerType {
+  var boundingBox: CoreGraphics.CGRect { get }
+}
+extension MatiSDK.SVGLayerType where Self : QuartzCore.CALayer {
+  @discardableResult
+  public func resizeToFit(_ rect: CoreGraphics.CGRect) -> Self
+}
+@objc @_inheritsConvenienceInitializers open class SVGLayer : QuartzCore.CAShapeLayer, MatiSDK.SVGLayerType {
+  public var boundingBox: CoreGraphics.CGRect
+  @objc override dynamic public init()
+  @objc override dynamic public init(layer: Any)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension MatiSDK.SVGLayer {
+  public var svgLayerCopy: MatiSDK.SVGLayer? {
+    get
+  }
+}
+extension MatiSDK.SVGLayer {
+  @objc override dynamic open var fillColor: CoreGraphics.CGColor? {
+    @objc get
+    @objc set(value)
+  }
+}
+extension MatiSDK.SVGLayer {
+  @objc override dynamic open var lineWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set(value)
+  }
+  @objc override dynamic open var strokeColor: CoreGraphics.CGColor? {
+    @objc get
+    @objc set(value)
+  }
+}
+public struct SVGParserSupportedElements {
+  public typealias ElementGenerator = () -> MatiSDK.SVGElement
+  public let tags: [Swift.String : MatiSDK.SVGParserSupportedElements.ElementGenerator]
+  public init(tags: [Swift.String : MatiSDK.SVGParserSupportedElements.ElementGenerator])
+  public static var barebones: MatiSDK.SVGParserSupportedElements {
+    get
+  }
+  public static var allSupportedElements: MatiSDK.SVGParserSupportedElements {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers public class FoundationHTTPServerHandler : MatiSDK.HTTPServerHandler {
   public func register(delegate: MatiSDK.HTTPServerDelegate)
@@ -398,6 +466,14 @@ public protocol SocketEngineSpec : AnyObject {
   func parseEngineMessage(_ message: Swift.String)
   func write(_ msg: Swift.String, withType type: MatiSDK.SocketEnginePacketType, withData data: [Foundation.Data], completion: (() -> ())?)
 }
+extension Swift.FloatingPoint {
+  public var toRadians: Self {
+    get
+  }
+  public var toDegrees: Self {
+    get
+  }
+}
 @objc public enum SocketIOStatus : Swift.Int, Swift.CustomStringConvertible {
   case notConnected
   case disconnected
@@ -415,6 +491,20 @@ public protocol SocketEngineSpec : AnyObject {
     get
   }
 }
+public protocol Fillable {
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public convenience init(pathString: Swift.String)
+  @_Concurrency.MainActor(unsafe) public convenience init(svgNamed: Swift.String, parser: MatiSDK.SVGParser? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @available(*, deprecated, renamed: "init(svgNamed:parser:completion:)")
+  @_Concurrency.MainActor(unsafe) public convenience init(SVGNamed: Swift.String, parser: MatiSDK.SVGParser? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @_Concurrency.MainActor(unsafe) public convenience init(svgURL: Foundation.URL, parser: MatiSDK.SVGParser? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @available(*, deprecated, renamed: "init(svgURL:parser:completion:)")
+  @_Concurrency.MainActor(unsafe) public convenience init(SVGURL: Foundation.URL, parser: MatiSDK.SVGParser? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @_Concurrency.MainActor(unsafe) public convenience init(svgData: Foundation.Data, parser: MatiSDK.SVGParser? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @available(*, deprecated, renamed: "init(svgData:parser:completion:)")
+  @_Concurrency.MainActor(unsafe) public convenience init(SVGData svgData: Foundation.Data, parser: MatiSDK.SVGParser? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+}
 @objc public protocol SocketEngineClient {
   @objc func engineDidError(reason: Swift.String)
   @objc func engineDidClose(reason: Swift.String)
@@ -426,6 +516,9 @@ public protocol SocketEngineSpec : AnyObject {
   @objc func parseEngineMessage(_ msg: Swift.String)
   @objc func parseEngineBinaryData(_ data: Foundation.Data)
   @objc func engineDidWebsocketUpgrade(headers: [Swift.String : Swift.String])
+}
+public protocol SVGContainerElement : MatiSDK.DelaysApplyingAttributes, MatiSDK.Fillable, MatiSDK.Identifiable, MatiSDK.SVGElement, MatiSDK.Strokable, MatiSDK.Stylable, MatiSDK.Transformable {
+  var containerLayer: QuartzCore.CALayer { get set }
 }
 public enum FoundationSecurityError : Swift.Error {
   case invalidRequest
@@ -453,6 +546,22 @@ public protocol SocketLogger : AnyObject {
 extension MatiSDK.SocketLogger {
   public func log(_ message: @autoclosure () -> Swift.String, type: Swift.String)
   public func error(_ message: @autoclosure () -> Swift.String, type: Swift.String)
+}
+extension QuartzCore.CAShapeLayer {
+  public convenience init(pathString: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class SVGView : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var svgName: Swift.String? {
+    @objc get
+    @objc set(value)
+  }
+  @available(*, deprecated, renamed: "svgName")
+  @_Concurrency.MainActor(unsafe) open var SVGName: Swift.String?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol Identifiable {
 }
 public class WSCompression : MatiSDK.CompressionHandler {
   public init()
@@ -680,6 +789,119 @@ extension MatiSDK.SocketPacket {
     }
   }
 }
+extension MatiSDK.NSXMLSVGParser : MatiSDK.SVGParser {
+}
+@objc @_hasMissingDesignatedInitializers open class NSXMLSVGParser : Foundation.XMLParser, Foundation.XMLParserDelegate {
+  public var completionBlock: ((MatiSDK.SVGLayer) -> ())?
+  public var supportedElements: MatiSDK.SVGParserSupportedElements?
+  open var containerLayer: MatiSDK.SVGLayer
+  public convenience init(svgURL: Foundation.URL, supportedElements: MatiSDK.SVGParserSupportedElements? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @available(*, deprecated, renamed: "init(svgURL:supportedElements:completion:)")
+  public convenience init(SVGURL: Foundation.URL, supportedElements: MatiSDK.SVGParserSupportedElements? = nil, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  required public init(svgData: Foundation.Data, supportedElements: MatiSDK.SVGParserSupportedElements? = SVGParserSupportedElements.allSupportedElements, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  @available(*, deprecated, renamed: "init(svgData:supportedElements:completion:)")
+  public convenience init(SVGData: Foundation.Data, supportedElements: MatiSDK.SVGParserSupportedElements? = SVGParserSupportedElements.allSupportedElements, completion: ((MatiSDK.SVGLayer) -> ())? = nil)
+  public func startParsing()
+  @objc open func parser(_ parser: Foundation.XMLParser, didStartElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?, attributes attributeDict: [Swift.String : Swift.String])
+  @objc open func parser(_ parser: Foundation.XMLParser, didEndElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?)
+  @objc public func parserDidEndDocument(_ parser: Foundation.XMLParser)
+  @objc public func parser(_ parser: Foundation.XMLParser, parseErrorOccurred parseError: Swift.Error)
+  @objc deinit
+}
+public protocol SVGParser {
+  init(svgData: Foundation.Data, supportedElements: MatiSDK.SVGParserSupportedElements?, completion: ((MatiSDK.SVGLayer) -> ())?)
+  var completionBlock: ((MatiSDK.SVGLayer) -> ())? { get }
+  var supportedElements: MatiSDK.SVGParserSupportedElements? { get }
+  var containerLayer: MatiSDK.SVGLayer { get }
+  func startParsing()
+}
+public protocol Stylable {
+}
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public var ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static var reachabilityChanged: Foundation.Notification.Name
+}
+public class Reachability {
+  public typealias NetworkReachable = (MatiSDK.Reachability) -> ()
+  public typealias NetworkUnreachable = (MatiSDK.Reachability) -> ()
+  @available(*, unavailable, renamed: "Connection")
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable
+    case reachableViaWiFi
+    case reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: MatiSDK.Reachability.NetworkStatus, b: MatiSDK.Reachability.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Connection : Swift.CustomStringConvertible {
+    case unavailable
+    case wifi
+    case cellular
+    public var description: Swift.String {
+      get
+    }
+    @available(*, deprecated, renamed: "unavailable")
+    public static var none: MatiSDK.Reachability.Connection
+    public static func == (a: MatiSDK.Reachability.Connection, b: MatiSDK.Reachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: MatiSDK.Reachability.NetworkReachable?
+  public var whenUnreachable: MatiSDK.Reachability.NetworkUnreachable?
+  @available(*, deprecated, renamed: "allowsCellularConnection")
+  final public let reachableOnWWAN: Swift.Bool
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  @available(*, deprecated, renamed: "connection.description")
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  @available(*, unavailable, renamed: "connection")
+  public var currentReachabilityStatus: MatiSDK.Reachability.Connection {
+    get
+  }
+  public var connection: MatiSDK.Reachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  public convenience init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  public convenience init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension MatiSDK.Reachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  @available(*, deprecated, message: "Please use `connection != .none`")
+  public var isReachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .cellular`")
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .wifi`")
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
 @objc open class SocketManager : ObjectiveC.NSObject, MatiSDK.SocketManagerSpec, MatiSDK.SocketParsable, MatiSDK.SocketDataBufferable, MatiSDK.ConfigSettable {
   public var defaultSocket: MatiSDK.SocketIOClient {
     get
@@ -767,6 +989,14 @@ public enum FoundationTransportError : Swift.Error {
     get
   }
 }
+extension UIKit.UIBezierPath {
+  public convenience init(pathString: Swift.String)
+  @available(*, deprecated, message: "This method is deprecated. If you want to parse a single path, instantiate a new instance of SVGPath using the SVGPath(singlePathString:) initializer and pass the path string.")
+  public class func pathWithSVGURL(_ SVGURL: Foundation.URL) -> UIKit.UIBezierPath?
+}
+extension UIKit.UIColor {
+  public convenience init?(cssName: Swift.String)
+}
 public enum CodeType {
   case phone
   case email
@@ -811,6 +1041,13 @@ extension Foundation.URL {
     get
   }
   public func getParts() -> MatiSDK.URLParts?
+}
+extension QuartzCore.CALayer {
+  open func applyOnSublayers<T>(ofType: T.Type, closure: (T) -> ()) where T : QuartzCore.CALayer
+  public func sublayers<T, U>(in layer: T) -> [U] where T : QuartzCore.CALayer
+}
+public protocol Transformable {
+  var layerToTransform: QuartzCore.CALayer { get }
 }
 public enum ConnectionEvent {
   case connected([Swift.String : Swift.String])
@@ -948,6 +1185,11 @@ public class NativeEngine : ObjectiveC.NSObject, MatiSDK.Engine, Foundation.URLS
   @objc override dynamic public init()
   @objc deinit
 }
+extension Swift.String {
+  public subscript(integerRange: Swift.Range<Swift.Int>) -> Swift.String {
+    get
+  }
+}
 @objc @_hasMissingDesignatedInitializers final public class SocketAnyEvent : ObjectiveC.NSObject {
   @objc final public let event: Swift.String
   @objc final public let items: [Any]?
@@ -955,6 +1197,23 @@ public class NativeEngine : ObjectiveC.NSObject, MatiSDK.Engine, Foundation.URLS
     @objc get
   }
   @objc deinit
+}
+public protocol SVGElement {
+  static var elementName: Swift.String { get }
+  var supportedAttributes: [Swift.String : (Swift.String) -> ()] { get set }
+  func didProcessElement(in container: MatiSDK.SVGContainerElement?)
+}
+extension QuartzCore.CALayer {
+  @discardableResult
+  public convenience init(svgURL: Foundation.URL, parser: MatiSDK.SVGParser? = nil, completion: @escaping (MatiSDK.SVGLayer) -> ())
+  @available(*, deprecated, renamed: "init(svgURL:parser:completion:)")
+  @discardableResult
+  public convenience init(SVGURL: Foundation.URL, parser: MatiSDK.SVGParser? = nil, completion: @escaping (MatiSDK.SVGLayer) -> ())
+  @discardableResult
+  public convenience init(svgData: Foundation.Data, parser: MatiSDK.SVGParser? = nil, completion: @escaping (MatiSDK.SVGLayer) -> ())
+  @available(*, deprecated, renamed: "init(svgData:parser:completion:)")
+  @discardableResult
+  public convenience init(SVGData: Foundation.Data, parser: MatiSDK.SVGParser? = nil, completion: @escaping (MatiSDK.SVGLayer) -> ())
 }
 public protocol EngineDelegate : AnyObject {
   func didReceive(event: MatiSDK.WebSocketEvent)
@@ -966,6 +1225,10 @@ public protocol Engine {
   func forceStop()
   func write(data: Foundation.Data, opcode: MatiSDK.FrameOpCode, completion: (() -> ())?)
   func write(string: Swift.String, completion: (() -> ())?)
+}
+extension UIKit.UIAppearance {
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) public func style(_ styleClosure: (Self) -> Swift.Void) -> Self
 }
 public protocol SocketData {
   func socketRepresentation() throws -> MatiSDK.SocketData
@@ -1054,6 +1317,16 @@ public enum SocketClientEvent : Swift.String {
   public var rawValue: Swift.String {
     get
   }
+}
+@_hasMissingDesignatedInitializers open class SVGCache {
+  public static var `default`: MatiSDK.SVGCache
+  final public let memoryCache: Foundation.NSCache<Foundation.NSString, MatiSDK.SVGLayer>
+  public subscript(key: Swift.String) -> MatiSDK.SVGLayer? {
+    get
+    set(newValue)
+  }
+  public func removeObject(key: Swift.String)
+  @objc deinit
 }
 public protocol SocketParsable : AnyObject {
   func parseBinaryData(_ data: Foundation.Data) -> MatiSDK.SocketPacket?

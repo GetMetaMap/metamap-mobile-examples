@@ -1,5 +1,5 @@
 PODS:
-  - Mati-Global-ID-SDK (3.8.6)
+  - Mati-Global-ID-SDK (3.9.0)
 
 DEPENDENCIES:
   - Mati-Global-ID-SDK
@@ -9,7 +9,7 @@ SPEC REPOS:
     - Mati-Global-ID-SDK
 
 SPEC CHECKSUMS:
-  Mati-Global-ID-SDK: 38905389e19c86482256a0d42b4f1e1d8effb5a6
+  Mati-Global-ID-SDK: 5d3f882174b8645b9ac6653ea6aa1d41da59f794
 
 PODFILE CHECKSUM: 598b90b53e2ad705be1c64b154f4528a3c8f48f4
 

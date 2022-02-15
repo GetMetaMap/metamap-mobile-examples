@@ -18,12 +18,12 @@
 */
 package org.apache.cordova;
 
+import android.annotation.SuppressLint;
+
 import java.security.SecureRandom;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-
-import android.util.Log;
 
 /**
  * Contains APIs that the JS can call. All functions in here should also have
@@ -87,15 +87,15 @@ public class CordovaBridge {
     private boolean verifySecret(String action, int bridgeSecret) throws IllegalAccessException {
         if (!jsMessageQueue.isBridgeEnabled()) {
             if (bridgeSecret == -1) {
-                Log.d(LOG_TAG, action + " call made before bridge was enabled.");
+                LOG.d(LOG_TAG, action + " call made before bridge was enabled.");
             } else {
-                Log.d(LOG_TAG, "Ignoring " + action + " from previous page load.");
+                LOG.d(LOG_TAG, "Ignoring " + action + " from previous page load.");
             }
             return false;
         }
         // Bridge secret wrong and bridge not due to it being from the previous page.
         if (expectedBridgeSecret < 0 || bridgeSecret != expectedBridgeSecret) {
-            Log.e(LOG_TAG, "Bridge access attempt with wrong secret token, possibly from malicious code. Disabling exec() bridge!");
+            LOG.e(LOG_TAG, "Bridge access attempt with wrong secret token, possibly from malicious code. Disabling exec() bridge!");
             clearBridgeSecret();
             throw new IllegalAccessException();
         }
@@ -112,6 +112,8 @@ public class CordovaBridge {
     }
 
     /** Called by cordova.js to initialize the bridge. */
+    //On old Androids SecureRandom isn't really secure, this is the least of your problems if
+    //you're running Android 4.3 and below in 2017
     int generateBridgeSecret() {
         SecureRandom randGen = new SecureRandom();
         expectedBridgeSecret = randGen.nextInt(Integer.MAX_VALUE);
@@ -120,11 +122,11 @@ public class CordovaBridge {
 
     public void reset() {
         jsMessageQueue.reset();
-        clearBridgeSecret();        
+        clearBridgeSecret();
     }
 
     public String promptOnJsPrompt(String origin, String message, String defaultValue) {
-        if (defaultValue != null && defaultValue.length() > 3 && defaultValue.startsWith("gap:")) {
+        if (defaultValue != null && defaultValue.startsWith("gap:")) {
             JSONArray array;
             try {
                 array = new JSONArray(defaultValue.substring(4));
@@ -141,7 +143,7 @@ public class CordovaBridge {
             }
             return "";
         }
-        // Sets the native->JS bridge mode. 
+        // Sets the native->JS bridge mode.
         else if (defaultValue != null && defaultValue.startsWith("gap_bridge_mode:")) {
             try {
                 int bridgeSecret = Integer.parseInt(defaultValue.substring(16));
@@ -153,7 +155,7 @@ public class CordovaBridge {
             }
             return "";
         }
-        // Polling for JavaScript messages 
+        // Polling for JavaScript messages
         else if (defaultValue != null && defaultValue.startsWith("gap_poll:")) {
             int bridgeSecret = Integer.parseInt(defaultValue.substring(9));
             try {
@@ -175,7 +177,7 @@ public class CordovaBridge {
                 int secret = generateBridgeSecret();
                 return ""+secret;
             } else {
-                Log.e(LOG_TAG, "gap_init called from restricted origin: " + origin);
+                LOG.e(LOG_TAG, "gap_init called from restricted origin: " + origin);
             }
             return "";
         }

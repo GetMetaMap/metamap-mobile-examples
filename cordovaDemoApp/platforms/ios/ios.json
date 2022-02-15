@@ -1,42 +1,77 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
-    },
-    "config_munge": {
-        "files": {
-            "config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"MatiGlobalIDSDK\"><param name=\"ios-package\" value=\"MatiGlobalIDSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"MatiGlobalIDSDK\"><param name=\"ios-package\" value=\"MatiGlobalIDSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
             }
+          ]
         }
+      },
+      "app/src/main/AndroidManifest.xml": {
+        "parents": {
+          "/manifest/application/activity[@android:name='MainActivity']": [
+            {
+              "xml": "<activity android:exported=\"true\" />",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "NSLocationWhenInUseUsageDescription": [
+            {
+              "xml": "<string>We need access to work properly MetaMap</string>",
+              "count": 2
+            }
+          ],
+          "NSCameraUsageDescription": [
+            {
+              "xml": "<string>We need access to work properly MetaMap</string>",
+              "count": 2
+            }
+          ],
+          "NSPhotoLibraryUsageDescription": [
+            {
+              "xml": "<string>We need access to work properly MetaMap</string>",
+              "count": 2
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-cocoapod-support": {
+      "PACKAGE_NAME": "com.metamap.cordovaDemoApp"
     },
-    "installed_plugins": {
-        "cordova-plugin-cocoapod-support": {
-            "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
-        },
-        "mati-global-id-sdk-cordova-plugin": {
-            "PACKAGE_NAME": "com.getmati.cordovaDemoApp"
-        }
-    },
-    "dependent_plugins": {},
-    "modules": [
-        {
-            "file": "plugins/mati-global-id-sdk-cordova-plugin/www/MatiGlobalIDSDK.js",
-            "id": "mati-global-id-sdk-cordova-plugin.MatiGlobalIDSDK",
-            "pluginId": "mati-global-id-sdk-cordova-plugin",
-            "clobbers": [
-                "cordova.plugins.MatiGlobalIDSDK"
-            ]
-        }
-    ]
+    "mati-global-id-sdk-cordova-plugin": {
+      "PACKAGE_NAME": "com.metamap.cordovaDemoApp"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "mati-global-id-sdk-cordova-plugin.MatiGlobalIDSDK",
+      "file": "plugins/mati-global-id-sdk-cordova-plugin/www/MatiGlobalIDSDK.js",
+      "pluginId": "mati-global-id-sdk-cordova-plugin",
+      "clobbers": [
+        "cordova.plugins.MatiGlobalIDSDK"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-cocoapod-support": "1.6.2",
+    "mati-global-id-sdk-cordova-plugin": "0.0.4"
+  }
 }

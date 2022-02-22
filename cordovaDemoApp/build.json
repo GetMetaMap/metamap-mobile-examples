@@ -1,0 +1,9 @@
+{
+  "ios": {
+    "release": {
+      "developmentTeam": "837M74W45L",
+      "packageType": "app-store",
+      "provisioningProfile": "metamap_universal_appstore_profile"
+    }
+  }
+}

@@ -10,19 +10,19 @@
           "NSLocationWhenInUseUsageDescription": [
             {
               "xml": "<string>We need access to work properly MetaMap</string>",
-              "count": 1
+              "count": 2
             }
           ],
           "NSCameraUsageDescription": [
             {
               "xml": "<string>We need access to work properly MetaMap</string>",
-              "count": 1
+              "count": 2
             }
           ],
           "NSPhotoLibraryUsageDescription": [
             {
               "xml": "<string>We need access to work properly MetaMap</string>",
-              "count": 1
+              "count": 2
             }
           ]
         }

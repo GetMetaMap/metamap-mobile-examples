@@ -21,10 +21,10 @@
         </edit-config>
     </platform>
      <platform name="ios">
-    <preference name="deployment-target" value="12.0" />
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
+        <preference name="deployment-target" value="12.0" />
+            <allow-intent href="itms:*" />
+            <allow-intent href="itms-apps:*" />
+        </platform>
      <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
          <string>We need access to work properly MetaMap</string>
      </config-file>
@@ -34,6 +34,5 @@
       <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
          <string>We need access to work properly MetaMap</string>
      </config-file>
-
  </platform>
 </widget>

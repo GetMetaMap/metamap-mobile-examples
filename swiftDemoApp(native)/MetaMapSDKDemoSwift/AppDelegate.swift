@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  MatiKYCSDKDemoSwift
+//  MetaMapKYCSDKDemoSwift
 //
-//  Created by Suren Poghosyan on 3/27/19.
-//  Copyright © 2019 Suren Poghosyan. All rights reserved.
+//  Created by Avo Sukiasyan on 27/03/22.
+//  Copyright © 2019 Avo Sukiasyan. All rights reserved.
 //
 
 import UIKit

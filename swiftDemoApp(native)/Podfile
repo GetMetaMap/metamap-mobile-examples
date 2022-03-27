@@ -5,6 +5,6 @@ target 'MatiSDKDemoSwift' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Mati-Global-ID-SDK'
+  pod 'MetaMap-Global-ID-SDK'
 
 end

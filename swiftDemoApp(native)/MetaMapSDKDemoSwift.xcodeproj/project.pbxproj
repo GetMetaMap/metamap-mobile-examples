@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		221281D51ED2A32577967077 /* Pods_MatiSDKDemoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FA82C97CB50910B324F7EF /* Pods_MatiSDKDemoSwift.framework */; };
 		3371A1C5224B8A7800729456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3371A1C4224B8A7800729456 /* AppDelegate.swift */; };
 		3371A1C7224B8A7800729456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3371A1C6224B8A7800729456 /* ViewController.swift */; };
 		3371A1CA224B8A7800729456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3371A1C8224B8A7800729456 /* Main.storyboard */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F5FEF57767D565B9B344025 /* Pods-MatiKYCSDKDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatiKYCSDKDemoSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatiKYCSDKDemoSwift/Pods-MatiKYCSDKDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		3371A1C1224B8A7800729456 /* MatiSDKDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatiSDKDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3371A1C4224B8A7800729456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3371A1C6224B8A7800729456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,8 +22,6 @@
 		3371A1CB224B8A7A00729456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3371A1CE224B8A7A00729456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3371A1D0224B8A7A00729456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38FA82C97CB50910B324F7EF /* Pods_MatiSDKDemoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatiSDKDemoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8239A2CF1C52AA3A924C4A30 /* Pods-MatiKYCSDKDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatiKYCSDKDemoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatiKYCSDKDemoSwift/Pods-MatiKYCSDKDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
 		9B53632692CD9A855D15676C /* Pods-MatiSDKDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatiSDKDemoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatiSDKDemoSwift/Pods-MatiSDKDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
 		9DD9D2DE8E170BF7F7D50A73 /* Pods-MatiSDKDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatiSDKDemoSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatiSDKDemoSwift/Pods-MatiSDKDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,7 +31,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221281D51ED2A32577967077 /* Pods_MatiSDKDemoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +40,7 @@
 		3371A1B8224B8A7800729456 = {
 			isa = PBXGroup;
 			children = (
-				3371A1C3224B8A7800729456 /* MatiSDKDemoSwift */,
+				3371A1C3224B8A7800729456 /* MetaMapSDKDemoSwift */,
 				3371A1C2224B8A7800729456 /* Products */,
 				88F63C819AE937EC1B8DABD3 /* Pods */,
 				9113B2CCB63351ED5A7DAD27 /* Frameworks */,
@@ -60,7 +55,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3371A1C3224B8A7800729456 /* MatiSDKDemoSwift */ = {
+		3371A1C3224B8A7800729456 /* MetaMapSDKDemoSwift */ = {
 			isa = PBXGroup;
 			children = (
 				3371A1C4224B8A7800729456 /* AppDelegate.swift */,
@@ -70,14 +65,12 @@
 				3371A1CD224B8A7A00729456 /* LaunchScreen.storyboard */,
 				3371A1D0224B8A7A00729456 /* Info.plist */,
 			);
-			path = MatiSDKDemoSwift;
+			path = MetaMapSDKDemoSwift;
 			sourceTree = "<group>";
 		};
 		88F63C819AE937EC1B8DABD3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2F5FEF57767D565B9B344025 /* Pods-MatiKYCSDKDemoSwift.debug.xcconfig */,
-				8239A2CF1C52AA3A924C4A30 /* Pods-MatiKYCSDKDemoSwift.release.xcconfig */,
 				9DD9D2DE8E170BF7F7D50A73 /* Pods-MatiSDKDemoSwift.debug.xcconfig */,
 				9B53632692CD9A855D15676C /* Pods-MatiSDKDemoSwift.release.xcconfig */,
 			);
@@ -87,7 +80,6 @@
 		9113B2CCB63351ED5A7DAD27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				38FA82C97CB50910B324F7EF /* Pods_MatiSDKDemoSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +121,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3371A1BC224B8A7800729456 /* Build configuration list for PBXProject "MatiSDKDemoSwift" */;
+			buildConfigurationList = 3371A1BC224B8A7800729456 /* Build configuration list for PBXProject "MetaMapSDKDemoSwift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -352,8 +344,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/MatiSDKDemoSwift/Info.plist";
+				DEVELOPMENT_TEAM = 837M74W45L;
+				INFOPLIST_FILE = "$(SRCROOT)/MetaMapSDKDemoSwift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,8 +364,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/MatiSDKDemoSwift/Info.plist";
+				DEVELOPMENT_TEAM = 837M74W45L;
+				INFOPLIST_FILE = "$(SRCROOT)/MetaMapSDKDemoSwift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3371A1BC224B8A7800729456 /* Build configuration list for PBXProject "MatiSDKDemoSwift" */ = {
+		3371A1BC224B8A7800729456 /* Build configuration list for PBXProject "MetaMapSDKDemoSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3371A1D1224B8A7A00729456 /* Debug */,

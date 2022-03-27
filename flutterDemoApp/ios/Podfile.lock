@@ -1,0 +1,58 @@
+PODS:
+  - Flutter (1.0.0)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - mati_plugin_flutter (2.2.2):
+    - Flutter
+    - MetaMap-Global-ID-SDK
+  - MetaMap-Global-ID-SDK (3.9.3)
+  - package_info_plus (0.4.5):
+    - Flutter
+  - Sentry (7.1.4):
+    - Sentry/Core (= 7.1.4)
+  - Sentry/Core (7.1.4)
+  - sentry_flutter (0.0.1):
+    - Flutter
+    - FlutterMacOS
+    - Sentry (~> 7.1.3)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - mati_plugin_flutter (from `.symlinks/plugins/mati_plugin_flutter/ios`)
+  - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
+  - sentry_flutter (from `.symlinks/plugins/sentry_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MetaMap-Global-ID-SDK
+    - Sentry
+    - Toast
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  mati_plugin_flutter:
+    :path: ".symlinks/plugins/mati_plugin_flutter/ios"
+  package_info_plus:
+    :path: ".symlinks/plugins/package_info_plus/ios"
+  sentry_flutter:
+    :path: ".symlinks/plugins/sentry_flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  fluttertoast: 16fbe6039d06a763f3533670197d01fc73459037
+  mati_plugin_flutter: 321d850e5780afd65ba18bede4ca7695328cc4e4
+  MetaMap-Global-ID-SDK: d4f5983195ca7c7f98e723b3c9b3ac9185680a82
+  package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
+  Sentry: 1d3eb1a25f8c5333c88dd5603904a6d461cd9fcf
+  sentry_flutter: f20d4f199442900fbdab2b8496f1d2091d8b94d9
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: ce13d36744da294d67f8e460dbb7aed7c09bd7f4
+
+COCOAPODS: 1.11.2

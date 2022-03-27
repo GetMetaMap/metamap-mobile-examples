@@ -28,9 +28,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  void showMatiFlow() {
-    MatiFlutter.showMatiFlow("YOUR_CLIENT_ID", "YOUR_FLOW_ID", {});
-    MatiFlutter.resultCompleter.future.then((result) => Fluttertoast.showToast(
+  void showMetaMapFlow() {
+    MetaMapFlutter.showMetaMapFlow("YOUR_CLIENT_ID", "YOUR_FLOW_ID", {});
+    MetaMapFlutter.resultCompleter.future.then((result) => Fluttertoast.showToast(
         msg: result is ResultSuccess ? "Success ${result.verificationId}" : "Cancelled",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.BOTTOM));
@@ -40,11 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Mati flutter plugin demo"),
+          title: Text("MetaMap flutter plugin demo"),
         ),
         body: Center(
             child: ElevatedButton(
-              onPressed: showMatiFlow,
+              onPressed: showMetaMapFlow,
               child: const Text('Verify me'),
             )
         )

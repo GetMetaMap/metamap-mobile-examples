@@ -10,7 +10,7 @@ PODS:
     - React-jsi (= 0.64.0)
     - ReactCommon/turbomodule/core (= 0.64.0)
   - glog (0.3.5)
-  - Mati-Global-ID-SDK (3.2.1)
+  - MetaMap-Global-ID-SDK (3.9.4)
   - RCT-Folly (2020.01.13.00):
     - boost-for-react-native
     - DoubleConversion
@@ -204,8 +204,8 @@ PODS:
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
   - React-jsinspector (0.64.0)
-  - react-native-mati-global-id-sdk (3.1.0):
-    - Mati-Global-ID-SDK
+  - react-native-metaMap-sdk (4.0.0):
+    - MetaMap-Global-ID-SDK
     - React
   - React-perflogger (0.64.0)
   - React-RCTActionSheet (0.64.0):
@@ -291,7 +291,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-mati-global-id-sdk (from `../node_modules/react-native-mati-global-id-sdk`)
+  - react-native-metaMap-sdk (from `../node_modules/react-native-metaMap-sdk`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -309,7 +309,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
-    - Mati-Global-ID-SDK
+    - MetaMap-Global-ID-SDK
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -342,8 +342,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-  react-native-mati-global-id-sdk:
-    :path: "../node_modules/react-native-mati-global-id-sdk"
+  react-native-metaMap-sdk:
+    :path: "../node_modules/react-native-metaMap-sdk"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -375,9 +375,9 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: 49cbe4b43e445b06bf29199b6ad2057649e4c8f5
-  FBReactNativeSpec: ef83a05120020fcfb09ab0f5fc11536c7b851a24
+  FBReactNativeSpec: 745a230557c5f4272b857e8d93305e67fd94859a
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
-  Mati-Global-ID-SDK: e15a0fff4cd58b206a40b4a10bf9e8662ce49baa
+  MetaMap-Global-ID-SDK: 2895eb0df3c53ee0bd4ddb989d8c3098e3bd5c64
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
   RCTRequired: 2f8cb5b7533219bf4218a045f92768129cf7050a
   RCTTypeSafety: 512728b73549e72ad7330b92f3d42936f2a4de5b
@@ -389,7 +389,7 @@ SPEC CHECKSUMS:
   React-jsi: 74341196d9547cbcbcfa4b3bbbf03af56431d5a1
   React-jsiexecutor: 06a9c77b56902ae7ffcdd7a4905f664adc5d237b
   React-jsinspector: 0ae35a37b20d5e031eb020a69cc5afdbd6406301
-  react-native-mati-global-id-sdk: 597a78f111fc3a315b9765c36239dc6bcb702cc1
+  react-native-metaMap-sdk: 2a8d8fbce61500582376b5f4f712787b622f9a02
   React-perflogger: 9c547d8f06b9bf00cb447f2b75e8d7f19b7e02af
   React-RCTActionSheet: 3080b6e12e0e1a5b313c8c0050699b5c794a1b11
   React-RCTAnimation: 3f96f21a497ae7dabf4d2f150ee43f906aaf516f
@@ -404,6 +404,6 @@ SPEC CHECKSUMS:
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
   Yoga: 8c8436d4171c87504c648ae23b1d81242bdf3bbf
 
-PODFILE CHECKSUM: c005a6e9150f46972f6c5f0aa141cb0b31bed44b
+PODFILE CHECKSUM: 5ded53b97dff3d4d71e49b6fdf4886d45274fdeb
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

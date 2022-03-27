@@ -7,8 +7,8 @@ import {
 } from 'react-native';
 
 import {
-  MatiGlobalIdSdk,
-} from 'react-native-mati-global-id-sdk';
+  MetaMapRNSdk,
+} from 'react-native-metaMap-sdk';
 
 export default class App extends Component {
   constructor() {
@@ -16,19 +16,19 @@ export default class App extends Component {
     console.log('Constructor Called.');	
   }
 
-  componentDidMount() {
+   componentDidMount() {
+ 	 //set listening callbacks
+   	const MetaMapVerifyResult = new NativeEventEmitter(NativeModules.MetaMapRNSdk)
+  	 MetaMapVerifyResult.addListener('verificationSuccess', (data) => console.log(data))
+  	 MetaMapVerifyResult.addListener('verificationCanceled', (data) => console.log(data))
+   }
 
-  //set listening callbacks
-  const MatiVerifyResult = new NativeEventEmitter(NativeModules.MatiGlobalIdSdk)
-  MatiVerifyResult.addListener('verificationSuccess', (data) => console.log(data))
-  MatiVerifyResult.addListener('verificationCanceled', (data) => console.log(data))
-  }
 
   //call showFlow when button is clicked
-  handleMatiClickButton = () => {
+  handleMetaMapClickButton = () => {
 	 //set 3 params clientId (cant be null), flowId, metadata
   	  var yourMetadata = { param1: "value1", param2: "value2" }
-   	 MatiGlobalIdSdk.showFlow("YOUR_CLIENT_ID", "YOUR_FLOW_ID", yourMetadata);
+   	 MetaMapRNSdk.showFlow("YOUR_CLIENT_ID", "YOUR_FLOW_ID", yourMetadata);
   }
 
   //Add button to view graph
@@ -41,7 +41,7 @@ export default class App extends Component {
           alignItems: 'center',
           backgroundColor: 'powderblue',
         }}>
-        <Button onPress={this.handleMatiClickButton} title="Click here"/>
+        <Button onPress={this.handleMetaMapClickButton} title="Click here"/>
       </View>
     );
   }

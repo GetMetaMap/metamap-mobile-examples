@@ -10,9 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^8.5.5",
     "react": "17.0.1",
     "react-native": "0.64.0",
-    "react-native-mati-global-id-sdk": "github:MatiFace/react-native-mati-global-id-sdk"
+    "react-native-metaMap-sdk": "github:MatiFace/react-native-mati-global-id-sdk"
   },
   "devDependencies": {
     "@babel/core": "7.13.14",

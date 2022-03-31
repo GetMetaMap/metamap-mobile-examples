@@ -23,7 +23,7 @@ Hello, here is you can try our demo apps with implemented MetaMap SDK (by native
 
 - [Demo app in this repo wth Java](https://github.com/GetMetaMap/mati-mobile-examples/tree/main/javaDemoApp(native)).
 
-- Demo app in this repo with Kotlin (will be available soon)
+- [Demo app in this repo with Kotlin](https://github.com/GetMetaMap/metamap-android-demo-kotlin).
 
 
 # Crossplatform frameworks

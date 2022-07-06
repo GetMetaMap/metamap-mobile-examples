@@ -11,8 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		48F4ED87F0B6ED6E6624C0A8 /* Pods_matiDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF64A69FB9FB270D626E7A2 /* Pods_matiDemoApp.framework */; };
-		6A488129868E3ED97BE569A3 /* Pods_matiDemoApp_matiDemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7895A09BBBB38C4D1DFE1A49 /* Pods_matiDemoApp_matiDemoAppTests.framework */; };
+		5AE3EAD02FDAAD17997EE6B8 /* Pods_matiDemoApp_matiDemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B598C823F0832FB4835E7B78 /* Pods_matiDemoApp_matiDemoAppTests.framework */; };
+		7AB221B404BDAE650D91393A /* Pods_matiDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999327D1D55C351CBEA970F7 /* Pods_matiDemoApp.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -39,9 +39,9 @@
 		140BF55B0DBB732E61872C9C /* Pods-matiDemoApp-matiDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-matiDemoApp-matiDemoAppTests.debug.xcconfig"; path = "Target Support Files/Pods-matiDemoApp-matiDemoAppTests/Pods-matiDemoApp-matiDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3FFC34C64CF82681E724568C /* Pods-matiDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-matiDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-matiDemoApp/Pods-matiDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		57CE98383CDE826911860D05 /* Pods-matiDemoApp-matiDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-matiDemoApp-matiDemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-matiDemoApp-matiDemoAppTests/Pods-matiDemoApp-matiDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		5BF64A69FB9FB270D626E7A2 /* Pods_matiDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_matiDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7895A09BBBB38C4D1DFE1A49 /* Pods_matiDemoApp_matiDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_matiDemoApp_matiDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = matiDemoApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		999327D1D55C351CBEA970F7 /* Pods_matiDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_matiDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B598C823F0832FB4835E7B78 /* Pods_matiDemoApp_matiDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_matiDemoApp_matiDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA2F6A8D79AA543C67FEEFC /* Pods-matiDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-matiDemoApp.release.xcconfig"; path = "Target Support Files/Pods-matiDemoApp/Pods-matiDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A488129868E3ED97BE569A3 /* Pods_matiDemoApp_matiDemoAppTests.framework in Frameworks */,
+				5AE3EAD02FDAAD17997EE6B8 /* Pods_matiDemoApp_matiDemoAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F4ED87F0B6ED6E6624C0A8 /* Pods_matiDemoApp.framework in Frameworks */,
+				7AB221B404BDAE650D91393A /* Pods_matiDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5BF64A69FB9FB270D626E7A2 /* Pods_matiDemoApp.framework */,
-				7895A09BBBB38C4D1DFE1A49 /* Pods_matiDemoApp_matiDemoAppTests.framework */,
+				999327D1D55C351CBEA970F7 /* Pods_matiDemoApp.framework */,
+				B598C823F0832FB4835E7B78 /* Pods_matiDemoApp_matiDemoAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -590,7 +590,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

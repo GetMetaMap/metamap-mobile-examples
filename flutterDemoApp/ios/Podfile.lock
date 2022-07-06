@@ -6,16 +6,16 @@ PODS:
   - mati_plugin_flutter (2.2.2):
     - Flutter
     - MetaMap-Global-ID-SDK
-  - MetaMap-Global-ID-SDK (3.9.3)
+  - MetaMap-Global-ID-SDK (3.9.7)
   - package_info_plus (0.4.5):
     - Flutter
-  - Sentry (7.1.4):
-    - Sentry/Core (= 7.1.4)
-  - Sentry/Core (7.1.4)
+  - Sentry (7.11.0):
+    - Sentry/Core (= 7.11.0)
+  - Sentry/Core (7.11.0)
   - sentry_flutter (0.0.1):
     - Flutter
     - FlutterMacOS
-    - Sentry (~> 7.1.3)
+    - Sentry (~> 7.11.0)
   - Toast (4.0.0)
 
 DEPENDENCIES:
@@ -47,12 +47,12 @@ SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   fluttertoast: 16fbe6039d06a763f3533670197d01fc73459037
   mati_plugin_flutter: 321d850e5780afd65ba18bede4ca7695328cc4e4
-  MetaMap-Global-ID-SDK: d4f5983195ca7c7f98e723b3c9b3ac9185680a82
+  MetaMap-Global-ID-SDK: 2bf663e371f123ea5ade6ea73bd7e73215a88c57
   package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
-  Sentry: 1d3eb1a25f8c5333c88dd5603904a6d461cd9fcf
-  sentry_flutter: f20d4f199442900fbdab2b8496f1d2091d8b94d9
+  Sentry: 0c5cd63d714187b4a39c331c1f0eb04ba7868341
+  sentry_flutter: efb3df2c203cd03aad255892a8d628a458656d14
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
 PODFILE CHECKSUM: ce13d36744da294d67f8e460dbb7aed7c09bd7f4
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

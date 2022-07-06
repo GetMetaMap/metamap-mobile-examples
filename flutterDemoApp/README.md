@@ -1,4 +1,4 @@
-# myapp
+# test_flutter_mati_app
 
 A new Flutter project.
 

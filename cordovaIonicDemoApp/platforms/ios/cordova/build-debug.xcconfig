@@ -30,5 +30,3 @@ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) DEBUG=1
 // (CB-11792)
 // @COCOAPODS_SILENCE_WARNINGS@ //
 #include "../pods-debug.xcconfig"
-
-#include "Pods/Target Support Files/Pods-MyApp/Pods-MyApp.debug.xcconfig"

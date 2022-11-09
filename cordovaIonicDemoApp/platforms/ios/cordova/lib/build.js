@@ -55,7 +55,7 @@ const buildFlagMatchers = {
 function createProjectObject (projectPath, projectName) {
     const locations = {
         root: projectPath,
-        pbxproj: path.join(projectPath, `${projectName}.xcworkspace`, 'project.pbxproj')
+        pbxproj: path.join(projectPath, `${projectName}.xcodeproj`, 'project.pbxproj')
     };
 
     return projectFile.parse(locations);
@@ -273,16 +273,16 @@ module.exports.run = buildOpts => {
  */
 function findXCodeProjectIn (projectPath) {
     // 'Searching for Xcode project in ' + projectPath);
-    const xcodeProjFiles = fs.readdirSync(projectPath).filter(name => path.extname(name) === '.xcworkspace');
+    const xcodeProjFiles = fs.readdirSync(projectPath).filter(name => path.extname(name) === '.xcodeproj');
 
     if (xcodeProjFiles.length === 0) {
         return Promise.reject(new CordovaError(`No Xcode project found in ${projectPath}`));
     }
     if (xcodeProjFiles.length > 1) {
-        events.emit('warn', `Found multiple .xcworkspace directories in \n${projectPath}\nUsing first one`);
+        events.emit('warn', `Found multiple .xcodeproj directories in \n${projectPath}\nUsing first one`);
     }
 
-    const projectName = path.basename(xcodeProjFiles[0], '.xcworkspace');
+    const projectName = path.basename(xcodeProjFiles[0], '.xcodeproj');
     return Promise.resolve(projectName);
 }
 

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2008-2020 Pivotal Labs
+Copyright (c) 2008-2021 Pivotal Labs
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -132,7 +132,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       if (result.status === 'failed') {
         failures.push(failureDom(result));
       }
-      addDeprecationWarnings(result);
+      addDeprecationWarnings(result, 'suite');
     };
 
     this.specStarted = function(result) {
@@ -168,7 +168,7 @@ jasmineRequire.HtmlReporter = function(j$) {
         failures.push(failureDom(result));
       }
 
-      addDeprecationWarnings(result);
+      addDeprecationWarnings(result, 'spec');
     };
 
     this.displaySpecInCorrectFormat = function(result) {
@@ -208,7 +208,10 @@ jasmineRequire.HtmlReporter = function(j$) {
           ' of ' +
           totalSpecsDefined +
           ' specs - run all';
-        var skippedLink = addToExistingQueryString('spec', '');
+        // include window.location.pathname to fix issue with karma-jasmine-html-reporter in angular: see https://github.com/jasmine/jasmine/issues/1906
+        var skippedLink =
+          (window.location.pathname || '') +
+          addToExistingQueryString('spec', '');
         alert.appendChild(
           createDom(
             'span',
@@ -307,14 +310,27 @@ jasmineRequire.HtmlReporter = function(j$) {
 
       addDeprecationWarnings(doneResult);
 
-      var warningBarClassName = 'jasmine-bar jasmine-warning';
       for (i = 0; i < deprecationWarnings.length; i++) {
-        var warning = deprecationWarnings[i];
+        var context;
+
+        switch (deprecationWarnings[i].runnableType) {
+          case 'spec':
+            context = '(in spec: ' + deprecationWarnings[i].runnableName + ')';
+            break;
+          case 'suite':
+            context = '(in suite: ' + deprecationWarnings[i].runnableName + ')';
+            break;
+          default:
+            context = '';
+        }
+
         alert.appendChild(
           createDom(
             'span',
-            { className: warningBarClassName },
-            'DEPRECATION: ' + warning
+            { className: 'jasmine-bar jasmine-warning' },
+            'DEPRECATION: ' + deprecationWarnings[i].message,
+            createDom('br'),
+            context
           )
         );
       }
@@ -552,7 +568,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       );
       throwCheckbox.checked = config.oneFailurePerSpec;
       throwCheckbox.onclick = function() {
-        navigateWithNewParam('throwFailures', !config.oneFailurePerSpec);
+        navigateWithNewParam('oneFailurePerSpec', !config.oneFailurePerSpec);
       };
 
       var randomCheckbox = optionsMenuDom.querySelector(
@@ -622,15 +638,23 @@ jasmineRequire.HtmlReporter = function(j$) {
         suite = suite.parent;
       }
 
-      return addToExistingQueryString('spec', els.join(' '));
+      // include window.location.pathname to fix issue with karma-jasmine-html-reporter in angular: see https://github.com/jasmine/jasmine/issues/1906
+      return (
+        (window.location.pathname || '') +
+        addToExistingQueryString('spec', els.join(' '))
+      );
     }
 
-    function addDeprecationWarnings(result) {
+    function addDeprecationWarnings(result, runnableType) {
       if (result && result.deprecationWarnings) {
         for (var i = 0; i < result.deprecationWarnings.length; i++) {
           var warning = result.deprecationWarnings[i].message;
           if (!j$.util.arrayContains(warning)) {
-            deprecationWarnings.push(warning);
+            deprecationWarnings.push({
+              message: warning,
+              runnableName: result.fullName,
+              runnableType: runnableType
+            });
           }
         }
       }
@@ -682,11 +706,19 @@ jasmineRequire.HtmlReporter = function(j$) {
     }
 
     function specHref(result) {
-      return addToExistingQueryString('spec', result.fullName);
+      // include window.location.pathname to fix issue with karma-jasmine-html-reporter in angular: see https://github.com/jasmine/jasmine/issues/1906
+      return (
+        (window.location.pathname || '') +
+        addToExistingQueryString('spec', result.fullName)
+      );
     }
 
     function seedHref(seed) {
-      return addToExistingQueryString('seed', seed);
+      // include window.location.pathname to fix issue with karma-jasmine-html-reporter in angular: see https://github.com/jasmine/jasmine/issues/1906
+      return (
+        (window.location.pathname || '') +
+        addToExistingQueryString('seed', seed)
+      );
     }
 
     function defaultQueryString(key, value) {

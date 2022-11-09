@@ -5,3 +5,7 @@ export const IonIcon: {
   prototype: IonIcon;
   new (): IonIcon;
 };
+/**
+ * Used to define this component and all nested components recursively.
+ */
+export const defineCustomElement: () => void;

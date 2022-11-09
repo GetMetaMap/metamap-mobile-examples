@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const LIFECYCLE_WILL_ENTER = 'ionViewWillEnter';
 export const LIFECYCLE_DID_ENTER = 'ionViewDidEnter';
 export const LIFECYCLE_WILL_LEAVE = 'ionViewWillLeave';

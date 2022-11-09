@@ -1,6 +1,6 @@
 import type { SerializedEvent } from '@stencil/core/internal';
-import type * as pd from './puppeteer-declarations';
 import type * as puppeteer from 'puppeteer';
+import type * as pd from './puppeteer-declarations';
 export declare function initPageEvents(page: pd.E2EPageInternal): Promise<void>;
 export declare function waitForEvent(page: pd.E2EPageInternal, eventName: string, elementHandle: puppeteer.ElementHandle): Promise<any>;
 export declare class EventSpy implements EventSpy {

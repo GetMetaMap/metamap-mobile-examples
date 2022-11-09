@@ -1,6 +1,9 @@
 {
-  "name": "demoIonicStart",
+  "name": "cordovaIonicDemoApp",
   "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
     "cordova": {}
   },
   "type": "angular"

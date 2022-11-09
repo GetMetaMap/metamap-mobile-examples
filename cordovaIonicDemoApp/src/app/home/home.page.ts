@@ -9,26 +9,29 @@ declare var cordova: any;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
   constructor() {}
-  
+
   ionViewDidEnter() {
     //register to callback
-    cordova.plugins.MatiGlobalIDSDK.setMatiCallback(
-      identityId => {
-        console.log("setMatiCallback success: " + identityId);
+    cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
+      (params) => {
+        console.log('setMetaMapCallback success: ' + params.identityId);
+        console.log('setMetaMapCallback success: ' + params.verificationID);
       },
-      error => {
-        console.log("setMatiCallback error: " + error);
+      (error) => {
+        console.log('setMetaMapCallback error: ' + error);
       }
-    );  
+    );
   }
 
-  showMatiFlow() {
-    //set 3 params clientId (cant be null), flowId, metadata 
-    var yourMetadata = { param1: "value1", param2: "value2" };
-    var matiParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata };
-    cordova.plugins.MatiGlobalIDSDK.showMatiFlow(matiParams);
+  showMetaMapFlow() {
+    //set 3 params clientId (cant be null), flowId, metadata
+    var yourMetadata = { param1: 'value1', param2: 'value2' };
+    var metaMapButtinParams = {
+      clientId: 'YOUR_CLIENT_ID',
+      flowId: 'YOUR_FLOW_ID',
+      metadata: yourMetadata,
+    };
+    cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtinParams);
   }
-
 }

@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 const cloneMap = new WeakMap();
 export const relocateInput = (componentEl, inputEl, shouldRelocate, inputRelativeY = 0) => {
   if (cloneMap.has(componentEl) === shouldRelocate) {

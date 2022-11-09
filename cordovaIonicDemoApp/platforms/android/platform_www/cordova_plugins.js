@@ -41,21 +41,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "mati-global-id-sdk-cordova-plugin.MatiGlobalIDSDK",
-      "file": "plugins/mati-global-id-sdk-cordova-plugin/www/MatiGlobalIDSDK.js",
-      "pluginId": "mati-global-id-sdk-cordova-plugin",
+      "id": "metamap-cordova-plugin.MetaMapGlobalIDSDK",
+      "file": "plugins/metamap-cordova-plugin/www/MetaMapGlobalIDSDK.js",
+      "pluginId": "metamap-cordova-plugin",
       "clobbers": [
-        "cordova.plugins.MatiGlobalIDSDK"
+        "cordova.plugins.MetaMapGlobalIDSDK"
       ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "2.2.0",
-    "cordova-plugin-ionic-webview": "4.2.1",
+    "cordova-plugin-ionic-webview": "5.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-whitelist": "1.3.3",
-    "mati-global-id-sdk-cordova-plugin": "0.0.4"
+    "metamap-cordova-plugin": "0.0.4"
   };
 });

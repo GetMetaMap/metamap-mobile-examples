@@ -50,7 +50,6 @@
   user-select: none;
   vertical-align: top;
   vertical-align: -webkit-baseline-middle;
-  pointer-events: auto;
   font-kerning: none;
 }
 
@@ -403,26 +402,27 @@ ion-ripple-effect {
   padding-bottom: 0;
 }
 
+/**
+ * Only allow overriding of opacity here
+ * as developers should not be overriding
+ * colors when using the color prop.
+ */
 :host(.button-solid.ion-color.ion-focused) .button-native::after {
   background: var(--ion-color-contrast);
-  opacity: 0.24;
 }
 
 :host(.button-clear.ion-color.ion-focused) .button-native::after,
 :host(.button-outline.ion-color.ion-focused) .button-native::after {
   background: var(--ion-color-base);
-  opacity: 0.12;
 }
 
 @media (any-hover: hover) {
   :host(.button-solid.ion-color:hover) .button-native::after {
     background: var(--ion-color-contrast);
-    opacity: 0.08;
   }
 
   :host(.button-clear.ion-color:hover) .button-native::after,
 :host(.button-outline.ion-color:hover) .button-native::after {
     background: var(--ion-color-base);
-    opacity: 0.04;
   }
 }

@@ -9,6 +9,7 @@ export declare function createJestPuppeteerEnvironment(): {
         newPuppeteerPage(): Promise<import("puppeteer").Page>;
         closeOpenPages(): Promise<void>;
         teardown(): Promise<void>;
+        getVmContext(): any;
     };
     [x: string]: any;
 };

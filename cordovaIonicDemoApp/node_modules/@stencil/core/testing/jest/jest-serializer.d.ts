@@ -1,5 +1,4 @@
-import { MockNode } from '@stencil/core/mock-doc';
 export declare const HtmlSerializer: {
-    print: (val: HTMLElement | MockNode) => string;
+    print: (val: unknown) => string;
     test: (val: any) => boolean;
 };

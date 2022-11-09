@@ -40,11 +40,7 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"MatiGlobalIDSDK\"><param name=\"android-package\" value=\"com.cordova.plugin.matiglobalidsdk.MatiGlobalIDSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "xml": "<feature name=\"MetaMapGlobalIDSDK\"><param name=\"android-package\" value=\"com.cordova.plugin.metaMapglobalidsdk.MetaMapGlobalIDSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
           ]
@@ -79,41 +75,27 @@
             }
           ]
         }
-      },
-      "AndroidManifest.xml": {
-        "parents": {
-          "/manifest/application": [
-            {
-              "xml": "<activity android:name=\"com.cordova.plugin.matiglobalidsdk.MatiGlobalIDSDK$MatiLoginButtonLauncher\" android:theme=\"@style/Theme.AppCompat.Light.NoActionBar\"></activity>",
-              "count": 1
-            }
-          ]
-        }
       }
     }
   },
   "installed_plugins": {
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
     "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
     "cordova-plugin-ionic-webview": {
-      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "mati-global-id-sdk-cordova-plugin": {
-      "PACKAGE_NAME": "io.ionic.starter"
+    "metamap-cordova-plugin": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     }
   },
   "dependent_plugins": {},
@@ -159,21 +141,20 @@
       ]
     },
     {
-      "id": "mati-global-id-sdk-cordova-plugin.MatiGlobalIDSDK",
-      "file": "plugins/mati-global-id-sdk-cordova-plugin/www/MatiGlobalIDSDK.js",
-      "pluginId": "mati-global-id-sdk-cordova-plugin",
+      "id": "metamap-cordova-plugin.MetaMapGlobalIDSDK",
+      "file": "plugins/metamap-cordova-plugin/www/MetaMapGlobalIDSDK.js",
+      "pluginId": "metamap-cordova-plugin",
       "clobbers": [
-        "cordova.plugins.MatiGlobalIDSDK"
+        "cordova.plugins.MetaMapGlobalIDSDK"
       ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "2.2.0",
-    "cordova-plugin-ionic-webview": "4.2.1",
+    "cordova-plugin-ionic-webview": "5.0.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-whitelist": "1.3.3",
-    "mati-global-id-sdk-cordova-plugin": "0.0.4"
+    "metamap-cordova-plugin": "0.0.4"
   }
 }

@@ -1,5 +1,21 @@
 {
-    "declarations": {},
-    "sources": {},
-    "libraries": {}
+    "declarations": {
+        "use_frameworks!": {
+            "declaration": "use_frameworks!",
+            "count": 1
+        }
+    },
+    "sources": {
+        "https://cdn.cocoapods.org/": {
+            "source": "https://cdn.cocoapods.org/",
+            "count": 1
+        }
+    },
+    "libraries": {
+        "MetaMap-ID-SDK": {
+            "name": "MetaMap-ID-SDK",
+            "spec": "3.11.3",
+            "count": 1
+        }
+    }
 }

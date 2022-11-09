@@ -1,7 +1,0 @@
-repositories {
-    jcenter()
-}
-
-dependencies {
-    implementation 'com.getmati:mati-sdk:3.4.1'
-}

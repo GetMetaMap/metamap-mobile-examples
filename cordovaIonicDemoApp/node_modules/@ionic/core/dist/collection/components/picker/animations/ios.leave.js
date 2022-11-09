@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { createAnimation } from '../../../utils/animation/animation';
 /**
  * iOS Picker Leave Animation

@@ -31,5 +31,3 @@ CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Distribution
 // (CB-11792)
 // @COCOAPODS_SILENCE_WARNINGS@ //
 #include "../pods-release.xcconfig"
-
-#include "Pods/Target Support Files/Pods-MyApp/Pods-MyApp.release.xcconfig"

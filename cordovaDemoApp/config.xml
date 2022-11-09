@@ -8,31 +8,6 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <platform name="android">
-        <preference name="AndroidXEnabled" value="true" />
-        <allow-intent href="market:*" />
-        <preference name="android-minSdkVersion" value="31" />
-        <preference name="android-targetSdkVersion" value="31" />
-        <edit-config
-          file="app/src/main/AndroidManifest.xml"
-          target="/manifest/application/activity[@android:name='MainActivity']"
-          mode="merge">
-            <activity android:exported="true"/>
-        </edit-config>
-    </platform>
-     <platform name="ios">
-        <preference name="deployment-target" value="12.0" />
-            <allow-intent href="itms:*" />
-            <allow-intent href="itms-apps:*" />
-        </platform>
-     <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
-         <string>We need access to work properly MetaMap</string>
-     </config-file>
-     <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-         <string>We need access to work properly MetaMap</string>
-     </config-file>
-      <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
-         <string>We need access to work properly MetaMap</string>
-     </config-file>
- </platform>
+    <preference name="deployment-target" value="12.0" />
+    <preference name="android-targetSdkVersion" value="31" />
 </widget>

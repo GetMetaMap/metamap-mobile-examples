@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## Mati-Global-ID-SDK
+## MetaMap-ID-SDK
 
 Copyright (c) 2021 Matilock inc
 

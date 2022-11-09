@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		CB3DA2D277B8C676DAFAA681751A98AD /* Mati-Global-ID-SDK */ = {
+		A859B542A7FAFA5563B68FC55382B7DE /* MetaMap-ID-SDK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 4855F676C9B0913A24FD8E3EC3A1F130 /* Build configuration list for PBXAggregateTarget "Mati-Global-ID-SDK" */;
+			buildConfigurationList = A8D264B1CF96CA516875B42EC903F1C3 /* Build configuration list for PBXAggregateTarget "MetaMap-ID-SDK" */;
 			buildPhases = (
-				E873D0AA477044F9CAC59D187B5C2B2F /* [CP] Copy XCFrameworks */,
+				C2E4842AA5D185AD39E4A001F0465EC1 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
-			name = "Mati-Global-ID-SDK";
+			name = "MetaMap-ID-SDK";
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1CE8AADB0070C32D54C584CB87C791BB /* Pods-cordovaDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C044892E87AEB5F9B679533122CA0A3 /* Pods-cordovaDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21190A2C1E54537D766EDE25AB41DF8E /* Pods-cordovaDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F71798789DC7D5E461FB8D71B1CA4B4F /* Pods-cordovaDemoApp-dummy.m */; };
-		B4848322EB355FC1C7DA3ADB303FF7C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3A0D8B2DA126A33AC9B80D725680A018 /* Pods-cordovaDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F71798789DC7D5E461FB8D71B1CA4B4F /* Pods-cordovaDemoApp-dummy.m */; };
+		9EE6513FC5F0E7996FFE274DC233BFAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E1B9C0955EC8A876BA8326A9E03215F8 /* Pods-cordovaDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C044892E87AEB5F9B679533122CA0A3 /* Pods-cordovaDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F2D24B4928C737D7E49BB0F013521645 /* PBXContainerItemProxy */ = {
+		AFD6F502A41FE5E380AB80979C2874AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CB3DA2D277B8C676DAFAA681751A98AD;
-			remoteInfo = "Mati-Global-ID-SDK";
+			remoteGlobalIDString = A859B542A7FAFA5563B68FC55382B7DE;
+			remoteInfo = "MetaMap-ID-SDK";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,26 +40,26 @@
 		2C044892E87AEB5F9B679533122CA0A3 /* Pods-cordovaDemoApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-cordovaDemoApp-umbrella.h"; sourceTree = "<group>"; };
 		358BF08D06C842E47CC411AB21A13874 /* Pods-cordovaDemoApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-cordovaDemoApp.modulemap"; sourceTree = "<group>"; };
 		3FC56BAF1CCABD76D793E0FF242879A5 /* Pods-cordovaDemoApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-cordovaDemoApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		51F4E25F7602F59B5C74DCE2C9BAD705 /* Mati-Global-ID-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Mati-Global-ID-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		50D42C8870BE9C864530918BC94ED76D /* MetaMap-ID-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MetaMap-ID-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7CF176A510DD5C451C53E1BEE4B39A0C /* Pods-cordovaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cordovaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		7FC2B294E255B23D3B47520C8F2173C0 /* MetaMap-ID-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MetaMap-ID-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		8FCDDD265AF09C229EC3E6C40192DF3D /* Pods-cordovaDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cordovaDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		917EE7E41A816F91CDB5147189F3AA0E /* Pods-cordovaDemoApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-cordovaDemoApp"; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cordovaDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		C9E639DC4410E31A329260EBA5B57E50 /* MatiSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MatiSDK.xcframework; sourceTree = "<group>"; };
+		BFCB55A89E5E283FB39649F1AE47505F /* MetaMap-ID-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MetaMap-ID-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
 		D87EE9C2B67DF298D386D6BA9E5AB4A1 /* Pods-cordovaDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cordovaDemoApp-frameworks.sh"; sourceTree = "<group>"; };
-		DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.release.xcconfig"; sourceTree = "<group>"; };
-		E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Mati-Global-ID-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		F71798789DC7D5E461FB8D71B1CA4B4F /* Pods-cordovaDemoApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-cordovaDemoApp-dummy.m"; sourceTree = "<group>"; };
+		FB314B79DC886638E611B4EC02C8FB76 /* MetaMapSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = MetaMapSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		584B15D0129733272329A8142E338951 /* Frameworks */ = {
+		B25059AAE23A55F31E0A4EFA22013C5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4848322EB355FC1C7DA3ADB303FF7C3 /* Foundation.framework in Frameworks */,
+				9EE6513FC5F0E7996FFE274DC233BFAE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,14 +91,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3922295C4ACF3ECA711E5544CDE5744E /* Mati-Global-ID-SDK */ = {
+		2BD655368F30971DB755C5F7C5EE0B7A /* MetaMap-ID-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				7F3CD5D973DB4582B62AA4FDE082F53B /* Frameworks */,
-				CED40EE02A27141DD5723A9751DF0E98 /* Support Files */,
+				D0A43A811C64E0145E9552BAC5D873FC /* Frameworks */,
+				55366477FAC999459933B3F266225BB3 /* Support Files */,
 			);
-			name = "Mati-Global-ID-SDK";
-			path = "Mati-Global-ID-SDK";
+			name = "MetaMap-ID-SDK";
+			path = "MetaMap-ID-SDK";
+			sourceTree = "<group>";
+		};
+		4208FD3239A0EF0CF7D97CCA387FF34F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BD655368F30971DB755C5F7C5EE0B7A /* MetaMap-ID-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		55366477FAC999459933B3F266225BB3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFCB55A89E5E283FB39649F1AE47505F /* MetaMap-ID-SDK-xcframeworks.sh */,
+				7FC2B294E255B23D3B47520C8F2173C0 /* MetaMap-ID-SDK.debug.xcconfig */,
+				50D42C8870BE9C864530918BC94ED76D /* MetaMap-ID-SDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MetaMap-ID-SDK";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -109,14 +128,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7F3CD5D973DB4582B62AA4FDE082F53B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C9E639DC4410E31A329260EBA5B57E50 /* MatiSDK.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		90D1BF0C4BAF868A954C94E359BB2DEF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,34 +136,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		AD9CA38FCC7474D073AA12C99F2653EA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3922295C4ACF3ECA711E5544CDE5744E /* Mati-Global-ID-SDK */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CED40EE02A27141DD5723A9751DF0E98 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				51F4E25F7602F59B5C74DCE2C9BAD705 /* Mati-Global-ID-SDK-xcframeworks.sh */,
-				E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */,
-				DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Mati-Global-ID-SDK";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				AD9CA38FCC7474D073AA12C99F2653EA /* Pods */,
+				4208FD3239A0EF0CF7D97CCA387FF34F /* Pods */,
 				2308E11FC189DDF7F1FB9E5944D4019E /* Products */,
 				90D1BF0C4BAF868A954C94E359BB2DEF /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D0A43A811C64E0145E9552BAC5D873FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB314B79DC886638E611B4EC02C8FB76 /* MetaMapSDK.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -166,11 +166,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1FBA0A987008ED7F1013425521B21EF2 /* Headers */ = {
+		28BB61D3431440AB46CC88C5A0B996F9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CE8AADB0070C32D54C584CB87C791BB /* Pods-cordovaDemoApp-umbrella.h in Headers */,
+				E1B9C0955EC8A876BA8326A9E03215F8 /* Pods-cordovaDemoApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,17 +179,17 @@
 /* Begin PBXNativeTarget section */
 		C7B2A621F5DA02F35C72357BE1DD7AC9 /* Pods-cordovaDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A298AAC3EAFB38E67D7DBD32949FED5 /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */;
+			buildConfigurationList = F7CDDEBF4FF28A7BF3C83CC9A190098D /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */;
 			buildPhases = (
-				1FBA0A987008ED7F1013425521B21EF2 /* Headers */,
-				415949FBF3FD5D2558EC87F4141A1BA4 /* Sources */,
-				584B15D0129733272329A8142E338951 /* Frameworks */,
-				A5BCB6E29489B35101CE77D3C0B4EBF1 /* Resources */,
+				28BB61D3431440AB46CC88C5A0B996F9 /* Headers */,
+				EC990CB3E2317FAFEB9CEBFD2B96EDAD /* Sources */,
+				B25059AAE23A55F31E0A4EFA22013C5C /* Frameworks */,
+				C0090C85716E35AFDDD67E1C3FCE92FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				17D6F46C5725AA609981DC4A7595B87F /* PBXTargetDependency */,
+				4DF10B94062653AD6F7EA16CF422A778 /* PBXTargetDependency */,
 			);
 			name = "Pods-cordovaDemoApp";
 			productName = Pods_cordovaDemoApp;
@@ -218,14 +218,14 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB3DA2D277B8C676DAFAA681751A98AD /* Mati-Global-ID-SDK */,
+				A859B542A7FAFA5563B68FC55382B7DE /* MetaMap-ID-SDK */,
 				C7B2A621F5DA02F35C72357BE1DD7AC9 /* Pods-cordovaDemoApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A5BCB6E29489B35101CE77D3C0B4EBF1 /* Resources */ = {
+		C0090C85716E35AFDDD67E1C3FCE92FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,49 +235,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E873D0AA477044F9CAC59D187B5C2B2F /* [CP] Copy XCFrameworks */ = {
+		C2E4842AA5D185AD39E4A001F0465EC1 /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Mati-Global-ID-SDK/Mati-Global-ID-SDK-xcframeworks-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/MetaMap-ID-SDK/MetaMap-ID-SDK-xcframeworks-input-files.xcfilelist",
 			);
 			name = "[CP] Copy XCFrameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Mati-Global-ID-SDK/Mati-Global-ID-SDK-xcframeworks-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/MetaMap-ID-SDK/MetaMap-ID-SDK-xcframeworks-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Mati-Global-ID-SDK/Mati-Global-ID-SDK-xcframeworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/MetaMap-ID-SDK/MetaMap-ID-SDK-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		415949FBF3FD5D2558EC87F4141A1BA4 /* Sources */ = {
+		EC990CB3E2317FAFEB9CEBFD2B96EDAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21190A2C1E54537D766EDE25AB41DF8E /* Pods-cordovaDemoApp-dummy.m in Sources */,
+				3A0D8B2DA126A33AC9B80D725680A018 /* Pods-cordovaDemoApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		17D6F46C5725AA609981DC4A7595B87F /* PBXTargetDependency */ = {
+		4DF10B94062653AD6F7EA16CF422A778 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Mati-Global-ID-SDK";
-			target = CB3DA2D277B8C676DAFAA681751A98AD /* Mati-Global-ID-SDK */;
-			targetProxy = F2D24B4928C737D7E49BB0F013521645 /* PBXContainerItemProxy */;
+			name = "MetaMap-ID-SDK";
+			target = A859B542A7FAFA5563B68FC55382B7DE /* MetaMap-ID-SDK */;
+			targetProxy = AFD6F502A41FE5E380AB80979C2874AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		22DB49C1E5E097568992F59ACFAF8C0A /* Release */ = {
+		1E8C917F0DB94221899A95123F533752 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD38B7F024744FE15EA96CC06025CADB /* Mati-Global-ID-SDK.release.xcconfig */;
+			baseConfigurationReference = 7FC2B294E255B23D3B47520C8F2173C0 /* MetaMap-ID-SDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,9 +289,45 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
+		};
+		297844E9EB1B13D29DDC3F6974D3CCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -359,6 +395,24 @@
 			};
 			name = Debug;
 		};
+		41136AB385E515E8DBBA270A2180F382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50D42C8870BE9C864530918BC94ED76D /* MetaMap-ID-SDK.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -421,61 +475,7 @@
 			};
 			name = Release;
 		};
-		6F6D55678BB025C12432422694602753 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8731276EA9872459192E07691559E36 /* Pods-cordovaDemoApp.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B7017D2D0F7B26F68A116F5EC06C0ED3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8D98D43A9D1172212B5524EFF9BBC48 /* Mati-Global-ID-SDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FA15F5A2EB063AC4637E43F83E6D45B2 /* Release */ = {
+		F42317B6186FED9DA7EC120BEB98B64B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7CF176A510DD5C451C53E1BEE4B39A0C /* Pods-cordovaDemoApp.release.xcconfig */;
 			buildSettings = {
@@ -525,20 +525,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4855F676C9B0913A24FD8E3EC3A1F130 /* Build configuration list for PBXAggregateTarget "Mati-Global-ID-SDK" */ = {
+		A8D264B1CF96CA516875B42EC903F1C3 /* Build configuration list for PBXAggregateTarget "MetaMap-ID-SDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B7017D2D0F7B26F68A116F5EC06C0ED3 /* Debug */,
-				22DB49C1E5E097568992F59ACFAF8C0A /* Release */,
+				1E8C917F0DB94221899A95123F533752 /* Debug */,
+				41136AB385E515E8DBBA270A2180F382 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A298AAC3EAFB38E67D7DBD32949FED5 /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */ = {
+		F7CDDEBF4FF28A7BF3C83CC9A190098D /* Build configuration list for PBXNativeTarget "Pods-cordovaDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F6D55678BB025C12432422694602753 /* Debug */,
-				FA15F5A2EB063AC4637E43F83E6D45B2 /* Release */,
+				297844E9EB1B13D29DDC3F6974D3CCCD /* Debug */,
+				F42317B6186FED9DA7EC120BEB98B64B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -45,11 +45,5 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need access to work properly MetaMap</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need access to work properly MetaMap</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to work properly MetaMap</string>
 </dict>
 </plist>

@@ -1,16 +1,16 @@
 PODS:
-  - Mati-Global-ID-SDK (3.9.0)
+  - MetaMap-ID-SDK (3.11.3)
 
 DEPENDENCIES:
-  - Mati-Global-ID-SDK
+  - MetaMap-ID-SDK (= 3.11.3)
 
 SPEC REPOS:
   trunk:
-    - Mati-Global-ID-SDK
+    - MetaMap-ID-SDK
 
 SPEC CHECKSUMS:
-  Mati-Global-ID-SDK: 5d3f882174b8645b9ac6653ea6aa1d41da59f794
+  MetaMap-ID-SDK: 55c1161849fd0e8e33572bcf65a4ca13f8bdbc50
 
-PODFILE CHECKSUM: 598b90b53e2ad705be1c64b154f4528a3c8f48f4
+PODFILE CHECKSUM: 60171fbd677a4c76c1b1da2a0360756b9e0fd35f
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

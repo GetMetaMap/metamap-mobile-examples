@@ -7,13 +7,9 @@
     "files": {}
   },
   "installed_plugins": {
-    "mati-global-id-sdk-cordova-plugin": {
+    "metamap-cordova-plugin": {
       "PACKAGE_NAME": "com.metamap.cordovaDemoApp"
     }
   },
-  "dependent_plugins": {
-    "cordova-plugin-cocoapod-support": {
-      "PACKAGE_NAME": "com.metamap.cordovaDemoApp"
-    }
-  }
+  "dependent_plugins": {}
 }

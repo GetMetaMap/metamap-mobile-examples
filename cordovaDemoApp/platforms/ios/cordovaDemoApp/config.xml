@@ -25,6 +25,11 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="MetaMapGlobalIDSDK">
+        <preference name="deployment-target" value="12.0" />
+        <param name="ios-package" value="MetaMapGlobalIDSDK" />
+        <param name="onload" value="true" />
+    </feature>
     <name>cordovaDemoApp</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
@@ -33,15 +38,6 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist">
-        <string>We need access to work properly MetaMap</string>
-    </config-file>
-    <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
-        <string>We need access to work properly MetaMap</string>
-    </config-file>
-    <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
-        <string>We need access to work properly MetaMap</string>
-    </config-file>
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />
@@ -55,4 +51,6 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
+    <preference name="deployment-target" value="12.0" />
+    <preference name="android-targetSdkVersion" value="31" />
 </widget>

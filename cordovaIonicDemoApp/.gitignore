@@ -24,10 +24,10 @@ npm-debug.log*
 /.sourcemaps
 /.versions
 /.vscode/*
-!/.vscode/extensions.json
 /coverage
 /dist
 /node_modules
 /platforms
+!/platforms/ios/IonicCordovaDemoApp.xcworkspace
 /plugins
 /www

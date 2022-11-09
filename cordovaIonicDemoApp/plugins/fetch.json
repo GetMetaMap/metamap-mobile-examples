@@ -45,8 +45,6 @@
       "id": "metamap-cordova-plugin"
     },
     "is_top_level": true,
-    "variables": {
-      "VERSION": "1.4.10"
-    }
+    "variables": {}
   }
 }

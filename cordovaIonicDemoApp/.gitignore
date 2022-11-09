@@ -28,6 +28,8 @@ npm-debug.log*
 /dist
 /node_modules
 /platforms
-!/platforms/ios/IonicCordovaDemoApp.xcworkspace
+!/platforms/ios/IonicCordovaDemoApp.xcworkspace/*
+!/platforms/ios/IonicCordovaDemoApp.xcodeproj/*
+!/platforms/ios/IonicCordovaDemoApp/*
 /plugins
 /www

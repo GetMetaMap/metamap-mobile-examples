@@ -1,6 +1,6 @@
 {
   "name": "metamap-cordova-plugin",
-  "version": "1.4.10",
+  "version": "1.5.1",
   "description": "MetaMap SDK plugin",
   "cordova": {
     "id": "metamap-cordova-plugin",

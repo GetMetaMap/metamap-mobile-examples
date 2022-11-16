@@ -2,7 +2,7 @@
   "metamap-cordova-plugin": {
     "source": {
       "type": "registry",
-      "id": "metamap-cordova-plugin"
+      "id": "metamap-cordova-plugin@^1.5.1"
     },
     "is_top_level": true,
     "variables": {}

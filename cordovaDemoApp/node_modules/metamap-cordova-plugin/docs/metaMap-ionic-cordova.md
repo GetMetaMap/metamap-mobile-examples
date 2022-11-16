@@ -6,8 +6,8 @@ category: 61ae8e8dba577a0010791480
 ---
 
 | LTS version (Recommended for most users): | Current Version(Latest features) |
-|-------------------------------------------|----------------------------------|
-| 1.4.2                                     | 1.3.0                            |
+|------------------------------------------|----------------------------|
+| 1.5.1                                    | 1.5.1                      |
 
 ### Install MetaMap for Cordova
 
@@ -16,114 +16,114 @@ category: 61ae8e8dba577a0010791480
 <preference name="deployment-target" value="12.0" />
 ```
 
-2. add the plugin:
+2. add the plugin, where `<version_number>` is either the LTS or latest version of the plugin:
 ```bash
-npm i metamap-cordova-plugin@1.3.0
+npm i metamap-cordova-plugin@<version_number>
 ```
 
 3. Add the MetaMap button to your HTML file:
 
-**HTML Example for Cordova**
-```bash
- <input
-     class="metaMapButton"
-     id="metaMapButton"
-     type="button"
-     value="show MetaMap Flow"
+   **HTML Example for Cordova**
+   ```bash
+    <input
+        class="metaMapButton"
+        id="metaMapButton"
+        type="button"
+        value="show MetaMap Flow"
      />
- ```
+   ```
 
-<a id="cordova-javascript"></a>
-#### JavaScript
 
-4. Add the MetaMap button in your JavaScript file `index.js`:
+4. <a id="cordova-javascript"></a>Add the MetaMap button in your JavaScript file `index.js`:
 
-**JavaScript Example for Cordova**
+   **JavaScript Example for Cordova**
 
-```bash
-function onDeviceReady() {
+   ```bash
+    function onDeviceReady() {
 
-//trigger login on button click
-var metaMapButton = document.getElementById("metaMapButton");
+    //trigger login on button click
+    var metaMapButton = document.getElementById("metaMapButton");
 
-  metaMapButton.onclick = () => {
-      //set 3 params clientId (cant be null), flowId, metadata
-      var yourMetadata = { param1: "value1", param2: "value2" }
-      var metaMapButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
-      cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtinParams)
-    };
+      metaMapButton.onclick = () => {
+          //set 3 params clientId (cant be null), flowId, metadata
+          var yourMetadata = { param1: "value1", param2: "value2" }
+          var metaMapButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
+          cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtinParams)
+        };
 
-    //register to callback
-    cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
-     params => {
-       console.log("setMetaMapCallback success: " + params.identityId);
-       console.log("setMetaMapCallback success: " + params.verificationID);
-     },
-     error => {
-       console.log("setMetaMapCallback error: " + error);
-     }
-    );
+        //register to callback
+        cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
+         params => {
+           console.log("setMetaMapCallback success: " + params.identityId);
+           console.log("setMetaMapCallback success: " + params.verificationID);
+         },
+         error => {
+           console.log("setMetaMapCallback error: " + error);
+         }
+        );
 
-}
- ```
+    }
+   ```
 
 ### Install MetaMap for Ionic Cordova
 
 
 1. add target minimum version on the  config.xml file
-```bash
-<preference name="deployment-target" value="12.0" />
-```
+    ```bash
+    <preference name="deployment-target" value="12.0" />
+    ```
 
 2. add the plugin:
-```bash
-ionic cordova plugin add metamap-cordova-plugin
-```
+    ```bash
+    ionic cordova plugin add metamap-cordova-plugin
+    ```
 
 3. Add the MetaMap button to your HTML file:
 
-**HTML Example for Ionic Cordova**
-```bash
- <input
-     class="metaMapButton"
-     id="metaMapButton"
-     type="button"
-     value="show MetaMap Flow"
-     />
- ```
+    **HTML Example for Ionic Cordova**
+    ```bash
+     <input
+         class="metaMapButton"
+         id="metaMapButton"
+         type="button"
+         value="show MetaMap Flow"
+         />
+     ```
 
 
 4. Add the MetaMap button in your JavaScript file `index.js`:
 
-**JavaScript Example for Ionic Cordova**
+    **JavaScript Example for Ionic Cordova**
 
-```bash
-function onDeviceReady() {
+    ```bash
+    function onDeviceReady() {
 
-//trigger login on button click
-var metaMapButton = document.getElementById("metaMapButton");
+    //trigger login on button click
+    var metaMapButton = document.getElementById("metaMapButton");
 
-  metaMapButton.onclick = () => {
-      //set 3 params clientId (cant be null), flowId, metadata
-      var yourMetadata = { param1: "value1", param2: "value2" }
-      var metaMapButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
-      cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtinParams)
-    };
+      metaMapButton.onclick = () => {
+          //set 3 params clientId (cant be null), flowId, metadata
+          var yourMetadata = { param1: "value1", param2: "value2" }
+          var metaMapButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
+          cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtinParams)
+        };
 
-    //register to callback
-    cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
-      params => {
-       console.log("setMetaMapCallback success: " + params.identityId);
-       console.log("setMetaMapCallback success: " + params.verificationID);
-     },
-     error => {
-       console.log("setMetaMapCallback error: " + error);
-     }
-    );
+        //register to callback
+        cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
+          params => {
+           console.log("setMetaMapCallback success: " + params.identityId);
+           console.log("setMetaMapCallback success: " + params.verificationID);
+         },
+         error => {
+           console.log("setMetaMapCallback error: " + error);
+         }
+        );
 
-}
- ```
+    }
+     ```
+# Demo code
 
+The following are code samples for both Android and iOS.
 
 ## Android
 
@@ -131,43 +131,43 @@ Download the latest version of MetaMap for Android [here](https://search.maven.o
 
 1. Check that your project's Gradle file (`<YourProject>/platforms/android/mati-global-id-sdk-cordova-plugin/<demoCordovaMati-build>.gradle`) uses the latest version of Mati for Cordova:
 
-```bash
-    dependencies {
-      implementation 'com.getmati:mati-sdk:<LATEST_VERSION>'
-    }
-  ```
+    ```bash
+        dependencies {
+          implementation 'com.getmati:mati-sdk:<LATEST_VERSION>'
+        }
+    ```
 
 2. Enable AndroidX support in `config.xml`.
 
-```bash
-   <platform name="android">
-   	<preference name="AndroidXEnabled" value="true" />
-   </platform>
-   ```
+    ```bash
+       <platform name="android">
+       <preference name="AndroidXEnabled" value="true" />
+       </platform>
+    ```
 
 ## iOS
 
 1. In the `info.plist` file, add the following permissions to capture video, access the photo gallery, and capture audio for voiceliveness:
    **Info.plist**
 
-```bash
-    <key>NSCameraUsageDescription</key>
-    <string>MetaMap needs access to your Camera</string>
-    
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>MetaMap needs access to your media library</string>
-    
-    <key>NSMicrophoneUsageDescription</key>
-    <string>MetaMap needs access to your Microphone</string>
-    
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>MetaMap will use your location information to provide best possible verification experience.</string>
-	
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>MetaMap will use your location information to provide best possible verification experience.</string>
-	
-	<key>NSLocationAlwaysUsageDescription</key>
-    <string>MetaMap will use your location information to provide best possible verification experience.</string>
+    ```bash
+        <key>NSCameraUsageDescription</key>
+        <string>MetaMap needs access to your Camera</string>
+
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>MetaMap needs access to your media library</string>
+
+        <key>NSMicrophoneUsageDescription</key>
+        <string>MetaMap needs access to your Microphone</string>
+
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>MetaMap will use your location information to provide best possible verification experience.</string>
+
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>MetaMap will use your location information to provide best possible verification experience.</string>
+
+        <key>NSLocationAlwaysUsageDescription</key>
+        <string>MetaMap will use your location information to provide best possible verification experience.</string>
    ```
 
 ## Metadata Usage
@@ -175,26 +175,26 @@ Download the latest version of MetaMap for Android [here](https://search.maven.o
 Metadata is an additional optional parameters:
 
 1. Set the Language:
-```bash
-yourMetadata: {"fixedLanguage": "es"}
-   ```
+    ```bash
+    yourMetadata: {"fixedLanguage": "es"}
+    ```
 
 2. Set the Button Color:
-```bash
-yourMetadata: {"buttonColor": "hexColor"}
+   ```bash
+   yourMetadata: {"buttonColor": "hexColor"}
    ```
 
 3. Set the Title color of the button:
-```bash
-yourMetadata: {"buttonTextColor": "hexColor"}
- ```
+   ```bash
+   yourMetadata: {"buttonTextColor": "hexColor"}
+   ```
 
 4. Set identity Id as parameter for re-verification:
-```bash
-yourMetadata: {"identityId": "value"}
-```
+    ```bash
+    yourMetadata: {"identityId": "value"}
+    ```
 
-## Some error codes you may get during integration
+## Some error codes you may encounter during integration
 
 `402` - MetaMap services are not paid: please contact your customer success manager
 

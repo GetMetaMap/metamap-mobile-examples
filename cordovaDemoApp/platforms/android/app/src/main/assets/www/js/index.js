@@ -19,33 +19,35 @@
 
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
-document.addEventListener('deviceready', onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+  // Cordova is now initialized. Have fun!
 
-    console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
-   //trigger login on button click
-    var metaMapButton = document.getElementById("metaMapButton");
+  console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
+  document.getElementById("deviceready").classList.add("ready");
+  //trigger login on button click
+  var metaMapButton = document.getElementById("metaMapButton");
 
   metaMapButton.onclick = () => {
-      //set 3 params clientId (cant be null), flowId, metadata
-      var yourMetadata = { param1: "value1", param2: "value2" }
-      var metaMapButtinParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: yourMetadata }
-      cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtinParams)
+    //set 3 params clientId (cant be null), flowId, metadata
+    var yourMetadata = { param1: "value1", param2: "value2" };
+    var metaMapButtonParams = {
+      clientId: "YOUR_CLIENT_ID",
+      flowId: "YOUR_FLOW_ID",
+      metadata: yourMetadata,
     };
+    cordova.plugins.MetaMapGlobalIDSDK.showMetaMapFlow(metaMapButtonParams);
+  };
 
-    //register to callback
-    cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
-     params => {
-       console.log("setMetaMapCallback success: " + params.identityId);
-       console.log("setMetaMapCallback success: " + params.verificationID);
-     },
-     error => {
-       console.log("setMetaMapCallback error: " + error);
-     }
-    );
-
+  //register to callback
+  cordova.plugins.MetaMapGlobalIDSDK.setMetaMapCallback(
+    (params) => {
+      console.log("setMetaMapCallback success: " + params.identityId);
+      console.log("setMetaMapCallback success: " + params.verificationID);
+    },
+    (error) => {
+      console.log("setMetaMapCallback error: " + error);
+    }
+  );
 }
-

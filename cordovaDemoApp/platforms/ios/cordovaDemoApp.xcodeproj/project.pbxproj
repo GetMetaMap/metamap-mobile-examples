@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0038B80E3CB8E64ABC6FC35E /* Pods_cordovaDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D5DCC9D556F9942B3FD99E /* Pods_cordovaDemoApp.framework */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		23579D9BB52344859C987C4C /* MetaMapGlobalIDSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E99783C9E44926839CD087 /* MetaMapGlobalIDSDK.m */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		E1ABF6BFAE23343405B5B57D /* Pods_cordovaDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4D0670A656F2ADC90E304C /* Pods_cordovaDemoApp.framework */; };
-		E9B36528E95D4783954B6701 /* MetaMapGlobalIDSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = F88AD2D0863846488EFA8831 /* MetaMapGlobalIDSDK.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = cordovaDemoApp/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		1C4D0670A656F2ADC90E304C /* Pods_cordovaDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* cordovaDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cordovaDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,12 +60,13 @@
 		5090FD4D1A09C5D069BA89B0 /* Pods-cordovaDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cordovaDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = cordovaDemoApp/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* cordovaDemoApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "cordovaDemoApp-Info.plist"; path = "cordovaDemoApp/cordovaDemoApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
+		B4E99783C9E44926839CD087 /* MetaMapGlobalIDSDK.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MetaMapGlobalIDSDK.m; path = "metamap-cordova-plugin/MetaMapGlobalIDSDK.m"; sourceTree = "<group>"; };
 		DFD28C13C98F5404C5571DDC /* Pods-cordovaDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cordovaDemoApp.release.xcconfig"; path = "Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		E5D5DCC9D556F9942B3FD99E /* Pods_cordovaDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cordovaDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = cordovaDemoApp/config.xml; sourceTree = "<group>"; };
-		F88AD2D0863846488EFA8831 /* MetaMapGlobalIDSDK.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MetaMapGlobalIDSDK.m; path = "metamap-cordova-plugin/MetaMapGlobalIDSDK.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				E1ABF6BFAE23343405B5B57D /* Pods_cordovaDemoApp.framework in Frameworks */,
+				0038B80E3CB8E64ABC6FC35E /* Pods_cordovaDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +147,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C4D0670A656F2ADC90E304C /* Pods_cordovaDemoApp.framework */,
+				E5D5DCC9D556F9942B3FD99E /* Pods_cordovaDemoApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				F88AD2D0863846488EFA8831 /* MetaMapGlobalIDSDK.m */,
+				B4E99783C9E44926839CD087 /* MetaMapGlobalIDSDK.m */,
 			);
 			name = Plugins;
 			path = cordovaDemoApp/Plugins;
@@ -211,7 +211,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				4390876A5086C88E6E99D1C7 /* [CP] Embed Pods Frameworks */,
+				0B73E89F9310C837CADD0348 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,22 +291,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		304B58A110DAC018002A0835 /* Copy www directory */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy www directory";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/cordovaDemoApp/Scripts/copy-www-build-step.sh\"";
-			showEnvVarsInLog = 0;
-		};
-		4390876A5086C88E6E99D1C7 /* [CP] Embed Pods Frameworks */ = {
+		0B73E89F9310C837CADD0348 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,6 +306,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		304B58A110DAC018002A0835 /* Copy www directory */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy www directory";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/cordovaDemoApp/Scripts/copy-www-build-step.sh\"";
 			showEnvVarsInLog = 0;
 		};
 		81FE498F0C795C3D4F826FE5 /* [CP] Check Pods Manifest.lock */ = {
@@ -355,7 +355,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				E9B36528E95D4783954B6701 /* MetaMapGlobalIDSDK.m in Sources */,
+				23579D9BB52344859C987C4C /* MetaMapGlobalIDSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

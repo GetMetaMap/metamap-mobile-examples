@@ -1,5 +1,5 @@
-import { Animation } from '../../../interface';
+import type { Animation } from '../../../interface';
 /**
  * md Toast Leave Animation
  */
-export declare const mdLeaveAnimation: (baseEl: ShadowRoot) => Animation;
+export declare const mdLeaveAnimation: (baseEl: HTMLElement) => Animation;

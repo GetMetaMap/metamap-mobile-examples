@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.metamap.cordovaDemoApp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="MetaMapGlobalIDSDK">
+        <param name="android-package" value="com.cordova.plugin.metaMapglobalidsdk.MetaMapGlobalIDSDK" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>cordovaDemoApp</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="deployment-target" value="12.0" />
+    <preference name="android-targetSdkVersion" value="31" />
+</widget>

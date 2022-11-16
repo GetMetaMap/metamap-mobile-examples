@@ -1,37 +1,30 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
-    "config_munge": {
-        "files": {}
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
-    "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-ionic-webview": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-ionic-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "mati-global-id-sdk-cordova-plugin": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        }
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     },
-    "dependent_plugins": {
-        "cordova-plugin-cocoapod-support": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        }
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
+    },
+    "metamap-cordova-plugin": {
+      "PACKAGE_NAME": "com.metamap.ioniccordovademoapp"
     }
+  },
+  "dependent_plugins": {}
 }

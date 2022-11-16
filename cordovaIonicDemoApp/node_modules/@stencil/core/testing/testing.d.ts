@@ -1,2 +1,2 @@
-import type { Config, Testing } from '@stencil/core/internal';
-export declare const createTesting: (config: Config) => Promise<Testing>;
+import type { Testing, ValidatedConfig } from '@stencil/core/internal';
+export declare const createTesting: (config: ValidatedConfig) => Promise<Testing>;

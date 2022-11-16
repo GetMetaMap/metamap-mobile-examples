@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { createAnimation } from '../../animation/animation';
 /**
  * baseAnimation

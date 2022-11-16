@@ -1,0 +1,22 @@
+{
+  "name": "metamap-cordova-plugin",
+  "version": "1.4.10",
+  "description": "MetaMap SDK plugin",
+  "cordova": {
+    "id": "metamap-cordova-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {}
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Avo Sukiasyan",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

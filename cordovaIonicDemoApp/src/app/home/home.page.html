@@ -1,26 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Mati Demo App
-    </ion-title>
+    <ion-title> MetaMap DemoApp </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Mati Demo Ionic App</ion-title>
+      <ion-title size="large">MetaMap Demo Ionic App</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Press the button and start Mati flow</strong>
-    <br/>
+    <strong>Click the button to launch MetaMap flow</strong>
+
     <input
-    class="matiButton"
-    id="matiButton"
-    type="button"
-    value="show Mati Flow"
-    ion-item (click)="showMatiFlow()"/>
+      class="metaMapButton"
+      id="metaMapButton"
+      type="button"
+      value="Show MetaMap Flow"
+      ion-item
+      (click)="showMetaMapFlow()"
+    />
   </div>
 </ion-content>

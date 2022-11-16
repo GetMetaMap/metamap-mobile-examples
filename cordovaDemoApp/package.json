@@ -1,5 +1,5 @@
 {
-  "name": "com.metamap.cordovademoapp",
+  "name": "com.metamap.cordovaDemoApp",
   "displayName": "cordovaDemoApp",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
@@ -13,18 +13,17 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "cordova-android": "^10.1.1",
+    "cordova-android": "^10.1.2",
     "cordova-ios": "^6.2.0",
-    "cordova-plugin-cocoapod-support": "^1.6.2",
-    "mati-global-id-sdk-cordova-plugin": "github:GetMati/mati-cordova-plugin"
+    "metamap-cordova-plugin": "^1.4.10"
   },
   "cordova": {
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
-      "mati-global-id-sdk-cordova-plugin": {}
+      "metamap-cordova-plugin": {}
     }
   }
 }

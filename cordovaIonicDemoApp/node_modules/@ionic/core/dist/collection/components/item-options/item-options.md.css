@@ -1,8 +1,8 @@
 ion-item-options {
-  /* stylelint-disable property-blacklist */
+  /* stylelint-disable property-disallowed-list */
   top: 0;
   right: 0;
-  /* stylelint-enable property-blacklist */
+  /* stylelint-enable property-disallowed-list */
   justify-content: flex-end;
   display: none;
   position: absolute;
@@ -15,18 +15,18 @@ ion-item-options {
   justify-content: flex-start;
 }
 [dir=rtl] ion-item-options:not(.item-options-end), :host-context([dir=rtl]) ion-item-options:not(.item-options-end) {
-  /* stylelint-disable property-blacklist */
+  /* stylelint-disable property-disallowed-list */
   right: auto;
   left: 0;
-  /* stylelint-enable property-blacklist */
+  /* stylelint-enable property-disallowed-list */
   justify-content: flex-end;
 }
 
 .item-options-start {
-  /* stylelint-disable property-blacklist */
+  /* stylelint-disable property-disallowed-list */
   right: auto;
   left: 0;
-  /* stylelint-enable property-blacklist */
+  /* stylelint-enable property-disallowed-list */
   justify-content: flex-start;
 }
 [dir=rtl] .item-options-start, :host-context([dir=rtl]) .item-options-start {

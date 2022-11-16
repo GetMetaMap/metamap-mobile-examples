@@ -80,6 +80,10 @@
   font-kerning: none;
 }
 
+ion-ripple-effect {
+  color: var(--ripple-color);
+}
+
 :host(.ion-color) .button-native {
   color: var(--ion-color-base);
 }

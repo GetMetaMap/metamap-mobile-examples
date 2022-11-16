@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 export const CELL_TYPE_ITEM = 'item';
 export const CELL_TYPE_HEADER = 'header';
 export const CELL_TYPE_FOOTER = 'footer';

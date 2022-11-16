@@ -1,18 +1,10 @@
 {
-  "mati-global-id-sdk-cordova-plugin": {
+  "metamap-cordova-plugin": {
     "source": {
       "type": "registry",
-      "id": "https://github.com/GetMati/mati-cordova-plugin.git"
+      "id": "metamap-cordova-plugin"
     },
     "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-cocoapod-support": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-cocoapod-support"
-    },
-    "is_top_level": false,
     "variables": {}
   }
 }

@@ -1,8 +1,9 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "id": "SchematicsAngularServiceWorker",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "SchematicsAngularServiceWorker",
   "title": "Angular Service Worker Options Schema",
   "type": "object",
+  "additionalProperties": false,
   "description": "Pass this schematic to the \"run\" command to create a service worker",
   "properties": {
     "project": {
@@ -16,14 +17,7 @@
       "type": "string",
       "description": "The target to apply service worker to.",
       "default": "build"
-    },
-    "configuration": {
-      "type": "string",
-      "description": "The configuration to apply service worker to.",
-      "default": "production"
     }
   },
-  "required": [
-    "project"
-  ]
+  "required": ["project"]
 }

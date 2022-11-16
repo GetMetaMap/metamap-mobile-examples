@@ -86,7 +86,7 @@ module.exports = function(options) {
 
     // Parse literal
     url = parse(url);
-    var ext = extname(url.pathname)
+    var ext = extname(url.pathname || '')
       , mime = mimes[ext]
       , hash = url.hash || ''
       , literal = new nodes.Literal('url("' + url.href + '")')
@@ -114,19 +114,19 @@ module.exports = function(options) {
     }
 
     // Read data
-    var str = fs.readFileSync(found, 'utf8');
+    buf = fs.readFileSync(found);
 
     // Too large
-    if(false !== sizeLimit && str.length > sizeLimit) return literal;
+    if(false !== sizeLimit && buf.length > sizeLimit) return literal;
 
     if(enc && 'utf8' == enc.first.val.toLowerCase()) {
       encoding = encodingTypes.UTF8;
-      result = str.replace(/\s+/g, ' ')
+      result = buf.toString().replace(/\s+/g, ' ')
         .replace(/[{}\|\\\^~\[\]`"<>#%]/g, function(match) {
           return '%' + match[0].charCodeAt(0).toString(16).toUpperCase();
         }).trim();
     } else {
-      result = Buffer.from(str.replace(/\r\n?/g, '\n')).toString(encoding) + hash;
+      result = buf.toString(encoding) + hash;
     }
 
     // Encode

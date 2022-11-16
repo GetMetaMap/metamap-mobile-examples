@@ -1,3 +1,6 @@
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 import { addEventListener, removeEventListener } from '../../helpers';
 const SKIP_SELECTOR = 'input, textarea, [no-blur], [contenteditable]';
 export const enableInputBlurring = () => {

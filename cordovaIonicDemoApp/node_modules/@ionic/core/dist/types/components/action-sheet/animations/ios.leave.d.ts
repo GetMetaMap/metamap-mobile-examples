@@ -1,4 +1,4 @@
-import { Animation } from '../../../interface';
+import type { Animation } from '../../../interface';
 /**
  * iOS Action Sheet Leave Animation
  */

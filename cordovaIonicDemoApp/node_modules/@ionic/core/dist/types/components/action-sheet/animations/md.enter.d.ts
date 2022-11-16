@@ -1,4 +1,4 @@
-import { Animation } from '../../../interface';
+import type { Animation } from '../../../interface';
 /**
  * MD Action Sheet Enter Animation
  */

@@ -1,16 +1,23 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
-      "id": "mati-global-id-sdk-cordova-plugin.MatiGlobalIDSDK",
-      "file": "plugins/mati-global-id-sdk-cordova-plugin/www/MatiGlobalIDSDK.js",
-      "pluginId": "mati-global-id-sdk-cordova-plugin",
+      "id": "metamap-cordova-plugin.MetaMapGlobalIDSDK",
+      "file": "plugins/metamap-cordova-plugin/www/MetaMapGlobalIDSDK.js",
+      "pluginId": "metamap-cordova-plugin",
       "clobbers": [
-        "cordova.plugins.MatiGlobalIDSDK"
+        "cordova.plugins.MetaMapGlobalIDSDK"
+      ]
+    },
+    {
+      "id": "metamap-cordova-plugin.MetaMapGlobalIDSDK",
+      "file": "plugins/metamap-cordova-plugin/www/MetaMapGlobalIDSDK.js",
+      "pluginId": "metamap-cordova-plugin",
+      "clobbers": [
+        "MetaMapGlobalIDSDK"
       ]
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-cocoapod-support": "1.6.2",
-    "mati-global-id-sdk-cordova-plugin": "0.0.4"
+    "metamap-cordova-plugin": "0.0.4"
   };
 });

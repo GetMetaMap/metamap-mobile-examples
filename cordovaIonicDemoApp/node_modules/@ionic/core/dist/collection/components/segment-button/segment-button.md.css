@@ -164,6 +164,10 @@
   opacity: var(--background-focused-opacity);
 }
 
+:host(:focus) {
+  outline: none;
+}
+
 @media (any-hover: hover) {
   :host(:hover) .button-native {
     color: var(--color-hover);

@@ -1,10 +1,10 @@
 /**
-* @license
-* Copyright Google Inc. All Rights Reserved.
-*
-* Use of this source code is governed by an MIT-style license that can be
-* found in the LICENSE file at https://angular.io/license
-*/
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
 
 /**
  * @fileoverview Externs for zone.js
@@ -148,8 +148,8 @@ Zone.prototype.scheduleMicroTask = function(source, callback, data, customSchedu
  * @param {?function(!Task)=} customCancel
  * @return {!MacroTask} macroTask
  */
-Zone.prototype.scheduleMacroTask = function(source, callback, data, customSchedule, customCancel) {
-};
+Zone.prototype.scheduleMacroTask = function(
+    source, callback, data, customSchedule, customCancel) {};
 
 /**
  * @param {string} source
@@ -159,8 +159,8 @@ Zone.prototype.scheduleMacroTask = function(source, callback, data, customSchedu
  * @param {?function(!Task)=} customCancel
  * @return {!EventTask} eventTask
  */
-Zone.prototype.scheduleEventTask = function(source, callback, data, customSchedule, customCancel) {
-};
+Zone.prototype.scheduleEventTask = function(
+    source, callback, data, customSchedule, customCancel) {};
 
 /**
  * @param {!Task} task
@@ -179,7 +179,7 @@ Zone.prototype.cancelTask = function(task) {};
  */
 var ZoneSpec = function() {};
 /**
- * @type {!string} The name of the zone. Usefull when debugging Zones.
+ * @type {!string} The name of the zone. Useful when debugging Zones.
  */
 ZoneSpec.prototype.name;
 
@@ -420,7 +420,7 @@ Task.prototype.zone;
  * @type {number}
  */
 Task.prototype.runCount;
-Task.prototype.cancelSchduleRequest = function() {};
+Task.prototype.cancelScheduleRequest = function() {};
 
 /**
  * @interface

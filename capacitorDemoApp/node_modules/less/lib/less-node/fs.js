@@ -1,10 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var fs;
-try
-{
+try {
     fs = require('graceful-fs');
 }
-catch (e)
-{
+catch (e) {
     fs = require('fs');
 }
-module.exports = fs;
+exports.default = fs;
+//# sourceMappingURL=fs.js.map

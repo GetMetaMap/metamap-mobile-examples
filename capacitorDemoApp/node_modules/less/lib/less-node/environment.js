@@ -1,6 +1,10 @@
-module.exports = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
     encodeBase64: function encodeBase64(str) {
-        return new Buffer(str).toString('base64');
+        // Avoid Buffer constructor on newer versions of Node.js.
+        var buffer = (Buffer.from ? Buffer.from(str) : (new Buffer(str)));
+        return buffer.toString('base64');
     },
     mimeLookup: function (filename) {
         return require('mime').lookup(filename);
@@ -12,3 +16,4 @@ module.exports = {
         return require('source-map').SourceMapGenerator;
     }
 };
+//# sourceMappingURL=environment.js.map

@@ -1,12 +1,12 @@
 import { Cell, HeaderFn, ItemHeightFn, ItemRenderFn, VirtualNode } from '../../interface';
 import { FooterHeightFn, HeaderHeightFn } from './virtual-scroll-interface';
 export interface Viewport {
-    top: number;
-    bottom: number;
+  top: number;
+  bottom: number;
 }
 export interface Range {
-    offset: number;
-    length: number;
+  offset: number;
+  length: number;
 }
 export declare const updateVDom: (dom: VirtualNode[], heightIndex: Uint32Array, cells: Cell[], range: Range) => void;
 export declare const doRender: (el: HTMLElement, nodeRender: ItemRenderFn, dom: VirtualNode[], updateCellHeight: (cell: Cell, node: HTMLElement) => void) => void;

@@ -7,11 +7,11 @@ Use this command with a routing app that is accompanied by a Universal server-si
 To create an app shell, use the following command.
 
 <code-example format="." language="bash">
- ng generate app-shell --client-project my-app --universal-project server-app
+ ng generate app-shell my-app
 </code-example>
 
-* `my-app` is the name of your client application
-* `server-app` is the name of the Universal (server) application
+- `my-app` is the name of your client application
+- `server-app` is the name of the Universal (server) application
 
 The command adds two new architect build targets to your `angular.json` configuration file (along with a few other changes).
 

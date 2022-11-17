@@ -1,3 +1,3 @@
 export interface TextareaChangeEventDetail {
-    value: string | undefined | null;
+  value: string | undefined | null;
 }

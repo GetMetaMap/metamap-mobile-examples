@@ -1,18 +1,18 @@
 export interface Cell {
-    i: number;
-    index: number;
-    value: any;
-    type: CellType;
-    height: number;
-    reads: number;
-    visible: boolean;
+  i: number;
+  index: number;
+  value: any;
+  type: CellType;
+  height: number;
+  reads: number;
+  visible: boolean;
 }
 export interface VirtualNode {
-    cell: Cell;
-    top: number;
-    change: NodeChange;
-    d: boolean;
-    visible: boolean;
+  cell: Cell;
+  top: number;
+  change: NodeChange;
+  d: boolean;
+  visible: boolean;
 }
 export declare type CellType = 'item' | 'header' | 'footer';
 export declare type NodeChange = number;

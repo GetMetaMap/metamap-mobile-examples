@@ -1,9 +1,10 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "id": "SchematicsAngularModule",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "SchematicsAngularModule",
   "title": "Angular Module Options Schema",
   "type": "object",
-  "description": "Creates a new generic NgModule definition in the given or default project.",
+  "additionalProperties": false,
+  "description": "Creates a new, generic NgModule definition in the given or default project.",
   "properties": {
     "name": {
       "type": "string",
@@ -29,7 +30,7 @@
     },
     "routing": {
       "type": "boolean",
-      "description": "When true, creates a routing module.",
+      "description": "Create a routing module.",
       "default": false,
       "x-user-analytics": 17
     },
@@ -45,28 +46,26 @@
     },
     "flat": {
       "type": "boolean",
-      "description": "When true, creates the new files at the top level of the current project root. ",
+      "description": "Create the new files at the top level of the current project root. ",
       "default": false
     },
     "commonModule": {
       "type": "boolean",
-      "description": "When true, the new NgModule imports \"CommonModule\". ",
+      "description": "The new NgModule imports \"CommonModule\". ",
       "default": true,
       "visible": false
     },
-    "module":  {
+    "module": {
       "type": "string",
       "description": "The declaring NgModule.",
       "alias": "m"
     },
     "lintFix": {
       "type": "boolean",
-      "default": false,
-      "description": "When true, applies lint fixes after generating the module.",
-      "x-user-analytics": 15
+      "description": "Apply lint fixes after generating the module.",
+      "x-user-analytics": 15,
+      "x-deprecated": "Use \"ng lint --fix\" directly instead."
     }
   },
-  "required": [
-    "name"
-  ]
+  "required": ["name"]
 }

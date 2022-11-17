@@ -1,7 +1,9 @@
-var Node = require('./node'),
-    Selector = require('./selector');
-
-var Extend = function Extend(selector, option, index, currentFileInfo, visibilityInfo) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var node_1 = tslib_1.__importDefault(require("./node"));
+var selector_1 = tslib_1.__importDefault(require("./selector"));
+var Extend = function (selector, option, index, currentFileInfo, visibilityInfo) {
     this.selector = selector;
     this.option = option;
     this.object_id = Extend.next_id++;
@@ -10,7 +12,6 @@ var Extend = function Extend(selector, option, index, currentFileInfo, visibilit
     this._fileInfo = currentFileInfo;
     this.copyVisibilityInfo(visibilityInfo);
     this.allowRoot = true;
-
     switch (option) {
         case 'all':
             this.allowBefore = true;
@@ -23,36 +24,33 @@ var Extend = function Extend(selector, option, index, currentFileInfo, visibilit
     }
     this.setParent(this.selector, this);
 };
-Extend.next_id = 0;
-
-Extend.prototype = new Node();
-Extend.prototype.type = 'Extend';
-Extend.prototype.accept = function (visitor) {
-    this.selector = visitor.visit(this.selector);
-};
-Extend.prototype.eval = function (context) {
-    return new Extend(this.selector.eval(context), this.option, this.getIndex(), this.fileInfo(), this.visibilityInfo());
-};
-Extend.prototype.clone = function (context) {
-    return new Extend(this.selector, this.option, this.getIndex(), this.fileInfo(), this.visibilityInfo());
-};
-// it concatenates (joins) all selectors in selector array
-Extend.prototype.findSelfSelectors = function (selectors) {
-    var selfElements = [],
-        i,
-        selectorElements;
-
-    for (i = 0; i < selectors.length; i++) {
-        selectorElements = selectors[i].elements;
-        // duplicate the logic in genCSS function inside the selector node.
-        // future TODO - move both logics into the selector joiner visitor
-        if (i > 0 && selectorElements.length && selectorElements[0].combinator.value === '') {
-            selectorElements[0].combinator.value = ' ';
+Extend.prototype = Object.assign(new node_1.default(), {
+    type: 'Extend',
+    accept: function (visitor) {
+        this.selector = visitor.visit(this.selector);
+    },
+    eval: function (context) {
+        return new Extend(this.selector.eval(context), this.option, this.getIndex(), this.fileInfo(), this.visibilityInfo());
+    },
+    clone: function (context) {
+        return new Extend(this.selector, this.option, this.getIndex(), this.fileInfo(), this.visibilityInfo());
+    },
+    // it concatenates (joins) all selectors in selector array
+    findSelfSelectors: function (selectors) {
+        var selfElements = [], i, selectorElements;
+        for (i = 0; i < selectors.length; i++) {
+            selectorElements = selectors[i].elements;
+            // duplicate the logic in genCSS function inside the selector node.
+            // future TODO - move both logics into the selector joiner visitor
+            if (i > 0 && selectorElements.length && selectorElements[0].combinator.value === '') {
+                selectorElements[0].combinator.value = ' ';
+            }
+            selfElements = selfElements.concat(selectors[i].elements);
         }
-        selfElements = selfElements.concat(selectors[i].elements);
+        this.selfSelectors = [new selector_1.default(selfElements)];
+        this.selfSelectors[0].copyVisibilityInfo(this.visibilityInfo());
     }
-
-    this.selfSelectors = [new Selector(selfElements)];
-    this.selfSelectors[0].copyVisibilityInfo(this.visibilityInfo());
-};
-module.exports = Extend;
+});
+Extend.next_id = 0;
+exports.default = Extend;
+//# sourceMappingURL=extend.js.map

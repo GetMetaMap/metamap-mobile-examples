@@ -1,13 +1,14 @@
-var contexts = require('./contexts'),
-    visitor = require('./visitors'),
-    tree = require('./tree');
-
-module.exports = function(root, options) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var contexts_1 = tslib_1.__importDefault(require("./contexts"));
+var visitors_1 = tslib_1.__importDefault(require("./visitors"));
+var tree_1 = tslib_1.__importDefault(require("./tree"));
+function default_1(root, options) {
     options = options || {};
-    var evaldRoot,
-        variables = options.variables,
-        evalEnv = new contexts.Eval(options);
-
+    var evaldRoot;
+    var variables = options.variables;
+    var evalEnv = new contexts_1.default.Eval(options);
     //
     // Allows setting variables with a hash, so:
     //
@@ -24,28 +25,28 @@ module.exports = function(root, options) {
     if (typeof variables === 'object' && !Array.isArray(variables)) {
         variables = Object.keys(variables).map(function (k) {
             var value = variables[k];
-
-            if (!(value instanceof tree.Value)) {
-                if (!(value instanceof tree.Expression)) {
-                    value = new tree.Expression([value]);
+            if (!(value instanceof tree_1.default.Value)) {
+                if (!(value instanceof tree_1.default.Expression)) {
+                    value = new tree_1.default.Expression([value]);
                 }
-                value = new tree.Value([value]);
+                value = new tree_1.default.Value([value]);
             }
-            return new tree.Declaration('@' + k, value, false, null, 0);
+            return new tree_1.default.Declaration("@" + k, value, false, null, 0);
         });
-        evalEnv.frames = [new tree.Ruleset(null, variables)];
+        evalEnv.frames = [new tree_1.default.Ruleset(null, variables)];
     }
-
     var visitors = [
-            new visitor.JoinSelectorVisitor(),
-            new visitor.MarkVisibleSelectorsVisitor(true),
-            new visitor.ExtendVisitor(),
-            new visitor.ToCSSVisitor({compress: Boolean(options.compress)})
-        ], preEvalVisitors = [], v, visitorIterator;
-
+        new visitors_1.default.JoinSelectorVisitor(),
+        new visitors_1.default.MarkVisibleSelectorsVisitor(true),
+        new visitors_1.default.ExtendVisitor(),
+        new visitors_1.default.ToCSSVisitor({ compress: Boolean(options.compress) })
+    ];
+    var preEvalVisitors = [];
+    var v;
+    var visitorIterator;
     /**
      * first() / get() allows visitors to be added while visiting
-     * 
+     *
      * @todo Add scoping for visitors just like functions for @plugin; right now they're global
      */
     if (options.pluginManager) {
@@ -72,13 +73,10 @@ module.exports = function(root, options) {
             }
         }
     }
-    
     evaldRoot = root.eval(evalEnv);
-
     for (var i = 0; i < visitors.length; i++) {
         visitors[i].run(evaldRoot);
     }
-
     // Run any remaining visitors added after eval pass
     if (options.pluginManager) {
         visitorIterator.first();
@@ -88,6 +86,8 @@ module.exports = function(root, options) {
             }
         }
     }
-
     return evaldRoot;
-};
+}
+exports.default = default_1;
+;
+//# sourceMappingURL=transform-tree.js.map

@@ -3,5 +3,10 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular",
+
+  "ios": {
+    "minVersion": "13.0"
+  }
 }
+

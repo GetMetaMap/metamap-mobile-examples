@@ -1,3 +1,3 @@
 export interface SearchbarChangeEventDetail {
-    value: string | undefined;
+  value: string | undefined;
 }

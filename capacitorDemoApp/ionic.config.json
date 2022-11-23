@@ -1,8 +1,12 @@
 {
-  "name": "photo-rc1",
+  "name": "Photo Gallery NG Capacitor",
   "integrations": {
-    "cordova": {},
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular",
+
+  "ios": {
+    "minVersion": "13.0"
+  }
 }
+

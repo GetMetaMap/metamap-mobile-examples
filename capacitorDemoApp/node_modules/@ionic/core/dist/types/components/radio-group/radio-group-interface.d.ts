@@ -1,7 +1,7 @@
 export interface RadioGroupChangeEventDetail {
-    value: any;
+  value: any;
 }
 export interface RadioChangeEventDetail {
-    value: any;
-    checked: boolean;
+  value: any;
+  checked: boolean;
 }

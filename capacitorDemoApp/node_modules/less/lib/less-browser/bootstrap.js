@@ -1,38 +1,34 @@
+"use strict";
 /**
  * Kicks off less and compiles any stylesheets
  * used in the browser distributed version of less
  * to kick-start less using the browser api
  */
 /* global window, document */
-
-// TODO - consider switching this out for a recommendation for this polyfill?
-// <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-// Browsers have good Promise support
-require('promise/polyfill');
-
-var options = require('../less/default-options')();
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var default_options_1 = tslib_1.__importDefault(require("../less/default-options"));
+var add_default_options_1 = tslib_1.__importDefault(require("./add-default-options"));
+var index_1 = tslib_1.__importDefault(require("./index"));
+var options = default_options_1.default();
 if (window.less) {
-    for (key in window.less) {
+    for (var key in window.less) {
         if (window.less.hasOwnProperty(key)) {
             options[key] = window.less[key];
         }
     }
 }
-require('./add-default-options')(window, options);
-
+add_default_options_1.default(window, options);
 options.plugins = options.plugins || [];
-
 if (window.LESS_PLUGINS) {
     options.plugins = options.plugins.concat(window.LESS_PLUGINS);
 }
-
-var less = module.exports = require('./index')(window, options);
-
+var less = index_1.default(window, options);
+exports.default = less;
 window.less = less;
-
-var css, head, style;
-
+var css;
+var head;
+var style;
 // Always restore page visibility
 function resolveOrReject(data) {
     if (data.filename) {
@@ -42,7 +38,6 @@ function resolveOrReject(data) {
         head.removeChild(style);
     }
 }
-
 if (options.onReady) {
     if (/!watch/.test(window.location.hash)) {
         less.watch();
@@ -52,16 +47,16 @@ if (options.onReady) {
         css = 'body { display: none !important }';
         head = document.head || document.getElementsByTagName('head')[0];
         style = document.createElement('style');
-
         style.type = 'text/css';
         if (style.styleSheet) {
             style.styleSheet.cssText = css;
-        } else {
+        }
+        else {
             style.appendChild(document.createTextNode(css));
         }
-
         head.appendChild(style);
     }
     less.registerStylesheetsImmediately();
     less.pageLoadFinished = less.refresh(less.env === 'development').then(resolveOrReject, resolveOrReject);
 }
+//# sourceMappingURL=bootstrap.js.map

@@ -1,4 +1,4 @@
 export interface CheckboxChangeEventDetail {
-    value: any;
-    checked: boolean;
+  value: any;
+  checked: boolean;
 }

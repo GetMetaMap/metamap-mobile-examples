@@ -1,0 +1,10 @@
+[
+	{
+		"pkg": "@capacitor/splash-screen",
+		"classpath": "com.capacitorjs.plugins.splashscreen.SplashScreenPlugin"
+	},
+	{
+		"pkg": "metamap-capacitor-plugin",
+		"classpath": "com.getmati.plugins.capacitor.MetaMapCapacitorPlugin"
+	}
+]

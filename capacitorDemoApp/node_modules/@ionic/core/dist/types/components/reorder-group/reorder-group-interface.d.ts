@@ -1,5 +1,5 @@
 export interface ItemReorderEventDetail {
-    from: number;
-    to: number;
-    complete: (data?: boolean | any[]) => any;
+  from: number;
+  to: number;
+  complete: (data?: boolean | any[]) => any;
 }

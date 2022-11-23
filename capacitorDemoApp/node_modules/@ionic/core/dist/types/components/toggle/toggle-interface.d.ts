@@ -1,4 +1,4 @@
 export interface ToggleChangeEventDetail {
-    value: any;
-    checked: boolean;
+  value: any;
+  checked: boolean;
 }

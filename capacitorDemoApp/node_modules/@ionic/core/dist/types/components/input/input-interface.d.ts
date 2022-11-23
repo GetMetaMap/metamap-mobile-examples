@@ -1,3 +1,3 @@
 export interface InputChangeEventDetail {
-    value: string | undefined | null;
+  value: string | undefined | null;
 }

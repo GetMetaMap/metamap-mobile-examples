@@ -1,2 +1,5 @@
 Gruntfile.js
-test/browser/vendor/*
+dist/*
+tmp/*
+lib/*
+test/browser/less.min.js

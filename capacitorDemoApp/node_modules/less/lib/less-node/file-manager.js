@@ -1,140 +1,107 @@
-var path = require('path'),
-    fs = require('./fs'),
-    PromiseConstructor = typeof Promise === 'undefined' ? require('promise') : Promise,
-    AbstractFileManager = require('../less/environment/abstract-file-manager.js');
-
-var FileManager = function() {
-    this.contents = {};
-};
-
-FileManager.prototype = new AbstractFileManager();
-
-FileManager.prototype.supports = function(filename, currentDirectory, options, environment) {
-    return true;
-};
-FileManager.prototype.supportsSync = function(filename, currentDirectory, options, environment) {
-    return true;
-};
-
-FileManager.prototype.loadFile = function(filename, currentDirectory, options, environment, callback) {
-
-    var fullFilename,
-        isAbsoluteFilename = this.isPathAbsolute(filename),
-        filenamesTried = [],
-        self = this,
-        prefix = filename.slice(0, 1),
-        explicit = prefix === '.' || prefix === '/',
-        result = null,
-        isNodeModule = false,
-        npmPrefix = 'npm://';
-
-    options = options || {};
-
-    var paths = isAbsoluteFilename ? [''] : [currentDirectory];
-
-    if (options.paths) { paths.push.apply(paths, options.paths); }
-
-    if (!isAbsoluteFilename && paths.indexOf('.') === -1) { paths.push('.'); }
-
-    var prefixes = options.prefixes || [''];
-    var fileParts = this.extractUrlParts(filename);
-
-    if (options.syncImport) {
-        getFileData(returnData, returnData);
-        if (callback) {
-            callback(result.error, result);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var path_1 = tslib_1.__importDefault(require("path"));
+var fs_1 = tslib_1.__importDefault(require("./fs"));
+var abstract_file_manager_js_1 = tslib_1.__importDefault(require("../less/environment/abstract-file-manager.js"));
+var FileManager = function () { };
+FileManager.prototype = Object.assign(new abstract_file_manager_js_1.default(), {
+    supports: function () {
+        return true;
+    },
+    supportsSync: function () {
+        return true;
+    },
+    loadFile: function (filename, currentDirectory, options, environment, callback) {
+        var fullFilename;
+        var isAbsoluteFilename = this.isPathAbsolute(filename);
+        var filenamesTried = [];
+        var self = this;
+        var prefix = filename.slice(0, 1);
+        var explicit = prefix === '.' || prefix === '/';
+        var result = null;
+        var isNodeModule = false;
+        var npmPrefix = 'npm://';
+        options = options || {};
+        var paths = isAbsoluteFilename ? [''] : [currentDirectory];
+        if (options.paths) {
+            paths.push.apply(paths, options.paths);
+        }
+        if (!isAbsoluteFilename && paths.indexOf('.') === -1) {
+            paths.push('.');
+        }
+        var prefixes = options.prefixes || [''];
+        var fileParts = this.extractUrlParts(filename);
+        if (options.syncImport) {
+            getFileData(returnData, returnData);
+            if (callback) {
+                callback(result.error, result);
+            }
+            else {
+                return result;
+            }
         }
         else {
-            return result;
+            // promise is guaranteed to be asyncronous
+            // which helps as it allows the file handle
+            // to be closed before it continues with the next file
+            return new Promise(getFileData);
         }
-    }
-    else {
-        // promise is guaranteed to be asyncronous
-        // which helps as it allows the file handle
-        // to be closed before it continues with the next file
-        return new PromiseConstructor(getFileData);
-    }
-
-    function returnData(data) {
-        if (!data.filename) {
-            result = { error: data };
+        function returnData(data) {
+            if (!data.filename) {
+                result = { error: data };
+            }
+            else {
+                result = data;
+            }
         }
-        else {
-            result = data;
-        }
-    }
-
-    function getFileData(fulfill, reject) {
-        (function tryPathIndex(i) {
-            if (i < paths.length) {
-                (function tryPrefix(j) {
-                    if (j < prefixes.length) {
-                        isNodeModule = false;
-                        fullFilename = fileParts.rawPath + prefixes[j] + fileParts.filename;
-
-                        if (paths[i]) {
-                            fullFilename = path.join(paths[i], fullFilename);
-                        }
-
-                        if (!explicit && paths[i] === '.') {
-                            try {
-                                fullFilename = require.resolve(fullFilename);
-                                isNodeModule = true;
+        function getFileData(fulfill, reject) {
+            (function tryPathIndex(i) {
+                if (i < paths.length) {
+                    (function tryPrefix(j) {
+                        if (j < prefixes.length) {
+                            isNodeModule = false;
+                            fullFilename = fileParts.rawPath + prefixes[j] + fileParts.filename;
+                            if (paths[i]) {
+                                fullFilename = path_1.default.join(paths[i], fullFilename);
                             }
-                            catch (e) {
-                                filenamesTried.push(npmPrefix + fullFilename);
-                                tryWithExtension();
-                            }
-                        }
-                        else {
-                            tryWithExtension();
-                        }
-
-                        function tryWithExtension() {
-                            var extFilename = options.ext ? self.tryAppendExtension(fullFilename, options.ext) : fullFilename;
-
-                            if (extFilename !== fullFilename && !explicit && paths[i] === '.') {
+                            if (!explicit && paths[i] === '.') {
                                 try {
-                                    fullFilename = require.resolve(extFilename);
+                                    fullFilename = require.resolve(fullFilename);
                                     isNodeModule = true;
                                 }
                                 catch (e) {
-                                    filenamesTried.push(npmPrefix + extFilename);
-                                    fullFilename = extFilename;
+                                    filenamesTried.push(npmPrefix + fullFilename);
+                                    tryWithExtension();
                                 }
                             }
                             else {
-                                fullFilename = extFilename;
+                                tryWithExtension();
                             }
-                        }
-
-                        var modified = false;
-
-                        if (self.contents[fullFilename]) {
-                            try {
-                                var stat = fs.statSync.apply(this, [fullFilename]);
-                                if (stat.mtime.getTime() === self.contents[fullFilename].mtime.getTime()) {
-                                    fulfill({ contents: self.contents[fullFilename].data, filename: fullFilename});
+                            function tryWithExtension() {
+                                var extFilename = options.ext ? self.tryAppendExtension(fullFilename, options.ext) : fullFilename;
+                                if (extFilename !== fullFilename && !explicit && paths[i] === '.') {
+                                    try {
+                                        fullFilename = require.resolve(extFilename);
+                                        isNodeModule = true;
+                                    }
+                                    catch (e) {
+                                        filenamesTried.push(npmPrefix + extFilename);
+                                        fullFilename = extFilename;
+                                    }
                                 }
                                 else {
-                                    modified = true;
+                                    fullFilename = extFilename;
                                 }
                             }
-                            catch (e) {
-                                modified = true;
-                            }
-                        }
-                        if (modified || !self.contents[fullFilename]) {
                             var readFileArgs = [fullFilename];
                             if (!options.rawBuffer) {
                                 readFileArgs.push('utf-8');
                             }
                             if (options.syncImport) {
                                 try {
-                                    var data = fs.readFileSync.apply(this, readFileArgs);
-                                    var stat = fs.statSync.apply(this, [fullFilename]);
-                                    self.contents[fullFilename] = { data: data, mtime: stat.mtime };
-                                    fulfill({ contents: data, filename: fullFilename});
+                                    var data = fs_1.default.readFileSync.apply(this, readFileArgs);
+                                    fulfill({ contents: data, filename: fullFilename });
                                 }
                                 catch (e) {
                                     filenamesTried.push(isNodeModule ? npmPrefix + fullFilename : fullFilename);
@@ -142,35 +109,31 @@ FileManager.prototype.loadFile = function(filename, currentDirectory, options, e
                                 }
                             }
                             else {
-                                readFileArgs.push(function(e, data) {
+                                readFileArgs.push(function (e, data) {
                                     if (e) {
                                         filenamesTried.push(isNodeModule ? npmPrefix + fullFilename : fullFilename);
                                         return tryPrefix(j + 1);
                                     }
-                                    var stat = fs.statSync.apply(this, [fullFilename]);
-                                    self.contents[fullFilename] = { data: data, mtime: stat.mtime };      
-                                    fulfill({ contents: data, filename: fullFilename});
+                                    fulfill({ contents: data, filename: fullFilename });
                                 });
-                                fs.readFile.apply(this, readFileArgs);
+                                fs_1.default.readFile.apply(this, readFileArgs);
                             }
-
                         }
-
-                    }
-                    else {
-                        tryPathIndex(i + 1);
-                    }
-                })(0);
-            } else {
-                reject({ type: 'File', message: '\'' + filename + '\' wasn\'t found. Tried - ' + filenamesTried.join(',') });
-            }
-        }(0));
+                        else {
+                            tryPathIndex(i + 1);
+                        }
+                    })(0);
+                }
+                else {
+                    reject({ type: 'File', message: "'" + filename + "' wasn't found. Tried - " + filenamesTried.join(',') });
+                }
+            }(0));
+        }
+    },
+    loadFileSync: function (filename, currentDirectory, options, environment) {
+        options.syncImport = true;
+        return this.loadFile(filename, currentDirectory, options, environment);
     }
-};
-
-FileManager.prototype.loadFileSync = function(filename, currentDirectory, options, environment) {
-    options.syncImport = true;
-    return this.loadFile(filename, currentDirectory, options, environment);
-};
-
-module.exports = FileManager;
+});
+exports.default = FileManager;
+//# sourceMappingURL=file-manager.js.map

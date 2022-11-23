@@ -1,6 +1,6 @@
 {
-    "name": "test_flutter_mati_app",
-    "short_name": "test_flutter_mati_app",
+    "name": "flutterdemoapp",
+    "short_name": "flutterdemoapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

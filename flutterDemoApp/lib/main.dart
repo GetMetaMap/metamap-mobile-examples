@@ -1,53 +1,71 @@
 import 'package:flutter/material.dart';
-import 'package:mati_plugin_flutter/mati_plugin_flutter.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:metamap_plugin_flutter/metamap_plugin_flutter.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mati flutter plugin demo',
+      title: 'MetaMap flutter plugin demo',
       theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(title: 'MetaMap Flutter Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   void showMetaMapFlow() {
-    MetaMapFlutter.showMetaMapFlow("610b96fb7cc893001b135505", "61cb1c7dd0b1c2001ba3c366", {});
-    MetaMapFlutter.resultCompleter.future.then((result) => Fluttertoast.showToast(
-        msg: result is ResultSuccess ? "Success ${result.verificationId}" : "Cancelled",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM));
+    final metaData = {"key": "value"};
+    MetaMapFlutter.showMetaMapFlow("CLIENT_ID", "FLOW_ID", metaData);
+    MetaMapFlutter.resultCompleter.future.then((result) =>
+        Fluttertoast.showToast(
+            msg: result is ResultSuccess
+                ? "Success ${result.verificationId}"
+                : "Cancelled",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("MetaMap flutter plugin demo"),
-        ),
-        body: Center(
-            child: ElevatedButton(
-              onPressed: showMetaMapFlow,
-              child: const Text('Verify me'),
-            )
-        )
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Center(
+          child: ElevatedButton(
+        onPressed: showMetaMapFlow,
+        child: const Text('Verify me'),
+      )),
     );
   }
 }

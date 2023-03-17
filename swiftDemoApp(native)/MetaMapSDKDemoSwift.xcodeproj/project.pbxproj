@@ -12,6 +12,7 @@
 		3371A1CA224B8A7800729456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3371A1C8224B8A7800729456 /* Main.storyboard */; };
 		3371A1CC224B8A7A00729456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3371A1CB224B8A7A00729456 /* Assets.xcassets */; };
 		3371A1CF224B8A7A00729456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3371A1CD224B8A7A00729456 /* LaunchScreen.storyboard */; };
+		3806F495E6B4A4A2A8F98C58 /* Pods_MatiSDKDemoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572D546985B68CFEDBFFFDCF /* Pods_MatiSDKDemoSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3371A1CB224B8A7A00729456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3371A1CE224B8A7A00729456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3371A1D0224B8A7A00729456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		572D546985B68CFEDBFFFDCF /* Pods_MatiSDKDemoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatiSDKDemoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B53632692CD9A855D15676C /* Pods-MatiSDKDemoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatiSDKDemoSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MatiSDKDemoSwift/Pods-MatiSDKDemoSwift.release.xcconfig"; sourceTree = "<group>"; };
 		9DD9D2DE8E170BF7F7D50A73 /* Pods-MatiSDKDemoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatiSDKDemoSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MatiSDKDemoSwift/Pods-MatiSDKDemoSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3806F495E6B4A4A2A8F98C58 /* Pods_MatiSDKDemoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,7 @@
 		9113B2CCB63351ED5A7DAD27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				572D546985B68CFEDBFFFDCF /* Pods_MatiSDKDemoSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -21,6 +21,14 @@ class RequestManager {
     
     private let socketManager = MetaMapSocketManager()
     private let apiManager = MetaMapApiManager()
+    
+    func subscribeReusage(event: @escaping () -> Void) {
+        socketManager.reusageManager.subscribe {
+            DispatchQueue.main.async {
+                event()
+            }
+        }
+    }
 
     func getToken(completion: @escaping (IdTokenResponseModel?) -> Void) {
         apiManager.getToken(completion: { (oauth) in

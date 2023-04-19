@@ -230,8 +230,10 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreFoundation;
 @import CoreGraphics;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import QuartzCore;
@@ -256,6 +258,21 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtC10MetaMapSDK17AVDocumentScanner")
+@interface AVDocumentScanner : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class AVCaptureOutput;
+@class AVCaptureConnection;
+
+@interface AVDocumentScanner (SWIFT_EXTENSION(MetaMapSDK)) <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)_ didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)_;
+@end
+
+
 
 
 
@@ -293,7 +310,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MetaMap * _N
 + (MetaMap * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)showMetaMapFlowWithClientId:(NSString * _Nonnull)clientId flowId:(NSString * _Nullable)flowId metadata:(NSDictionary<NSString *, id> * _Nullable)metadata;
+- (void)showMetaMapFlowWithClientId:(NSString * _Nonnull)clientId flowId:(NSString * _Nullable)flowId configurationId:(NSString * _Nullable)configurationId encryptionConfigurationId:(NSString * _Nullable)encryptionConfigurationId metadata:(NSDictionary<NSString *, id> * _Nullable)metadata;
 @end
 
 
@@ -346,6 +363,7 @@ SWIFT_CLASS("_TtC10MetaMapSDK15MetaMapUIConfig")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -710,6 +728,7 @@ SWIFT_CLASS("_TtC10MetaMapSDK31TransparentNavigationController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -988,8 +1007,10 @@ using UInt = size_t;
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreFoundation;
 @import CoreGraphics;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import QuartzCore;
@@ -1014,6 +1035,21 @@ using UInt = size_t;
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtC10MetaMapSDK17AVDocumentScanner")
+@interface AVDocumentScanner : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class AVCaptureOutput;
+@class AVCaptureConnection;
+
+@interface AVDocumentScanner (SWIFT_EXTENSION(MetaMapSDK)) <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)_ didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)_;
+@end
+
+
 
 
 
@@ -1051,7 +1087,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) MetaMap * _N
 + (MetaMap * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)showMetaMapFlowWithClientId:(NSString * _Nonnull)clientId flowId:(NSString * _Nullable)flowId metadata:(NSDictionary<NSString *, id> * _Nullable)metadata;
+- (void)showMetaMapFlowWithClientId:(NSString * _Nonnull)clientId flowId:(NSString * _Nullable)flowId configurationId:(NSString * _Nullable)configurationId encryptionConfigurationId:(NSString * _Nullable)encryptionConfigurationId metadata:(NSDictionary<NSString *, id> * _Nullable)metadata;
 @end
 
 
@@ -1104,6 +1140,7 @@ SWIFT_CLASS("_TtC10MetaMapSDK15MetaMapUIConfig")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -1468,6 +1505,7 @@ SWIFT_CLASS("_TtC10MetaMapSDK31TransparentNavigationController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 

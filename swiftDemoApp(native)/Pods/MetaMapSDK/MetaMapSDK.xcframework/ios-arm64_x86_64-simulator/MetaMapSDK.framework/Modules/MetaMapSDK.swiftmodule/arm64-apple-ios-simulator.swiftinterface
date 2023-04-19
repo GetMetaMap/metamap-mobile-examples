@@ -8,6 +8,7 @@ import AVKit
 import SystemConfiguration.CaptiveNetwork
 import CommonCrypto
 import CoreGraphics
+import CoreImage
 import CoreLocation
 import CoreMotion
 import CoreTelephony
@@ -19,10 +20,12 @@ import MobileCoreServices
 import Network
 import NotificationCenter
 import PDFKit
+import PencilKit
 import SafariServices
 import Swift
 import SwiftUI
 import SystemConfiguration
+import UIKit.UIGestureRecognizerSubclass
 import UIKit
 import Vision
 import WebKit
@@ -37,6 +40,30 @@ import zlib
   @objc weak public var delegate: MetaMapSDK.MetaMapButtonResultDelegate?
   @objc public static let shared: MetaMapSDK.MetaMapButtonResult
   @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers final public class AVDocumentScanner : ObjectiveC.NSObject {
+  final public var desiredJitter: CoreFoundation.CGFloat {
+    get
+    set
+  }
+  final public var featuresRequired: Swift.Int
+  final public var hasTorch: Swift.Bool
+  final public let progress: Foundation.Progress
+  final public var previewLayer: QuartzCore.CALayer {
+    get
+    set
+  }
+  convenience public init(sessionPreset: AVFoundation.AVCaptureSession.Preset = .photo, delegate: MetaMapSDK.DocumentScannerDelegate)
+  @objc deinit
+}
+extension MetaMapSDK.AVDocumentScanner : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc final public func captureOutput(_: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from _: AVFoundation.AVCaptureConnection)
+}
+extension MetaMapSDK.AVDocumentScanner : MetaMapSDK.DocumentScanner {
+  final public func captureImage(in bounds: MetaMapSDK.RectangleFeature?, completion: @escaping (UIKit.UIImage) -> Swift.Void)
+  final public func start()
+  final public func pause()
+  final public func stop()
 }
 public enum CloseCode : Swift.UInt16 {
   case normal
@@ -613,6 +640,17 @@ extension QuartzCore.CAShapeLayer {
 }
 public protocol Identifiable {
 }
+public struct RectangleFeature {
+}
+extension MetaMapSDK.RectangleFeature {
+  public var bezierPath: UIKit.UIBezierPath {
+    get
+  }
+}
+extension MetaMapSDK.RectangleFeature : Swift.Comparable {
+  public static func < (lhs: MetaMapSDK.RectangleFeature, rhs: MetaMapSDK.RectangleFeature) -> Swift.Bool
+  public static func == (a: MetaMapSDK.RectangleFeature, b: MetaMapSDK.RectangleFeature) -> Swift.Bool
+}
 public class WSCompression : MetaMapSDK.CompressionHandler {
   public init()
   public func load(headers: [Swift.String : Swift.String])
@@ -740,8 +778,8 @@ extension MetaMapSDK.SocketEngine {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class MetaMap : ObjectiveC.NSObject {
   @objc public static let shared: MetaMapSDK.MetaMap
-  @objc public func showMetaMapFlow(clientId: Swift.String, flowId: Swift.String?, metadata: [Swift.String : Any]? = nil)
-  public func showMetaMapFlow(clientId: Swift.String, flowId: Swift.String?, metaMapMetadata: MetaMapSDK.MetaMapMetadata? = nil)
+  @objc public func showMetaMapFlow(clientId: Swift.String, flowId: Swift.String?, configurationId: Swift.String? = nil, encryptionConfigurationId: Swift.String? = nil, metadata: [Swift.String : Any]? = nil)
+  public func showMetaMapFlow(clientId: Swift.String, flowId: Swift.String?, configurationId: Swift.String? = nil, encryptionConfigurationId: Swift.String? = nil, metaMapMetadata: MetaMapSDK.MetaMapMetadata? = nil)
   @objc deinit
 }
 public enum SocketIOVersion : Swift.Int {
@@ -838,6 +876,17 @@ extension MetaMapSDK.SocketPacket {
       get
     }
   }
+}
+public protocol DocumentScanner {
+  var desiredJitter: CoreFoundation.CGFloat { get set }
+  var featuresRequired: Swift.Int { get set }
+  var previewLayer: QuartzCore.CALayer { get }
+  var progress: Foundation.Progress { get }
+  func captureImage(in bounds: MetaMapSDK.RectangleFeature?, completion: @escaping (UIKit.UIImage) -> Swift.Void)
+  init(sessionPreset: AVFoundation.AVCaptureSession.Preset, delegate: MetaMapSDK.DocumentScannerDelegate)
+  func start()
+  func pause()
+  func stop()
 }
 extension MetaMapSDK.NSXMLSVGParser : MetaMapSDK.SVGParser {
 }
@@ -1178,6 +1227,9 @@ public protocol Engine {
   func write(data: Foundation.Data, opcode: MetaMapSDK.FrameOpCode, completion: (() -> ())?)
   func write(string: Swift.String, completion: (() -> ())?)
 }
+extension Foundation.NSMutableAttributedString {
+  public func setAsLink(textToFind: Swift.String, linkURL: Swift.String) -> Swift.Bool
+}
 public protocol SocketData {
   func socketRepresentation() throws -> MetaMapSDK.SocketData
 }
@@ -1211,6 +1263,10 @@ extension Swift.String : MetaMapSDK.SocketData {
 public typealias AckCallback = ([Any]) -> ()
 public typealias NormalCallback = ([Any], MetaMapSDK.SocketAckEmitter) -> ()
 public typealias Post = (msg: Swift.String, completion: (() -> ())?)
+public protocol DocumentScannerDelegate : AnyObject {
+  func didCapture(image: UIKit.UIImage)
+  func didRecognize(feature: MetaMapSDK.RectangleFeature?, in image: CoreImage.CIImage)
+}
 public protocol SocketIOClientSpec : AnyObject {
   var anyHandler: ((MetaMapSDK.SocketAnyEvent) -> ())? { get }
   var handlers: [MetaMapSDK.SocketEventHandler] { get }

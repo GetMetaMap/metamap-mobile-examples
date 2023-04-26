@@ -4,5 +4,5 @@ platform :ios, '12.0'
 use_frameworks!
 target 'cordovaDemoApp' do
 	project 'cordovaDemoApp.xcodeproj'
-	pod 'MetaMap-ID-SDK', '3.11.3'
+	pod 'MetaMapSDK'
 end

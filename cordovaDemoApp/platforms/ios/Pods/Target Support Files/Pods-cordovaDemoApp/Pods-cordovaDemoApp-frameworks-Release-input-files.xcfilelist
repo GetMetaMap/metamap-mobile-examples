@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-cordovaDemoApp/Pods-cordovaDemoApp-frameworks.sh
-${PODS_XCFRAMEWORKS_BUILD_DIR}/MetaMap-ID-SDK/MetaMapSDK.framework/MetaMapSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/MetaMapSDK/MetaMapSDK.framework/MetaMapSDK

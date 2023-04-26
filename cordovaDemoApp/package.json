@@ -14,8 +14,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "cordova-android": "^10.1.2",
-    "cordova-ios": "^6.2.0",
-    "metamap-cordova-plugin": "^1.5.1"
+    "cordova-ios": "^6.2.0"
   },
   "cordova": {
     "platforms": [
@@ -25,5 +24,8 @@
     "plugins": {
       "metamap-cordova-plugin": {}
     }
+  },
+  "dependencies": {
+    "metamap-cordova-plugin": "^2.0.5"
   }
 }

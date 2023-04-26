@@ -61,7 +61,7 @@
         }
     
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            [MetaMap.shared showMetaMapFlowWithClientId: clientId flowId: flowId metadata: metadata];
+            [MetaMap.shared showMetaMapFlowWithClientId: clientId flowId: flowId configurationId: nil encryptionConfigurationId: nil metadata: metadata];
             CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         });

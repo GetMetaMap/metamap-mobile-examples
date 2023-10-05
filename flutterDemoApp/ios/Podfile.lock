@@ -3,10 +3,10 @@ PODS:
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
-  - metamap_plugin_flutter (3.1.4):
+  - metamap_plugin_flutter (4.1.2):
     - Flutter
-    - MetaMapSDK (= 3.12.1)
-  - MetaMapSDK (3.12.1)
+    - MetaMapSDK (= 3.16.1)
+  - MetaMapSDK (3.16.1)
   - Toast (4.0.0)
 
 DEPENDENCIES:
@@ -30,10 +30,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
-  metamap_plugin_flutter: 91f4a7c82ff184bc96a1798de6a3fae772eb5db8
-  MetaMapSDK: f1252e5b34d1cc43f226b98edaa2e3e9714f4c1f
+  metamap_plugin_flutter: 41806c4bea29c6a4b119d9305cd2b97c7ed274de
+  MetaMapSDK: 387330ef85ffd66545ab95e70e4a50078bf37347
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
 PODFILE CHECKSUM: 4e8f8b2be68aeea4c0d5beb6ff1e79fface1d048
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1
